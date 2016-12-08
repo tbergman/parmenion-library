@@ -1,17 +1,8 @@
 {
   "name": "parmenion-library",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "description": "A boilerplate for running a Webpack workflow in Node express",
   "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/parmenion/parmenion-library.git"
-  },
-  "keywords": [
-    "express",
-    "webpack",
-    "node"
-  ],
   "author": "Ben Dunn",
   "license": "MIT",
   "bugs": {
@@ -33,8 +24,8 @@
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "babel-eslint": "^4.1.6",
-    "babel-loader": "^6.2.3",
     "babel-jscs": "^2.0.5",
+    "babel-loader": "^6.2.3",
     "babel-preset-es2015": "^6.3.13",
     "babel-preset-react": "^6.3.13",
     "babel-preset-react-hmre": "^1.1.0",
@@ -45,11 +36,13 @@
     "eslint": "^1.5.0",
     "eslint-plugin-react": "^3.4.2",
     "express": "^4.13.3",
-    "extract-text-webpack-plugin": "^0.8.2",
+    "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^1.6.1",
     "jscs": "^2.1.1",
     "jsdom": "^6.5.1",
     "json-loader": "^0.5.3",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
     "mocha": "^2.3.3",
     "mocha-jsdom": "^1.0.0",
     "postcss-loader": "^0.6.0",

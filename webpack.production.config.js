@@ -5,6 +5,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
+var autoprefixer = require('autoprefixer');
 
 module.exports = {
   entry: [
@@ -38,22 +39,28 @@ module.exports = {
     })
   ],
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel',
-      query: {
-        "presets": ["es2015", "stage-0", "react"]
-      }
-    }, {
-      test: /\.json?$/,
-      loader: 'json'
-    }, {
-      test: /\.css$/,
-      loader: ExtractTextPlugin.extract('style', 'css?modules&localIdentName=[name]---[local]---[hash:base64:5]!postcss')
-    }]
+    loaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'babel',
+        query: {
+          "presets": ["es2015", "stage-0", "react"]
+        }
+      }, {
+        test: /\.json?$/,
+        loader: 'json'
+      }, {
+        test: /\.less$/,
+        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
+      }      
+    ]
+  },
+  resolve: {
+    extensions: ['', '.js', '.less'],
+    root: [path.join(__dirname, './app')]
   },
   postcss: [
-    require('autoprefixer')
+    autoprefixer({ browsers: ['last 3 versions'] })
   ]
 };

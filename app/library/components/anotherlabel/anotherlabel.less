@@ -1,0 +1,81 @@
+@import "../../theme/colours.less";
+
+@label-default-bg:          orange;
+@label-primary-bg:          @brand-primary;
+@label-success-bg:          @brand-success;
+@label-info-bg:             @brand-info;
+@label-warning-bg:          @brand-warning;
+@label-danger-bg:           @brand-danger;
+@label-color:               white;
+@label-link-hover-color:    white;
+
+.c-another-label {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 125%;
+    font-weight: bold;
+    line-height: 1;
+    color: @label-color;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: @label-default-bg;
+    
+    // Add hover effects for links
+    a& {
+        &:hover,
+        &:focus {
+          color: @label-link-hover-color;
+          text-decoration: none;
+          cursor: pointer;
+        }
+    }
+    
+    // Empty labels collapse automatically
+    &:empty {
+        display: none;
+    }
+    
+
+    // Label styles
+    // ---------------------------------------------------
+
+    &--success {
+        background-color: @label-success-bg;
+    }
+
+    &--danger {
+        background-color: @label-danger-bg;
+    }
+
+    &--warning {
+        background-color: @label-warning-bg;
+    }
+
+    &--info {
+        background-color: @label-info-bg;
+    }
+
+
+    // Optimisations for labels inside other components
+    // ---------------------------------------------------
+
+    .c-btn & {
+        position: relative;
+        top: -1px;
+    }
+    h1 & {
+        position: relative;
+        top: -7px;
+        font-size: 0.5em;
+        margin-left: 10px;
+    }
+    h2 &, h3 &, h4 & {
+        position: relative;
+        top: -4px;
+        font-size: 0.6em;
+        margin-left: 8px;
+    }
+
+}

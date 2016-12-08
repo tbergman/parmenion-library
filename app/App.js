@@ -1,5 +1,7 @@
 import React from 'react';
-import styles from './App.css';
+import "library/theme/global.less";
+
+import Label from "library/components/label/label.jsx";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -8,8 +10,10 @@ export default class App extends React.Component {
   }
   render() {
     return (
-      <div className={styles.app}>
-        bar
+      <div>
+        <p>
+          <Label>This is a label</Label>
+        </p>
       </div>
     );
   }
