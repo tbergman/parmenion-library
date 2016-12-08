@@ -1,5 +1,5 @@
 import React from 'react';
-import "library/theme/global.less";
+import "library/theme/typography.less";
 
 import Label from "library/components/label/label.jsx";
 
