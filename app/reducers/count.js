@@ -8,12 +8,9 @@ export default function update(state = initialState, action) {
   switch(action.type) {
     case INCREASE:
       return { number: state.number + action.amount }
-      break;
     case DECREASE:
       return { number: state.number - action.amount }
-      break;
     default:
       return state
-      break;
   }
 }
