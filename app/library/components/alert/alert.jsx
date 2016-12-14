@@ -49,7 +49,13 @@ const Container = styled('div', () => ({
   background:     _styles.bg,
   borderRadius:   styles.components.border_radius_base,
   textAlign:      'left',
-  color:          _styles.color
+  color:          _styles.color,
+  ':hover': {
+    color: styles.colors.bright_blue,
+  },
+  '@media (min-width: 1024px)': {
+    padding: '16px 20px',
+  }
 }));
 
 // .c-alert__header
