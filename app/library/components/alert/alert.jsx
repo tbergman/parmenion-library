@@ -1,33 +1,62 @@
 import React from 'react';
 import {styled} from 'styletron-react';
+import tinycolor from 'tinycolor2';
+import styles from '../../theme/index.js';
 
-// variables.less
-const font_size_h4 =          '18px';
-const gray_lightest =         '#f9f9f9';
-const border_radius_base =    '2px';
+function getStateVariables(type) {
+  switch (type) {
+    case 1:
+      return {
+        color: tinycolor(styles.colors.brand.success).darken(30).toString(),
+        bg: tinycolor(styles.colors.brand.success).lighten(30).toString(),
+        border_color: tinycolor(styles.colors.brand.success).lighten(20).toString()
+      }
+    case 2:
+      return {
+        color: tinycolor(styles.colors.brand.danger).darken(30).toString(),
+        bg: tinycolor(styles.colors.brand.danger).lighten(30).toString(),
+        border_color: tinycolor(styles.colors.brand.danger).lighten(20).toString()
+      }
+    case 3:
+      return {
+        color: tinycolor(styles.colors.brand.info).darken(30).toString(),
+        bg: tinycolor(styles.colors.brand.info).lighten(30).toString(),
+        border_color: tinycolor(styles.colors.brand.info).lighten(20).toString()
+      }
+    case 4:
+      return {
+        color: tinycolor(styles.colors.brand.warning).darken(30).toString(),
+        bg: tinycolor(styles.colors.brand.warning).lighten(30).toString(),
+        border_color: tinycolor(styles.colors.brand.warning).lighten(20).toString()
+      }
+    default:
+      return {
+        bg: styles.colors.gray_lightest,
+        border_color: "transparent",
+        color: styles.colors.text_color
+      }
+  }
+}
 
-// alerts.less
-const alert_padding_v =       '8px';
-const alert_padding_h =       '10px';
-const alert_padding =         alert_padding_v + ' ' + alert_padding_h;
-const alert_border_radius =   border_radius_base;
-const alert_bg =              gray_lightest;
+const type = 1;
+const _styles = getStateVariables(type);
 
 // .c-alert
 const Container = styled('div', () => ({
-  padding:        alert_padding,
   margin:         '5px 0 15px',
-  background:     alert_bg,
-  border:         '1px solid transparent',
-  borderRadius:   alert_border_radius,
-  textAlign:      'left'
+  padding:        '8px 10px',
+  border:         `1px solid ${_styles.border_color}`,
+  background:     _styles.bg,
+  borderRadius:   styles.components.border_radius_base,
+  textAlign:      'left',
+  color:          _styles.color
 }));
 
 // .c-alert__header
 const Header = styled('div', () => ({
-  fontSize:       font_size_h4,
   marginTop:      '1px',
   marginBottom:   '2px',
+  fontSize:       styles.type.font_size_h4,
   color:          'inherit'
 }));
 

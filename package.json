@@ -26,7 +26,8 @@
     "react-router-redux": "^4.0.7",
     "redux": "^3.2.1",
     "styletron-client": "^2.2.0",
-    "styletron-react": "^2.2.1"
+    "styletron-react": "^2.2.1",
+    "tinycolor2": "^1.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^6.0.3",
