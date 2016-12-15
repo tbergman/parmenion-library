@@ -8,14 +8,9 @@ import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-
-import Styletron from 'styletron-client';
-import {StyletronProvider} from 'styletron-react';
-
-const styleSheet = document.createElement('style');
-document.head.appendChild(styleSheet);
-const styletron = new Styletron([styleSheet]);
     
+import { ThemeProvider } from 'styled-components';
+
 import * as reducers from './reducers'
 import { App, Home, Foo, Bar } from './containers'
 
@@ -36,8 +31,16 @@ const store = createStore(
 )
 const history = syncHistoryWithStore(browserHistory, store)
 
+const theme = {
+  primary:   "#BF2A23",
+  success:   "#91c95b",
+  danger:    "#BF2A23",
+  info:      "#5bc0de",
+  warning:   "#f0ad4e"
+};
+
 ReactDOM.render(
-  <StyletronProvider styletron={styletron}>
+  <ThemeProvider theme={theme}>
     <Provider store={store}>
       <div>
         <Router history={history}>
@@ -50,6 +53,6 @@ ReactDOM.render(
         <DevTools />
       </div>
     </Provider>
-  </StyletronProvider>,
+  </ThemeProvider>,
   document.getElementById('root')
 )
