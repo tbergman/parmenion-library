@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import withTheme from '../../../hoc/withTheme.jsx'
 import styles from '../../theme/index.js';
 import tinycolor from 'tinycolor2';
+
 
 
 /* ==========================================================================
@@ -11,10 +13,6 @@ import tinycolor from 'tinycolor2';
 /* Block styles
 ========================================================================== */
 
-let getBorder = c => tinycolor(c).lighten(20).toString();
-let getBackground = c => tinycolor(c).lighten(30).toString();
-let getColor = c => tinycolor(c).darken(30).toString();
-
 const Container = styled.div`
   position: relative;
   display: inline-block;
@@ -23,57 +21,15 @@ const Container = styled.div`
   padding: 8px 10px;
   text-align: left;
   border-radius: ${styles.components.border_radius_base};
-  border: 1px solid ${props => {
-    switch(props.type) {
-      case 1:
-        return getBorder(props.theme.success);
-      case 2:
-      case 5:
-        return getBorder(props.theme.danger);
-      case 3:
-        return getBorder(props.theme.warning);
-      case 4:
-        return getBorder(props.theme.info);
-      default:
-        return 'transparent'
-    }
-  }};
-  background: ${props => {
-    switch(props.type) {
-      case 1:
-        return getBackground(props.theme.success);
-      case 2:
-      case 5:
-        return getBackground(props.theme.danger);
-      case 3:
-        return getBackground(props.theme.warning);
-      case 4:
-        return getBackground(props.theme.info);
-      default:
-        return styles.colors.gray_lightest
-    }
-  }};
-  color: ${props => {
-    switch(props.type) {
-      case 1:
-        return getColor(props.theme.success);
-      case 2:
-      case 5:
-        return getColor(props.theme.danger);
-      case 3:
-        return getColor(props.theme.warning);
-      case 4:
-        return getColor(props.theme.info);
-      default:
-        return styles.type.text_color
-    }
-  }};
-  ${ props => props.type === 5 && `&:after {
+  border: 1px solid ${props => tinycolor(props.color).lighten(20).toString()};
+  background: ${props => tinycolor(props.color).lighten(30).toString()};
+  color: ${props => tinycolor(props.color).darken(30).toString()};
+  ${ props => props.hasArrow && `&:after {
     content: "▲";
     position: absolute;
-    top: -12px;
+    top: -14px;
     left: 15px;
-    color: ${getBackground(props.theme.danger)};
+    color: ${props => tinycolor(props.color).lighten(20).toString()};
   }`}
   &:hover {
     color: ${styles.colors.bright_blue};
@@ -109,11 +65,10 @@ const Description = styled.div`
    React Component
 ========================================================================== */
 
-class Alert extends React.Component{
+class Alert extends React.Component {
   render() {
-    let {type, title, children} = this.props;
-    
-    return <Container type={this.props.type}>
+    const {status, hasArrow, title, children, theme} = this.props;
+    return <Container color={status} hasArrow={hasArrow}>
       <Header>{ title }</Header>
       <Description>
         { children }
@@ -124,7 +79,7 @@ class Alert extends React.Component{
 
 Alert.propTypes = {
   title: React.PropTypes.string,
-  type: React.PropTypes.number
+  status: React.PropTypes.string,
+  hasArrow: React.PropTypes.bool
 };
-
-export default Alert;
+export default withTheme(Alert);
