@@ -9,12 +9,37 @@ export default class Foo extends React.Component {
           <Alert title="This is an alert heading" status={3} hasArrow={false}>
             This is the alert content  
           </Alert>
-          <Button>
-            This is a default button
-          </Button>
-          <Button type={1} isSmall={true}>
-            This is a small primary button
-          </Button>
+
+          <p>
+            <Button>
+              This is a default button
+            </Button>
+          </p>
+
+          <p>
+            <Button type={1} isSmall={true}>
+              This is a small primary button
+            </Button>
+          </p>
+
+          <p>
+            <Button type={2} onClick={() => console.log("Clicked!")}>
+              Log a console message via "onClick()"
+            </Button>
+          </p>
+          
+          <p>
+            <Button type={3} href="http://www.google.com">
+              Go to www.google.com via "href"
+            </Button>
+          </p>
+          
+          <p>
+            <Button to="/">
+              Go to Home via "to"
+            </Button>
+          </p>
+
         </div>;
     }
 }

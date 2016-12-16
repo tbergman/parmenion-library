@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import withTheme from '../../../hoc/withTheme.jsx'
 import styles from '../../theme/index.js';
 import tc from 'tinycolor2';
+import { Link } from 'react-router';
 
 
 /* ==========================================================================
@@ -45,8 +46,8 @@ const getButton = function(type, theme) {
   let padding_small = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
   let padding_default = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
 
-  // React component for use in Button class
-  return styled.a`
+  // React component based on Link
+  return styled(Link)`
     display: inline-block;
     margin-bottom: 0;
     padding: ${ props => props.isSmall ? padding_small : padding_default };
@@ -111,15 +112,16 @@ const getButton = function(type, theme) {
   
 }
 
+
 /* ==========================================================================
    React Component
 ========================================================================== */
 
 class Button extends React.Component {
   render() {
-    const {type, isSmall, children, theme} = this.props;
+    const {theme, children, type, isSmall, onClick, href, to} = this.props;
     const ThemedButton = getButton(type, theme);
-    return <ThemedButton isSmall={isSmall}>
+    return <ThemedButton isSmall={isSmall} onClick={onClick} href={href} to={to}>
       { children }
     </ThemedButton>;
   }
