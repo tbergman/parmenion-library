@@ -9,13 +9,6 @@ const colors = {
   faded_white:          "rgba(255,255,255,0.65)",
   pale_yellow:          "#fffcee",
   bright_blue:          "#66afe9",
-  brand: {
-    primary:            "#BF2A23",
-    success:            "#91c95b",
-    danger:             "#BF2A23",
-    info:               "#5bc0de",
-    warning:            "#f0ad4e"
-  }
 }
 
 export default colors

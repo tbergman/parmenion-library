@@ -10,7 +10,7 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
     
 import { ThemeProvider } from 'styled-components';
-import theme from 'library/theme/index.js';
+import brand from 'brand';
 
 import * as reducers from './reducers'
 import { App, Home, Foo, Bar } from './containers'
@@ -32,17 +32,8 @@ const store = createStore(
 )
 const history = syncHistoryWithStore(browserHistory, store)
 
-//export const theme = {
-//  primary:   "#BF2A23",
-//  success:   "#91c95b",
-//  danger:    "#BF2A23",
-//  info:      "#5bc0de",
-//  warning:   "#f0ad4e",
-//  default:   "#666666"
-//};
-
 ReactDOM.render(
-  <ThemeProvider theme={theme}>
+  <ThemeProvider theme={brand}>
     <Provider store={store}>
       <div>
         <Router history={history}>

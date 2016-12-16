@@ -67,7 +67,23 @@ const Description = styled.div`
 
 class Alert extends React.Component {
   render() {
-    const {color, hasArrow, title, children} = this.props;
+    const {status, hasArrow, title, children, theme} = this.props;
+    
+    const color = (() => {
+      switch(status) {
+        case 1: 
+          return theme.colors.states.success;
+        case 2: 
+          return theme.colors.states.danger;
+        case 3: 
+          return theme.colors.states.warning;
+        case 4: 
+          return theme.colors.states.info;
+        default: 
+          return styles.colors.grey_light;
+      }
+    })();
+    
     return <Container color={color} hasArrow={hasArrow}>
       <Header>{ title }</Header>
       <Description>
@@ -79,7 +95,7 @@ class Alert extends React.Component {
 
 Alert.propTypes = {
   title: React.PropTypes.string,
-  status: React.PropTypes.string,
+  status: React.PropTypes.number,
   hasArrow: React.PropTypes.bool
 };
-export default Alert;
+export default withTheme(Alert);

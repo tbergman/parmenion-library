@@ -15,9 +15,7 @@ const components = {
   border_radius_code:                  "0.25rem",
 
   component_active_color:              "white",
-  component_active_bg:                 colors.brand.primary,
 
-  highlight:                           colors.brand.success,
   dragdrop:                            "pale_yellow",
   dragdrop_shadow:                     "2px 2px 3px rgba(0, 0, 0, 0.125)"
 }
