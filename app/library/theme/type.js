@@ -4,6 +4,7 @@ const line_height_base = 1.428571429;
 const type = {
   font:                 'Arial, sans-serif',
   font_size:            `${font_size_base}px`,
+  font_size_small:      '0.9em',
   font_size_h1:         `${Math.floor(font_size_base*2.8)}px`,
   font_size_h2:         `${Math.floor(font_size_base*2.3)}px`,
   font_size_h3:         `${Math.floor(font_size_base*1.9)}px`,

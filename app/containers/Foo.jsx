@@ -9,8 +9,11 @@ export default class Foo extends React.Component {
           <Alert title="This is an alert heading" status={3} hasArrow={false}>
             This is the alert content  
           </Alert>
-          <Button type={1}>
-            This is the button content  
+          <Button>
+            This is a default button
+          </Button>
+          <Button type={1} isSmall={true}>
+            This is a small primary button
           </Button>
         </div>;
     }

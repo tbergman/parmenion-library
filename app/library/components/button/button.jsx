@@ -2,28 +2,60 @@ import React from 'react';
 import styled from 'styled-components';
 import withTheme from '../../../hoc/withTheme.jsx'
 import styles from '../../theme/index.js';
-import tinycolor from 'tinycolor2';
-
+import tc from 'tinycolor2';
 
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-/* Block styles
-========================================================================== */
+const getButton = function(type, theme) {
 
-const createButton = function(color = styles.type.text_color, background = "white", border = styles.colors.gray_light) {
+  // Style settings
+  const vars = ((type, theme) => {
+    switch(type) {
+      case 1:
+        return {
+          background: theme.colors.primary,
+          border: tc(theme.colors.primary).darken(5).toString(),
+          color: "white"
+        } 
+      case 2:
+        return {
+          background: theme.colors.secondary,
+          border: tc(theme.colors.secondary).darken(5).toString(),
+          color: "white"
+        }
+      case 3:
+        return {
+          background: theme.colors.states.danger,
+          border: tc(theme.colors.states.danger).darken(5).toString(),
+          color: "white"
+        }
+      default: 
+        return {
+          background: "white",
+          border: styles.colors.gray_light,
+          color: styles.type.text_color
+        } 
+      }
+  })(type, theme);
+
+  // Simplify long strings
+  let padding_small = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
+  let padding_default = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
+
+  // React component for use in Button class
   return styled.a`
     display: inline-block;
     margin-bottom: 0;
-    padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
-    font-size: ${styles.type.font_size};
+    padding: ${ props => props.isSmall ? padding_small : padding_default };
+    font-size: ${ props => props.isSmall ? styles.type.font_size_small : styles.type.font_size };
     line-height: ${styles.type.line_height_computed};
-    border: 1px solid ${border};
     border-radius: ${styles.components.border_radius_base};
-    color: ${color};
-    background-color: ${background};
+    border: 1px solid ${vars.border};
+    color: ${vars.color};
+    background-color: ${vars.background};
     background-image: none;
     font-weight: normal;
     text-decoration: none;
@@ -38,28 +70,28 @@ const createButton = function(color = styles.type.text_color, background = "whit
 
     &:focus,
     &.focus {
-      color: ${color};
-      background-color: ${tinycolor(background).darken(10).toString()};
-          border-color: ${tinycolor(border).darken(25).toString()};
+      color: ${vars.color};
+      background-color: ${tc(vars.background).darken(10).toString()};
+          border-color: ${tc(vars.border).darken(25).toString()};
     }
 
     &:hover {
-      color: ${color};
-      background-color: ${tinycolor(background).darken(10).toString()};
-          border-color: ${tinycolor(border).darken(12).toString()};
+      color: ${vars.color};
+      background-color: ${tc(vars.background).darken(10).toString()};
+          border-color: ${tc(vars.border).darken(12).toString()};
     }
 
     &:active {
       outline: 0;
-      color: ${color};
-      background-color: ${tinycolor(background).darken(10).toString()};
-          border-color: ${tinycolor(border).darken(12).toString()};
+      color: ${vars.color};
+      background-color: ${tc(vars.background).darken(10).toString()};
+          border-color: ${tc(vars.border).darken(12).toString()};
       &:hover,
       &:focus,
       &.focus {
-        color: ${color};
-        background-color: ${tinycolor(background).darken(17).toString()};
-            border-color: ${tinycolor(border).darken(25).toString()};
+        color: ${vars.color};
+        background-color: ${tc(vars.background).darken(17).toString()};
+            border-color: ${tc(vars.border).darken(25).toString()};
       }
     }
 
@@ -71,14 +103,13 @@ const createButton = function(color = styles.type.text_color, background = "whit
       &:hover,
       &:focus,
       &.focus {
-        background-color: ${background};
-            border-color: ${border};
+        background-color: ${vars.background};
+            border-color: ${vars.color};
       }
     }
   `;
   
 }
-
 
 /* ==========================================================================
    React Component
@@ -86,32 +117,17 @@ const createButton = function(color = styles.type.text_color, background = "whit
 
 class Button extends React.Component {
   render() {
-    const {type, children, theme} = this.props;
-
-    const Button = (() => {
-      switch(type) {
-        case 1: 
-          return createButton("white",theme.colors.states.success,tinycolor(theme.colors.states.success).darken(5).toString())
-        case 2: 
-          return createButton("white",theme.colors.states.danger,tinycolor(theme.colors.states.danger).darken(5).toString())
-        case 3: 
-          return createButton("white",theme.colors.states.warning,tinycolor(theme.colors.states.warning).darken(5).toString())
-        case 4: 
-          return createButton("white",theme.colors.states.info,tinycolor(theme.colors.states.info).darken(5).toString())
-        default: 
-          return createButton();
-      }
-    })();
-    
-    return <Button>
+    const {type, isSmall, children, theme} = this.props;
+    const ThemedButton = getButton(type, theme);
+    return <ThemedButton isSmall={isSmall}>
       { children }
-    </Button>;
+    </ThemedButton>;
   }
 }
 
 Button.propTypes = {
-  title: React.PropTypes.string,
-  status: React.PropTypes.number,
-  hasArrow: React.PropTypes.bool
+  type: React.PropTypes.number,
+  isSmall: React.PropTypes.bool
 };
+
 export default withTheme(Button);
