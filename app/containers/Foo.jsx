@@ -40,6 +40,24 @@ export default class Foo extends React.Component {
             </Button>
           </p>
 
+          <p>
+            <Button isBlock={true}>
+              This is a block button
+            </Button>
+          </p>
+
+          <p>
+            <Button type={4}>
+              This is a link button
+            </Button>
+          </p>
+
+          <p>
+            <Button isDisabled={true}>
+              Disabled button
+            </Button>
+          </p>
+
         </div>;
     }
 }
