@@ -140,7 +140,21 @@ Button.propTypes = {
   type: React.PropTypes.number,
   isSmall: React.PropTypes.bool,
   isBlock: React.PropTypes.bool,
-  isDisabled: React.PropTypes.bool
+  isDisabled: React.PropTypes.bool,
+  onClick: React.PropTypes.func,
+  href: React.PropTypes.string,
+  to: React.PropTypes.string,
+  children: React.PropTypes.node.isRequired
+};
+
+Button.defaultProps = {
+  type: 0,
+  isSmall: false,
+  isBlock: false,
+  isDisabled: false,
+  onClick: null,
+  href: null,
+  to: null
 };
 
 export default withTheme(Button);

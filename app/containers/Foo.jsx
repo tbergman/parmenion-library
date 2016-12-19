@@ -1,6 +1,11 @@
 import React from 'react';
 import Alert from '../library/components/alert/alert.jsx'
 import Button from '../library/components/button/button.jsx'
+import ButtonGroup from '../library/components/button/ButtonGroup.jsx'
+import InputGroup from '../library/components/button/InputGroup.jsx'
+import InputText from '../library/components/form/InputText.jsx'
+import InputPassword from '../library/components/form/InputPassword.jsx'
+import Textarea from '../library/components/form/Textarea.jsx'
 import brand from '../brand';
 
 export default class Foo extends React.Component {
@@ -17,7 +22,7 @@ export default class Foo extends React.Component {
           </p>
 
           <p>
-            <Button type={1} isSmall={true}>
+            <Button type={1} isSmall>
               This is a small primary button
             </Button>
           </p>
@@ -41,7 +46,7 @@ export default class Foo extends React.Component {
           </p>
 
           <p>
-            <Button isBlock={true}>
+            <Button isBlock>
               This is a block button
             </Button>
           </p>
@@ -53,10 +58,61 @@ export default class Foo extends React.Component {
           </p>
 
           <p>
-            <Button isDisabled={true}>
+            <Button isDisabled>
               Disabled button
             </Button>
           </p>
+
+          <p>
+            <InputText placeholder='Enter your text here' />
+          </p>
+
+          <p>
+            <InputPassword placeholder='Enter your password' />
+          </p>
+
+          <p>
+            <Textarea rows={4} />
+          </p>
+
+          <ButtonGroup>
+            <Button>
+              This is a button
+            </Button>
+            <Button>
+              This is a button
+            </Button>
+            <Button>
+              This is a button
+            </Button>
+          </ButtonGroup>
+
+          <ButtonGroup isJustified>
+            <Button>
+              This is a button
+            </Button>
+            <Button>
+              This is a button
+            </Button>
+            <Button>
+              This is a button
+            </Button>
+          </ButtonGroup>
+
+          <InputGroup start="£" end=".00">
+            <InputText placeholder='Enter money' />
+          </InputGroup>
+
+          <InputGroup start="£">
+            <InputText placeholder='Enter money' isSmall />
+          </InputGroup>
+
+          <InputGroup 
+            start={<Button>-</Button>} 
+            end={<Button>+</Button>}
+          >
+            <InputText placeholder='Enter money' />
+          </InputGroup>
 
         </div>;
     }

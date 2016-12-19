@@ -17,7 +17,9 @@ const components = {
   component_active_color:              "white",
 
   dragdrop:                            "pale_yellow",
-  dragdrop_shadow:                     "2px 2px 3px rgba(0, 0, 0, 0.125)"
+  dragdrop_shadow:                     "2px 2px 3px rgba(0, 0, 0, 0.125)",
+
+  border_color:                        colors.gray_lighter
 }
 
 export default components;
