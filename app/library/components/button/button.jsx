@@ -10,7 +10,7 @@ import { Link } from 'react-router';
    Styles
 ========================================================================== */
 
-const getButton = function(type, theme) {
+const createButton = function(type, theme) {
 
   // Style settings
   const vars = ((type, theme) => {
@@ -120,7 +120,7 @@ const getButton = function(type, theme) {
 class Button extends React.Component {
   render() {
     const {theme, children, type, isSmall, onClick, href, to} = this.props;
-    const ThemedButton = getButton(type, theme);
+    const ThemedButton = createButton(type, theme);
     return <ThemedButton isSmall={isSmall} onClick={onClick} href={href} to={to}>
       { children }
     </ThemedButton>;
