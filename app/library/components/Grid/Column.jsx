@@ -46,6 +46,7 @@ ColumnContainer.defaultProps = {
 
 const Column = styled(ColumnContainer)`
   display: ${(window.document.documentMode < 10) ? "table-cell" : "flex"};
+  vertical-align: top;
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 1px solid #fff;` : ''}
   box-sizing: border-box;
