@@ -1,19 +1,65 @@
 import React from 'react';
-import Alert from '../library/components/alert/alert.jsx'
-import Button from '../library/components/button/button.jsx'
-import ButtonGroup from '../library/components/button/ButtonGroup.jsx'
-import InputGroup from '../library/components/button/InputGroup.jsx'
-import InputText from '../library/components/form/InputText.jsx'
-import InputPassword from '../library/components/form/InputPassword.jsx'
-import Textarea from '../library/components/form/Textarea.jsx'
+import Alert from '../library/components/Status/Alert';
+import Button from '../library/components/Form/Button';
+import ButtonGroup from '../library/components/Form/ButtonGroup';
+import InputGroup from '../library/components/Form/InputGroup';
+import InputText from '../library/components/Form/InputText';
+import InputPassword from '../library/components/Form/InputPassword';
+import Textarea from '../library/components/Form/Textarea';
+import { Grid, Row, Column } from '../library/components/Grid';
 import brand from '../brand';
 
 export default class Foo extends React.Component {
     render() {
         return <div>
-          <Alert title="This is an alert heading" status={3} hasArrow={false}>
-            This is the alert content  
-          </Alert>
+
+          <Grid>
+            <Row>
+              <Column sm={6} xs={12}>
+                <Alert title="This is an alert heading" status={1} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column sm={6} xs={12}>
+                <Alert title="This is an alert heading" status={2} hasArrow={false}>
+                  Aliquam elit quam, pretium in augue in, aliquam tempor elit. Nam porttitor purus et bibendum vehicula. 
+                  Curabitur fringilla scelerisque blandit. Vivamus id tortor nunc. Aenean tristique mattis lobortis. 
+                  Sed in diam sed purus interdum suscipit. Duis arcu purus, scelerisque vitae felis et, euismod dictum magna. 
+                  Donec vestibulum ante turpis, et gravida elit commodo ac.
+                </Alert>
+              </Column>
+            </Row>
+          </Grid>
+
+          <Grid>
+            <Row divisions={5}>
+              <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={3} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={4} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={1} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={2} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={3} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+            </Row>
+          </Grid>
 
           <p>
             <Button>
@@ -87,6 +133,8 @@ export default class Foo extends React.Component {
             </Button>
           </ButtonGroup>
 
+          <br /><br />
+
           <ButtonGroup isJustified>
             <Button>
               This is a button
@@ -99,13 +147,19 @@ export default class Foo extends React.Component {
             </Button>
           </ButtonGroup>
 
+          <br />
+
           <InputGroup start="£" end=".00">
             <InputText placeholder='Enter money' />
           </InputGroup>
 
+          <br />
+
           <InputGroup start="£">
             <InputText placeholder='Enter money' isSmall />
           </InputGroup>
+
+          <br />
 
           <InputGroup 
             start={<Button>-</Button>} 

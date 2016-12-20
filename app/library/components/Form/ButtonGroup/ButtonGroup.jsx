@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../theme';
+import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -8,11 +8,11 @@ import styles from '../../theme';
 ========================================================================== */
 
 const Group = styled.div`
-    position: relative;
     display: ${ props => props.isJustified ? 'table' : 'inline-block' };
     width: ${ props => props.isJustified ? '100%' : 'auto' };
     table-layout: ${ props => props.isJustified ? 'fixed' : 'auto' };
     border-collapse: ${ props => props.isJustified ? 'separate' : 'auto' };
+    position: relative;
     vertical-align: middle;
     > * {
       position: relative;

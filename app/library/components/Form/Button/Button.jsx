@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import withTheme from '../../../hoc/withTheme.jsx'
-import styles from '../../theme/index.js';
+import withTheme from '../../../../hoc/withTheme.jsx'
+import styles from '../../../theme';
 import tc from 'tinycolor2';
 import { Link } from 'react-router';
 
@@ -20,21 +20,21 @@ const createButton = function(type, theme) {
           background: theme.colors.primary,
           border: tc(theme.colors.primary).darken(5).toString(),
           color: "white",
-          shadow: "0 1px 3px rgba(0,0,0,.125)"
+          shadow: styles.components.shadow
         } 
       case 2:
         return {
           background: theme.colors.secondary,
           border: tc(theme.colors.secondary).darken(5).toString(),
           color: "white",
-          shadow: "0 1px 3px rgba(0,0,0,.125)"
+          shadow: styles.components.shadow
         }
       case 3:
         return {
           background: theme.colors.states.danger,
           border: tc(theme.colors.states.danger).darken(5).toString(),
           color: "white",
-          shadow: "0 1px 3px rgba(0,0,0,.125)"
+          shadow: styles.components.shadow
         }
       case 4:
         return {
@@ -48,7 +48,7 @@ const createButton = function(type, theme) {
           background: "white",
           border: styles.colors.gray_light,
           color: styles.type.text_color,
-          shadow: "0 1px 3px rgba(0,0,0,.125)"
+          shadow: styles.components.shadow
         } 
       }
   })(type, theme);
@@ -60,20 +60,20 @@ const createButton = function(type, theme) {
   // React component based on Link
   return styled(Link)`
     display: ${ props => props.isBlock ? 'block' : 'inline-block' };
-    margin-bottom: 0;
     padding: ${ props => props.isSmall ? padding_small : padding_default };
     font-size: ${ props => props.isSmall ? styles.type.font_size_small : styles.type.font_size };
     line-height: ${styles.type.line_height_computed};
-    border-radius: ${styles.components.border_radius_base};
+    border-radius: ${styles.components.border_radius};
     border: 1px solid ${vars.border};
     color: ${vars.color};
     background-color: ${vars.background};
+    box-shadow: ${vars.shadow};
+    margin-bottom: 0;
     background-image: none;
     font-weight: normal;
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
-    box-shadow: ${vars.shadow};
     transition: background-color 100ms linear;
     touch-action: manipulation;
     cursor: pointer;
@@ -108,9 +108,9 @@ const createButton = function(type, theme) {
     }
 
     &[disabled] {
+      cursor: ${styles.components.cursor_disabled};
       opacity: 0.65;
       box-shadow: none;
-      cursor: not-allowed;
       &:hover,
       &:focus,
       &.focus {

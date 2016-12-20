@@ -9,7 +9,7 @@ import { Provider } from 'react-redux'
 import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
     
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider, injectGlobal } from 'styled-components';
 import brand from 'brand';
 
 import * as reducers from './reducers'
@@ -31,6 +31,18 @@ const store = createStore(
   DevTools.instrument()
 )
 const history = syncHistoryWithStore(browserHistory, store)
+
+injectGlobal`
+  * {
+    box-sizing: border-box
+  }
+  body {
+    margin: 20px;
+    font-size: ${brand.type.size}px;
+    font-family: ${brand.type.font};
+    line-height: ${brand.type.line_height}
+  }
+`
 
 ReactDOM.render(
   <ThemeProvider theme={brand}>

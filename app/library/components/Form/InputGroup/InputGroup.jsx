@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../theme';
+import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -8,14 +8,14 @@ import styles from '../../theme';
 ========================================================================== */
 
 const AddonString = styled.span`
-  display: table-cell;
-  width: 1%;
   padding: 0 ${styles.components.padding_base_horizontal};
   font-size: ${styles.type.font_size};
   color: ${styles.forms.input_color};
   background-color: ${styles.colors.gray_lighter};
   border: 1px solid ${styles.forms.input_border};
   border-radius: ${styles.forms.input_border_radius};
+  display: table-cell;
+  width: 1%;
   font-weight: normal;
   line-height: 1;
   vertical-align: middle;

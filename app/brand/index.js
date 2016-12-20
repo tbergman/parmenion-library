@@ -10,12 +10,12 @@ const brand = {
     }
   },
   type: {
-    font:               "Calibri",
-    size:               "16px",
-    line_height:        "1.6"
+    font:               "Arial, sans-serif",
+    size:               "15",
+    line_height:        "1.428571429"
   },
   components: {
-    border_radius:      "2px"
+    border_radius:      "4px"
   }
 }
 

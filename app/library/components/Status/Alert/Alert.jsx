@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import withTheme from '../../../hoc/withTheme.jsx'
-import styles from '../../theme/index.js';
+import withTheme from '../../../../hoc/withTheme.jsx'
+import styles from '../../../theme/index.js';
 import tinycolor from 'tinycolor2';
 
 
@@ -16,11 +16,11 @@ import tinycolor from 'tinycolor2';
 const Container = styled.div`
   position: relative;
   display: inline-block;
-  margin: 5px 0 15px;
+  margin: 0 0 ${styles.components.spacing_vertical} 0;
   width: 100%;
   padding: 8px 10px;
   text-align: left;
-  border-radius: ${styles.components.border_radius_base};
+  border-radius: ${styles.components.border_radius};
   border: 1px solid ${props => tinycolor(props.color).lighten(20).toString()};
   background: ${props => tinycolor(props.color).lighten(30).toString()};
   color: ${props => tinycolor(props.color).darken(30).toString()};
@@ -31,12 +31,6 @@ const Container = styled.div`
     left: 15px;
     color: ${props => tinycolor(props.color).lighten(20).toString()};
   }`}
-  &:hover {
-    color: ${styles.colors.bright_blue};
-  }
-  @media (min-width: 1024px) {
-    padding: 8px 20px;
-  }
 `;
 
 

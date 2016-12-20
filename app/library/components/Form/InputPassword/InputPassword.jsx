@@ -1,16 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../theme';
-import InputText from "./InputText.jsx";
+import styles from '../../../theme';
+import InputText from "../InputText";
 
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const Input = styled(InputText)`
-  margin: 50px;
-`;
+const Input = styled(InputText)``;
 
 /* ==========================================================================
    React Component

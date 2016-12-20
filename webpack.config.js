@@ -48,10 +48,6 @@ module.exports = {
       {
         test: /\.json?$/,
         loader: 'json'
-      }, 
-      {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract("style-loader", 'css-loader!less-loader?{"modifyVars":' + theme + '}!postcss-loader'),
       }
     ]
   },
