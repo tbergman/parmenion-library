@@ -18,7 +18,7 @@ const Container = styled.div`
   display: inline-block;
   margin: 0 0 ${styles.components.spacing_vertical} 0;
   width: 100%;
-  padding: 8px 10px;
+  padding: 0.6rem 0.8rem;
   text-align: left;
   border-radius: ${styles.components.border_radius};
   border: 1px solid ${props => tinycolor(props.color).lighten(20).toString()};
@@ -38,16 +38,16 @@ const Container = styled.div`
 ========================================================================== */
 
 const Header = styled.div`
-  margin-top: 1px;
-  margin-bottom: 2px;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
   font-size: ${styles.type.font_size_h4};
   color: inherit;
 `;
 
 const Icon = styled.div`
   float: left;
-  margin: 3px 10px 0 0;
-  font-size: 1em;
+  margin: 0.2em 0.6em 0 0;
+  font-size: 1em
 `;
 
 const Description = styled.div`

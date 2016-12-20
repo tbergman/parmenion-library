@@ -74,7 +74,7 @@ export default class Foo extends React.Component {
           </Grid>
 
           <Grid>
-            <Row divisions={5} spacing={100}>
+            <Row divisions={5} spacing={3}>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
                   This is the alert content  

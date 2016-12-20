@@ -48,7 +48,7 @@ RowContainer.defaultProps = {
 
 const Row = styled(RowContainer)`
   display: ${(window.document.documentMode < 10) ? "block" : "flex"};
-  margin: 0 -${props => props.spacing ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}px;
+  margin: 0 -${props => props.spacing ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}rem;
   width: auto;
   flex-direction: row;
   flex-wrap: wrap;

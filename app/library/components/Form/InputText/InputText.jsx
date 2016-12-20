@@ -12,10 +12,8 @@ let padding_small = `${styles.components.padding_small_vertical} ${styles.compon
 let padding_default = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
 
 const Input = styled.input`
-    height: ${props => props.isSmall ? styles.forms.input_height_small : styles.forms.input_height};
     padding: ${props => props.isSmall ? padding_small : padding_default};
-    font-size: ${ props => props.isSmall ? styles.type.font_size_small : styles.type.font_size };
-    line-height: ${styles.type.line_height_computed};
+    font-size: ${ props => props.isSmall ? "0.9rem" : "1rem" };
     color: ${styles.forms.input_color};
     background-color: ${styles.forms.input_bg};
     border: 1px solid ${styles.forms.input_border};
@@ -29,7 +27,7 @@ const Input = styled.input`
     &:focus {
       border-color: ${styles.forms.input_border_focus};
       outline: 0;
-      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.6rem rgba(102, 175, 233, 0.6);
     }
 
     /* Fix: Unstyle the caret on <select>s in IE10+. */

@@ -36,11 +36,13 @@ injectGlobal`
   * {
     box-sizing: border-box
   }
-  body {
-    margin: 20px;
-    font-size: ${brand.type.size}px;
+  html {
+    font-size: ${brand.type.size};
     font-family: ${brand.type.font};
     line-height: ${brand.type.line_height}
+  }
+  body {
+    margin: 20px;
   }
 `
 

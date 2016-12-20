@@ -8,7 +8,7 @@ import styles from '../../../theme';
 
 const TextArea = styled.textarea`
     padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
-    font-size: ${styles.type.font_size};
+    font-size: 1rem;
     line-height: ${styles.type.line_height_computed};
     color: ${styles.forms.input_color};
     background-color: ${styles.forms.input_bg};
@@ -26,7 +26,7 @@ const TextArea = styled.textarea`
     &:focus {
       border-color: ${styles.forms.input_border_focus};
       outline: 0;
-      box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.6rem rgba(102, 175, 233, 0.6);
     }
 
     // Disabled and read-only inputs

@@ -54,7 +54,7 @@ const Column = styled(ColumnContainer)`
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 1px solid #fff;` : ''}
   box-sizing: border-box;
-  ${props => `padding: 0 ${ props.spacing ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}px;`}
+  ${props => `padding: 0 ${ props.spacing ? (props.spacing/2) : parseInt(styles.components.spacing_horizontal,10)/2}rem;`}
   width: 100%;
   ${props =>
     props.xs

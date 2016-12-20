@@ -9,7 +9,7 @@ import styles from '../../../theme';
 
 const AddonString = styled.span`
   padding: 0 ${styles.components.padding_base_horizontal};
-  font-size: ${styles.type.font_size};
+  font-size: 1rem;
   color: ${styles.forms.input_color};
   background-color: ${styles.colors.gray_lighter};
   border: 1px solid ${styles.forms.input_border};

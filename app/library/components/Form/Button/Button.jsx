@@ -61,8 +61,8 @@ const createButton = function(type, theme) {
   return styled(Link)`
     display: ${ props => props.isBlock ? 'block' : 'inline-block' };
     padding: ${ props => props.isSmall ? padding_small : padding_default };
-    font-size: ${ props => props.isSmall ? styles.type.font_size_small : styles.type.font_size };
-    line-height: ${styles.type.line_height_computed};
+    font-size: ${ props => props.isSmall ? "0.9rem" : "1rem" };
+    line-height: 1rem;
     border-radius: ${styles.components.border_radius};
     border: 1px solid ${vars.border};
     color: ${vars.color};
@@ -108,7 +108,7 @@ const createButton = function(type, theme) {
     }
 
     &[disabled] {
-      cursor: ${styles.components.cursor_disabled};
+      cursor: ${styles.forms.cursor_disabled};
       opacity: 0.65;
       box-shadow: none;
       &:hover,
