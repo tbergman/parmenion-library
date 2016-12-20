@@ -21,12 +21,20 @@ export default class Foo extends React.Component {
                 </Alert>
               </Column>
               <Column sm={6} xs={12}>
-                <Alert title="This is an alert heading" status={2} hasArrow={false}>
-                  Aliquam elit quam, pretium in augue in, aliquam tempor elit. Nam porttitor purus et bibendum vehicula. 
-                  Curabitur fringilla scelerisque blandit. Vivamus id tortor nunc. Aenean tristique mattis lobortis. 
-                  Sed in diam sed purus interdum suscipit. Duis arcu purus, scelerisque vitae felis et, euismod dictum magna. 
-                  Donec vestibulum ante turpis, et gravida elit commodo ac.
-                </Alert>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+                  vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+                  Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+                </p>
+                <p>
+                  Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum, 
+                  et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida. 
+                  Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo. 
+                </p>
+                <p>
+                  Vivamus sapien sapien, aliquam aliquam aliquet sit amet, molestie in dolor. Nulla facilisi. Donec imperdiet 
+                  sapien lacus. Curabitur sed dui venenatis dui vehicula accumsan.
+                </p>
               </Column>
             </Row>
           </Grid>
@@ -41,6 +49,10 @@ export default class Foo extends React.Component {
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={4} hasArrow={false}>
                   This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
@@ -54,6 +66,40 @@ export default class Foo extends React.Component {
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
+                <Alert title="This is an alert heading" status={3} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+            </Row>
+          </Grid>
+
+          <Grid>
+            <Row divisions={5} spacing={100}>
+              <Column md={1} sm={5} flex>
+                <Alert title="This is an alert heading" status={3} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5} flex>
+                <Alert title="This is an alert heading" status={4} hasArrow={false}>
+                  This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5} flex>
+                <Alert title="This is an alert heading" status={1} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5} flex>
+                <Alert title="This is an alert heading" status={2} hasArrow={false}>
+                  This is the alert content  
+                </Alert>
+              </Column>
+              <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
                   This is the alert content  
                 </Alert>

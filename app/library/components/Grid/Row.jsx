@@ -1,10 +1,14 @@
 /**
- * Row component from hedron grid, with added flexbox fallback.
+ * Row component from hedron grid, with added:
+ * - IE9 float fallback
+ * - Flex options
+ * - Spacing options
  * https://github.com/JSBros/hedron/blob/master/src/components/Row.js
  */
 
 import React from 'react';
 import styled from 'styled-components';
+import styles from '../../theme/index.js';
 import Column from './Column.jsx';
 import { divvy, passOn } from '../../utils';
 
@@ -13,19 +17,18 @@ type Props = {
   className?: string,
   debug?: boolean,
   tagName?: string,
-  // grid props
   divisions?: number,
-  // flex props
   alignContent?: string,
   alignItems?: string,
   alignSelf?: string,
   justifyContent?: string,
-  order?: string
+  order?: string,
+  spacing?: number
 }
 
 function RowContainer(props: Props) {
   const { children, tagName, debug, divisions,
-    alignContent, alignItems, alignSelf, justifyContent, order,
+    alignContent, alignItems, alignSelf, justifyContent, order, spacing, 
     ...rest } = props;
   const newChildren = passOn(children, [Column], (child) => {
     return {
@@ -33,6 +36,7 @@ function RowContainer(props: Props) {
         ? debug
         : child.props.debug,
       divisions,
+      spacing,
     };
   });
   return React.createElement(tagName || 'section', rest, newChildren);
@@ -43,8 +47,9 @@ RowContainer.defaultProps = {
 };
 
 const Row = styled(RowContainer)`
-  display: ${(window.document.documentMode < 10) ? "table" : "flex"};
-  width: 100%;
+  display: ${(window.document.documentMode < 10) ? "block" : "flex"};
+  margin: 0 -${props => props.spacing ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}px;
+  width: auto;
   flex-direction: row;
   flex-wrap: wrap;
   ${props => props.alignContent

@@ -1,5 +1,8 @@
 /**
- * Column component from hedron grid, with added flexbox fallback.
+ * Column component from hedron grid, with added:
+ * - IE9 float fallback
+ * - Flex options
+ * - Spacing options
  * https://github.com/JSBros/hedron/blob/master/src/components/Column.js
  */
 
@@ -15,7 +18,8 @@ type Props = {
   tagName?: string,
   debug?: boolean,
   divisions?: number,
-  fluid?: boolean,
+  flex?: boolean,
+  spacing?: number,
   xs?: number,
   sm?: number,
   md?: number,
@@ -27,8 +31,8 @@ type Props = {
 }
 
 function ColumnContainer(props: Props) {
-  const { children, tagName, debug, divisions, fluid, xs, sm, md, lg,
-    xsShift, smShift, mdShift, lgShift,
+  const { children, tagName, debug, divisions, xs, sm, md, lg,
+    xsShift, smShift, mdShift, lgShift, 
     ...rest } = props;
   const newChildren = passOn(children, [Row], (child) => {
     return {
@@ -45,14 +49,12 @@ ColumnContainer.defaultProps = {
 };
 
 const Column = styled(ColumnContainer)`
-  display: ${(window.document.documentMode < 10) ? "table-cell" : "flex"};
-  vertical-align: top;
+  display: ${(window.document.documentMode < 10) ? "block" : props => props.flex ? "flex" : 'block'};
+  float: ${(window.document.documentMode < 10) ? "left" : "none"};
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 1px solid #fff;` : ''}
   box-sizing: border-box;
-  ${props =>
-    props.fluid ? 'padding: 0;' : `padding: 0 ${parseInt(styles.components.spacing_horizontal,10)/2}px;`
-  }
+  ${props => `padding: 0 ${ props.spacing ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}px;`}
   width: 100%;
   ${props =>
     props.xs
