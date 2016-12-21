@@ -6,6 +6,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
+let theme = JSON.stringify({
+  "gray": "#46a775"
+});
+
 module.exports = {
   devtool: 'source-map',
   entry: [
@@ -44,10 +48,6 @@ module.exports = {
       {
         test: /\.json?$/,
         loader: 'json'
-      }, 
-      {
-        test: /\.less$/,
-        loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
       }
     ]
   },

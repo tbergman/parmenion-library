@@ -5,11 +5,12 @@ const initialState = {
 }
 
 export default function update(state = initialState, action) {
-  if(action.type === INCREASE) {
-    return { number: state.number + action.amount }
+  switch(action.type) {
+    case INCREASE:
+      return { number: state.number + action.amount }
+    case DECREASE:
+      return { number: state.number - action.amount }
+    default:
+      return state
   }
-  else if(action.type === DECREASE) {
-    return { number: state.number - action.amount }
-  }
-  return state
 }
