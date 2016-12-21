@@ -61,10 +61,10 @@ const createButton = function(type, theme) {
   return styled(Link)`
     display: ${ props => props.isBlock ? 'block' : 'inline-block' };
     padding: ${ props => props.isSmall ? padding_small : padding_default };
-    font-size: ${ props => props.isSmall ? "0.9rem" : "1rem" };
-    line-height: 1rem;
+    font-size: ${ props => props.isSmall ? "0.9em" : "1em" };
     border-radius: ${styles.components.border_radius};
-    border: 1px solid ${vars.border};
+    line-height: ${styles.type.line_height};
+    border: 0.1rem solid ${vars.border};
     color: ${vars.color};
     background-color: ${vars.background};
     box-shadow: ${vars.shadow};

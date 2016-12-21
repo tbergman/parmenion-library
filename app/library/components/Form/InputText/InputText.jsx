@@ -13,12 +13,13 @@ let padding_default = `${styles.components.padding_base_vertical} ${styles.compo
 
 const Input = styled.input`
     padding: ${props => props.isSmall ? padding_small : padding_default};
-    font-size: ${ props => props.isSmall ? "0.9rem" : "1rem" };
+    font-size: ${ props => props.isSmall ? "0.9em" : "1em" };
     color: ${styles.forms.input_color};
     background-color: ${styles.forms.input_bg};
-    border: 1px solid ${styles.forms.input_border};
+    border: 0.1rem solid ${styles.forms.input_border};
     border-radius: ${styles.forms.input_border_radius};
     box-shadow: ${styles.forms.input_inner_shadow};
+    line-height: ${styles.type.line_height};
     display: block;
     width: 100%;
     background-image: none;
@@ -27,7 +28,7 @@ const Input = styled.input`
     &:focus {
       border-color: ${styles.forms.input_border_focus};
       outline: 0;
-      box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.6rem rgba(102, 175, 233, 0.6);
+      box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
     }
 
     /* Fix: Unstyle the caret on <select>s in IE10+. */

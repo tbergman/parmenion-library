@@ -18,17 +18,18 @@ const Container = styled.div`
   display: inline-block;
   margin: 0 0 ${styles.components.spacing_vertical} 0;
   width: 100%;
-  padding: 0.6rem 0.8rem;
+  padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
   text-align: left;
   border-radius: ${styles.components.border_radius};
-  border: 1px solid ${props => tinycolor(props.color).lighten(20).toString()};
+  border: 0.1rem solid ${props => tinycolor(props.color).lighten(20).toString()};
   background: ${props => tinycolor(props.color).lighten(30).toString()};
   color: ${props => tinycolor(props.color).darken(30).toString()};
+  font-size: 1em;
   ${ props => props.hasArrow && `&:after {
     content: "▲";
     position: absolute;
-    top: -14px;
-    left: 15px;
+    top: -1.4rem;
+    left: 1.5rem;
     color: ${props => tinycolor(props.color).lighten(20).toString()};
   }`}
 `;
@@ -46,7 +47,7 @@ const Header = styled.div`
 
 const Icon = styled.div`
   float: left;
-  margin: 0.2em 0.6em 0 0;
+  margin: 0.3em 1em 0 0;
   font-size: 1em
 `;
 

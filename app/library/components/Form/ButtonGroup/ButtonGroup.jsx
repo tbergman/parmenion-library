@@ -25,7 +25,7 @@ const Group = styled.div`
       }
     }
     > * + * {
-      margin-left: -1px;
+      margin-left: -0.1rem;
     }
     > *:not(:first-child):not(:last-child) {
       border-radius: 0;

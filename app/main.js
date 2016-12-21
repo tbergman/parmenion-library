@@ -37,12 +37,13 @@ injectGlobal`
     box-sizing: border-box
   }
   html {
-    font-size: ${brand.type.size};
-    font-family: ${brand.type.font};
-    line-height: ${brand.type.line_height}
+    font-size: ${brand.components.base_size};
   }
   body {
     margin: 20px;
+    font-size: ${brand.type.size};
+    font-family: ${brand.type.font};
+    line-height: ${brand.type.line_height}
   }
 `
 

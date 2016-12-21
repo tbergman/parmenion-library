@@ -9,10 +9,10 @@ import styles from '../../../theme';
 
 const AddonString = styled.span`
   padding: 0 ${styles.components.padding_base_horizontal};
-  font-size: 1rem;
+  font-size: 1em;
   color: ${styles.forms.input_color};
   background-color: ${styles.colors.gray_lighter};
-  border: 1px solid ${styles.forms.input_border};
+  border: 0.1rem solid ${styles.forms.input_border};
   border-radius: ${styles.forms.input_border_radius};
   display: table-cell;
   width: 1%;
@@ -41,7 +41,7 @@ const AddonButton = styled.span`
   vertical-align: middle;
   > * {
     box-shadow: none;
-    margin-left: -1px;
+    margin-left: -0.1rem;
     &:hover,
     &:focus,
     &:active {
@@ -50,14 +50,14 @@ const AddonButton = styled.span`
   }
   &:first-child > * {
     margin-left: 0;
-    margin-right: -1px;
+    margin-right: -0.1rem;
     border-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
   &:last-child > * {
     z-index: 2;
-    margin-left: -1px;
+    margin-left: -0.1rem;
     border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;

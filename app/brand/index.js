@@ -11,10 +11,11 @@ const brand = {
   },
   type: {
     font:               "Arial, sans-serif",
-    size:               "0.9em",
+    size:               "1.6rem",
     line_height:        "1.428571429"
   },
   components: {
+    base_size:          "62.5%",  // 10px
     border_radius:      "0.25rem"
   }
 }
