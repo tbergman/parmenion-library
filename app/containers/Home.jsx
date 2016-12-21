@@ -2,17 +2,20 @@ import React from 'react';
 import { connect } from 'react-redux'
 import * as countActions from '../actions/count'
 
-import Label from "library/components/label/label.jsx";
+import Button from "library/components/Form/Button";
+import ButtonGroup from "library/components/Form/ButtonGroup";
 
 class Home extends React.Component {
   render() {
     return (
       <div>
         <p>
-          <Label>{this.props.number}</Label>
+          {this.props.number}
         </p>
-        <button onClick={() => this.props.increase(1)}>Increase</button>
-        <button onClick={() => this.props.decrease(1)}>Decrease</button>
+        <ButtonGroup>
+          <Button onClick={() => this.props.decrease(1)}>Decrease</Button>
+          <Button onClick={() => this.props.increase(1)}>Increase</Button>
+        </ButtonGroup>
       </div>
     )
   }

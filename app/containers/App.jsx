@@ -1,5 +1,4 @@
 import React from 'react';
-import "library/theme/typography.less";
 
 import { Link, browserHistory } from 'react-router';
 
