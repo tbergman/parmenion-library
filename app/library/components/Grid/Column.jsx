@@ -10,7 +10,7 @@ import React from 'react';
 import styled from 'styled-components';
 import styles from '../../theme/index.js';
 import Row from './Row.jsx';
-import { divvy, media, passOn } from '../../utils';
+import { divvy, media, passOn } from './utils';
 
 type Props = {
   children?: Array<React.Element<>>,
