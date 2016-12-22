@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDom from 'react-dom';
 import styled from 'styled-components';
 import styles from '../../../theme';
 import tc from 'tinycolor2';
@@ -42,7 +43,7 @@ const Title = styled.h4`
 
 const Body = styled.div`
   display: block;
-	height: ${props => props.isOpen ? "20rem" : "0rem"};
+	height: ${props => `${props.height}px`};
 	transition: height 300ms ease-out;
 	overflow: hidden;
 `;
@@ -56,21 +57,44 @@ const BodyInner = styled.div`
 ========================================================================== */
 
 class AccordionPanel extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {height: 0};
+  }
+
+  componentDidMount() {
+    this.toggleOpen();
+  }
+
+  componentDidUpdate() {
+    this.toggleOpen();
+  }
+
+  toggleOpen() {
+    if (this.props.isOpen && this.state.height === 0) {
+      this.setState({height: ReactDom.findDOMNode(this._body).scrollHeight});
+    } else if (!this.props.isOpen && this.state.height > 0) {
+      this.setState({height: 0});
+    }
+  }
+
   render() {
     const {title, children, isOpen, onClick} = this.props;
     return (
-    	<Container onClick={onClick}>
-    		<Heading href="#" isOpen={isOpen}>
-    			<Title>{title}</Title>
-  			</Heading>
-  			<Body isOpen={isOpen}>
-  				<BodyInner>
-  					{children}
-  				</BodyInner>
-  			</Body>
-    	</Container>
-		);
+      <Container onClick={onClick}>
+        <Heading href="#" isOpen={isOpen}>
+          <Title>{title}</Title>
+        </Heading>
+        <Body height={this.state.height} ref={(ref) => { this._body = ref; }}>
+          <BodyInner>
+            {children}
+          </BodyInner>
+        </Body>
+      </Container>
+    );
   }
+
 }
 
 AccordionPanel.propTypes = {
