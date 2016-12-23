@@ -1,6 +1,6 @@
 import React from 'react';
-import Accordion from '../library/components/Form/Accordion/Accordion.jsx';
-import AccordionPanel from '../library/components/Form/Accordion/AccordionPanel.jsx';
+import Accordion from '../library/components/Containers/Accordion/Accordion.jsx';
+import AccordionPanel from '../library/components/Containers/Accordion/AccordionPanel.jsx';
 
 export default class Bar extends React.Component {
     render() {
