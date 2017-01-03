@@ -38,9 +38,9 @@ const Heading = styled.a`
   text-decoration: none!important;
   &:hover {
     background-color: ${props => props.isOpen ? tc(styles.colors.gray_lightest).darken(7).toString() : tc(styles.colors.gray_lightest).darken(3).toString()};
-  }
-  > ${Title} {
-    color: yellow!important;
+    > ${Title} {
+      color: red;
+    }
   }
 `;
 
