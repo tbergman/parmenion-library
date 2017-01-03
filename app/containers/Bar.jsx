@@ -4,9 +4,17 @@ import AccordionPanel from '../library/components/Containers/Accordion/Accordion
 import Label from '../library/components/Decoration/Label';
 import LabelBool from '../library/components/Decoration/LabelBool';
 import Button from '../library/components/Form/ButtonBool';
+import styled from 'styled-components';
+
 
 export default class Bar extends React.Component {
     render() {
+
+				const NewButton = { 
+				  "padding": "20px",
+				  "borderWidth": "4px"
+				}
+				
         return (
         	<Accordion>
         	
@@ -46,6 +54,9 @@ export default class Bar extends React.Component {
 		            </Button>
 		            <Button link href="#">
 		              This is a button
+		            </Button>
+		            <Button style={NewButton}>
+		            	This is an overridden button
 		            </Button>
 		        	</p>
 	        		<p>

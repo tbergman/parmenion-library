@@ -101,8 +101,8 @@ const Container = styled(Link)`
 
 class Button extends React.Component {
   render() {
-    const {children, primary, secondary, danger, link, isSmall, isBlock, isDisabled, onClick, href, to} = this.props;
-    return <Container primary={primary} secondary={secondary} danger={danger} link={link} isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to}>
+    const {children, primary, secondary, danger, link, isSmall, isBlock, isDisabled, onClick, href, to, style} = this.props;
+    return <Container primary={primary} secondary={secondary} danger={danger} link={link} isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to} style={style}>
       { children }
     </Container>;
   }
