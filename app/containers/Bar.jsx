@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from '../library/components/Containers/Accordion/Accordion.jsx';
-import AccordionPanel from '../library/components/Containers/Accordion/AccordionPanel.jsx';
+import AccordionPanel from '../library/components/Containers/Accordion/AccordionPanel2.jsx';
 import Label from '../library/components/Decoration/Label';
 import LabelBool from '../library/components/Decoration/LabelBool';
 import Button from '../library/components/Form/ButtonBool';
@@ -14,7 +14,7 @@ export default class Bar extends React.Component {
 				  "padding": "20px",
 				  "borderWidth": "4px"
 				}
-				
+
         return (
         	<Accordion>
         	
