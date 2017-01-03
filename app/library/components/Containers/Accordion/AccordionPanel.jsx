@@ -19,8 +19,13 @@ const Container = styled.div`
   }
 `;
 
+const Title = styled.h4`
+	font-size: ${styles.type.font_size_h4};
+	margin: 0;
+`;
+
 const Heading = styled.a`
-	display: block;
+  display: block;
   position: relative;
   padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
   padding-right: 5rem;
@@ -34,11 +39,9 @@ const Heading = styled.a`
   &:hover {
     background-color: ${props => props.isOpen ? tc(styles.colors.gray_lightest).darken(7).toString() : tc(styles.colors.gray_lightest).darken(3).toString()};
   }
-`;
-
-const Title = styled.h4`
-	font-size: ${styles.type.font_size_h4};
-	margin: 0;
+  > ${Title} {
+    color: yellow!important;
+  }
 `;
 
 const Body = styled.div`
