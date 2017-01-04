@@ -7,11 +7,32 @@ import InputText from '../library/components/Form/InputText';
 import InputPassword from '../library/components/Form/InputPassword';
 import Textarea from '../library/components/Form/Textarea';
 import { Grid, Row, Column } from '../library/components/Grid';
+import { Bar, Menu } from '../library/components/Navigation/Bar';
 import brand from '../brand';
 
 export default class Foo extends React.Component {
     render() {
+
+        let barMenuItems = [
+          {
+            location: "#1",
+            content: "Link A"
+          },
+          {
+            location: "#2",
+            content: "Link B"
+          },
+          {
+            location: "#3",
+            content: "Link C"
+          }
+        ];
+
         return <div>
+
+          <Bar>
+            <Menu items={barMenuItems} />
+          </Bar>
 
           <Grid>
             <Row>

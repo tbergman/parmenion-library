@@ -1,6 +1,6 @@
 const brand = {
   colors: {
-    primary:            "#91c95b",
+    primary:            "#0a7ead",
     secondary:          "#5bc0de",
     states: {
       success:          "#91c95b",
@@ -11,6 +11,7 @@ const brand = {
   },
   type: {
     font:               "Arial, sans-serif",
+    font_heading:       "Calibri, serif",
     size:               "1.6rem",
     line_height:        "1.428571429"
   },

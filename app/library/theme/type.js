@@ -2,6 +2,7 @@ import brand from "../../brand"
 
 const type = {
   font:                 brand.type.font,
+  font_heading:         brand.type.font_heading,
   font_size:            brand.type.size,
   font_size_small:      '0.9rem',
   font_size_h1:         '3rem',
