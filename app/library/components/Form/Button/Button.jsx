@@ -80,8 +80,7 @@ const createButton = function(type, theme) {
     white-space: nowrap;
     user-select: none;
 
-    &:focus,
-    &.focus {
+    &:focus {
       color: ${vars.color};
       background-color: ${tc(vars.background).darken(10).toString()};
           border-color: ${tc(vars.border).darken(25).toString()};

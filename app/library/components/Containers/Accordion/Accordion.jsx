@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import styles from '../../../theme';
 import tc from 'tinycolor2';
-import AccordionPanel from "./AccordionPanel2.jsx";
+import AccordionPanel from "./AccordionPanel.jsx";
 
 /* ==========================================================================
    React Component

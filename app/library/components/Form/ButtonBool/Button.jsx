@@ -61,9 +61,7 @@ const Container = styled(Link)`
   white-space: nowrap;
   user-select: none;
 
-  &:focus,
-  &.focus {
-    color: inherit;
+  &:focus {
     background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
   }
 
@@ -72,7 +70,6 @@ const Container = styled(Link)`
   }
 
   &:active {
-    color: inherit;
     outline: 0;
     background-image: linear-gradient(to right, rgba(0,0,0,0.1), rgba(0,0,0,0.1));
     &:hover,
@@ -87,8 +84,7 @@ const Container = styled(Link)`
     opacity: 0.65;
     box-shadow: none;
     &:hover,
-    &:focus,
-    &.focus {
+    &:focus {
       background-color: inherit;
     }
   }
