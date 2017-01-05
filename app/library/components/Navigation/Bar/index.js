@@ -1,4 +1,4 @@
 import Bar from './Bar.jsx';
-import Menu from './Menu.jsx';
+import { BarMenu, BarMenuItem } from './BarMenu.jsx';
 
-export { Bar, Menu };
+export { Bar, BarMenu, BarMenuItem };

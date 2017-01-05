@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import styled from 'styled-components';
 import styles from '../../../theme';
 
@@ -10,6 +9,7 @@ import styles from '../../../theme';
 
 const Container = styled.div`
   margin: 0;
+  height: 6rem;
   background-color: ${props => props.theme.colors.primary};
   font-family: ${props => props.theme.type.font_heading};
   box-shadow: ${styles.components.shadow};

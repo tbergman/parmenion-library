@@ -1,14 +1,13 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import styled from 'styled-components';
 import styles from '../../../theme';
-
+import { Link as RouterLink } from 'react-router';
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const Container = styled.ul`
+const BarMenu = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -23,7 +22,7 @@ const Item = styled.li`
   vertical-align: middle;
 `;
 
-const Link = styled.a`
+const Link = styled(RouterLink)`
   display: inline-block;
   position: relative;
   z-index: 1;
@@ -43,29 +42,23 @@ const Link = styled.a`
    React Component
 ========================================================================== */
 
-class Menu extends React.Component {
+class BarMenuItem extends React.Component {
   render() {
-    const {items} = this.props;
+    const {children, href, to} = this.props;
     return (
-      <Container>
-        {
-          items.map(function(item) {
-            return <Item>
-              <Link href={item.location}>
-                {item.content}
-              </Link>
-            </Item>;
-          })
-        }
-      </Container>
+      <Item>
+        <Link href={href} to={to}>
+          {children}
+        </Link>
+      </Item>
     );
   }
 }
 
-Menu.propTypes = {
-  items: React.PropTypes.array.isRequired
+BarMenuItem.propTypes = {
+  href: React.PropTypes.string.isRequired
 };
 
-Menu.defaultProps = {};
+BarMenuItem.defaultProps = {};
 
-export default Menu;
+export { BarMenu, BarMenuItem };

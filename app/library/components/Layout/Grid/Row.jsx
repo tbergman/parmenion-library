@@ -8,7 +8,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../theme/index.js';
+import styles from '../../../theme/index.js';
 import Column from './Column.jsx';
 import { divvy, passOn } from './utils';
 

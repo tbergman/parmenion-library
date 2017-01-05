@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDom from 'react-dom';
 import styled from 'styled-components';
-import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -9,31 +7,30 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Container = styled.div`
-  margin: 0;
-  background-color: ${props => props.theme.colors.brand_primary};
-  font-family: ${props => props.theme.type.font_heading};
-  box-shadow: ${styles.components.shadow};
+  float: ${props => props.right ? "right" : "left"};
 `;
 
 /* ==========================================================================
    React Component
 ========================================================================== */
 
-class Bar extends React.Component {
+class Float extends React.Component {
   render() {
-    const {children} = this.props;
+    const {children, right} = this.props;
     return (
-      <Container>
+      <Container right={right}>
         {children}
       </Container>
     );
   }
 }
 
-Bar.propTypes = {
-  children: React.PropTypes.node.isRequired
+Float.propTypes = {
+  right: React.PropTypes.bool
 };
 
-Bar.defaultProps = {};
+Float.defaultProps = {
+  right: false
+};
 
-export default Bar;
+export default Float;
