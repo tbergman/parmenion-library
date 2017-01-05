@@ -6,33 +6,83 @@ import InputGroup from '../library/components/Form/InputGroup';
 import InputText from '../library/components/Form/InputText';
 import InputPassword from '../library/components/Form/InputPassword';
 import Textarea from '../library/components/Form/Textarea';
-import { Grid, Row, Column } from '../library/components/Grid';
-import { Bar, Menu } from '../library/components/Navigation/Bar';
+import { Grid, Row, Column } from '../library/components/Layout/Grid';
+import { Bar, BarMenu, BarMenuItem } from '../library/components/Navigation/Bar';
+import Position from '../library/components/Layout/Position';
+import Float from '../library/components/Layout/Float';
 import brand from '../brand';
+import {H1, H2, H3, H4, H5, H6} from '../library/components/Type/Heading';
+import P from '../library/components/Type/Paragraph';
 
 export default class Foo extends React.Component {
     render() {
 
-        let barMenuItems = [
-          {
-            location: "#1",
-            content: "Link A"
-          },
-          {
-            location: "#2",
-            content: "Link B"
-          },
-          {
-            location: "#3",
-            content: "Link C"
-          }
-        ];
-
         return <div>
 
-          <Bar>
-            <Menu items={barMenuItems} />
-          </Bar>
+          <Position top left right zindex={10}>
+            <Bar>
+              <Float right>
+                <BarMenu>
+                  <BarMenuItem href="http://www.parmenion.co.uk">
+                    Parmenion
+                  </BarMenuItem>
+                </BarMenu>
+              </Float>
+              <BarMenu>
+                <BarMenuItem to="/">
+                  Home
+                </BarMenuItem>
+                <BarMenuItem to="/foo">
+                  Foo
+                </BarMenuItem>
+                <BarMenuItem to="/bar">
+                  Bar
+                </BarMenuItem>
+              </BarMenu>
+            </Bar>
+          </Position>
+
+          <H1>This is a heading 1 component</H1>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
+
+          <H2>This is a heading 2 component</H2>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
+
+          <H3>This is a heading 3 component</H3>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
+
+          <H4>This is a heading 4 component</H4>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
+
+          <H5>This is a heading 5 component</H5>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
+
+          <H6>This is a heading 6 component</H6>
+          <P>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+          </P>
 
           <Grid>
             <Row>
@@ -42,20 +92,20 @@ export default class Foo extends React.Component {
                 </Alert>
               </Column>
               <Column sm={6} xs={12}>
-                <p>
+                <P>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
                   vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
                   Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
-                </p>
-                <p>
+                </P>
+                <P>
                   Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum, 
                   et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida. 
                   Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo. 
-                </p>
-                <p>
+                </P>
+                <P>
                   Vivamus sapien sapien, aliquam aliquam aliquet sit amet, molestie in dolor. Nulla facilisi. Donec imperdiet 
                   sapien lacus. Curabitur sed dui venenatis dui vehicula accumsan.
-                </p>
+                </P>
               </Column>
             </Row>
           </Grid>
