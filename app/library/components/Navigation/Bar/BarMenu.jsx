@@ -56,7 +56,8 @@ class BarMenuItem extends React.Component {
 }
 
 BarMenuItem.propTypes = {
-  href: React.PropTypes.string.isRequired
+  href: React.PropTypes.string,
+  to: React.PropTypes.string
 };
 
 BarMenuItem.defaultProps = {};
