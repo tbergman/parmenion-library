@@ -21,7 +21,7 @@ const createButton = function(type, theme) {
           border: tc(theme.colors.primary).darken(5).toString(),
           color: "white",
           shadow: styles.components.shadow
-        } 
+        }
       case 2:
         return {
           background: theme.colors.secondary,
@@ -43,13 +43,13 @@ const createButton = function(type, theme) {
           color: styles.type.text_color,
           shadow: "none"
         }
-      default: 
+      default:
         return {
           background: "white",
           border: styles.colors.gray_light,
           color: styles.type.text_color,
           shadow: styles.components.shadow
-        } 
+        }
       }
   })(type, theme);
 
@@ -118,7 +118,7 @@ const createButton = function(type, theme) {
       }
     }
   `;
-  
+
 }
 
 
