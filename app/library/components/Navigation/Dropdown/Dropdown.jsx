@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -20,7 +19,7 @@ const Menu = styled.div`
   z-index: 1;
   width:100%;
   min-width: 20rem;
-  box-shadow: ${styles.components.shadow_large};
+  box-shadow: ${props => props.theme.components.shadow_large};
 `;
 
 /* ==========================================================================

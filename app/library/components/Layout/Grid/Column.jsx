@@ -8,7 +8,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme/index';
 import Row from './Row';
 import { divvy, media, passOn } from './utils';
 
@@ -50,7 +49,7 @@ const Column = styled(ColumnContainer)`
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 0.1rem solid #fff;` : ''}
   box-sizing: border-box;
-  ${props => `padding: 0 ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(styles.components.spacing_horizontal, 10) / 2}rem;`}
+  ${props => `padding: 0 ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;`}
   width: 100%;
   ${props =>
     props.xs

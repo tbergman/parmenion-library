@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router';
-import styles from '../../../theme';
 
 /* ==========================================================================
    Styles
@@ -32,7 +31,7 @@ const Link = styled(RouterLink)`
   text-decoration: none;
   &:hover,
   &:focus {
-    background: ${styles.colors.gray_dark}
+    background: ${props => props.theme.colors.gray_dark}
     color: white;
     text-decoration:inherit;
   }

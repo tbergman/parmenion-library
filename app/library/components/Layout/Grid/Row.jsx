@@ -8,7 +8,6 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme';
 import Column from './Column';
 import { passOn } from './utils';
 
@@ -44,7 +43,7 @@ RowContainer.defaultProps = {
 
 const Row = styled(RowContainer)`
   display: ${(window.document.documentMode < 10) ? 'block' : 'flex'};
-  margin: 0 -${props => props.spacing >= 0 ? props.spacing / 2 : parseInt(styles.components.spacing_horizontal, 10) / 2}rem;
+  margin: 0 -${props => props.spacing >= 0 ? props.spacing / 2 : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;
   width: auto;
   flex-direction: row;
   flex-wrap: wrap;

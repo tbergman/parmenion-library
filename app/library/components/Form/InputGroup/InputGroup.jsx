@@ -1,19 +1,18 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const AddonString = styled.span`
-  padding: 0 ${styles.components.padding_base_horizontal};
+const AddonString = styled.span`${({ theme }) => css`
+  padding: 0 ${theme.components.padding_base_horizontal};
   font-size: 1em;
-  color: ${styles.forms.input_color};
-  background-color: ${styles.colors.gray_lighter};
-  border: 0.1rem solid ${styles.forms.input_border};
-  border-radius: ${styles.forms.input_border_radius};
+  color: ${theme.forms.input_color};
+  background-color: ${theme.colors.gray_lighter};
+  border: 0.1rem solid ${theme.forms.input_border};
+  border-radius: ${theme.forms.input_border_radius};
   display: table-cell;
   width: 1%;
   font-weight: normal;
@@ -31,7 +30,7 @@ const AddonString = styled.span`
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }
-`;
+`}`;
 
 const AddonButton = styled.span`
   display: table-cell;

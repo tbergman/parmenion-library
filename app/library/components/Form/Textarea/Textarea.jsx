@@ -1,21 +1,20 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const TextArea = styled.textarea`
-    padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
+const TextArea = styled.textarea`${({ theme }) => css`
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     font-size: 1em;
-    line-height: ${styles.type.line_height_computed};
-    color: ${styles.forms.input_color};
-    background-color: ${styles.forms.input_bg};
-    border: 0.1rem solid ${styles.forms.input_border};
-    border-radius: ${styles.forms.input_border_radius};
-    box-shadow: ${styles.forms.input_inner_shadow};
-    font-family: ${styles.type.font};
+    line-height: ${theme.type.line_height_computed};
+    color: ${theme.forms.input_color};
+    background-color: ${theme.forms.input_bg};
+    border: 0.1rem solid ${theme.forms.input_border};
+    border-radius: ${theme.forms.input_border_radius};
+    box-shadow: ${theme.forms.input_inner_shadow};
+    font-family: ${theme.type.font};
     display: block;
     width: 100%;
     height: auto;
@@ -24,7 +23,7 @@ const TextArea = styled.textarea`
     resize: vertical;
 
     &:focus {
-      border-color: ${styles.forms.input_border_focus};
+      border-color: ${theme.forms.input_border_focus};
       outline: 0;
       box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
     }
@@ -32,13 +31,13 @@ const TextArea = styled.textarea`
     // Disabled and read-only inputs
     &[disabled],
     &[readonly] {
-        background-color: ${styles.forms.input_bg_disabled};
+        background-color: ${theme.forms.input_bg_disabled};
         opacity: 1;
     }
     &[disabled] {
-        cursor: ${styles.forms.cursor_disabled};
+        cursor: ${theme.forms.cursor_disabled};
     }
-`;
+`}`;
 
 
 /* ==========================================================================
