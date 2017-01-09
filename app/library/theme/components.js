@@ -12,7 +12,8 @@ const components = {
   border_color:                  colors.gray_lighter,
   active_color:                  "white",
   active_background:             brand.colors.primary,
-  shadow: 							         "0 0.1rem 0.3rem rgba(0,0,0,.125)"
+  shadow: 							         "0 0.1rem 0.3rem rgba(0,0,0,.125)",
+  shadow_large: 							   "0.2rem 0.3rem 1rem rgba(0,0,0,.25)"
 }
 
 export default components;

@@ -8,6 +8,8 @@ import InputPassword from '../library/components/Form/InputPassword';
 import Textarea from '../library/components/Form/Textarea';
 import { Grid, Row, Column } from '../library/components/Layout/Grid';
 import { Bar, BarMenu, BarMenuItem } from '../library/components/Navigation/Bar';
+import Dropdown from '../library/components/Navigation/Dropdown';
+import { Menu, MenuItem } from '../library/components/Navigation/Menu';
 import Position from '../library/components/Layout/Position';
 import Float from '../library/components/Layout/Float';
 import brand from '../brand';
@@ -44,66 +46,101 @@ export default class Foo extends React.Component {
 
           <H1>This is a heading 1 component</H1>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
+
+          <Dropdown trigger={
+              <Button isBlock>
+                Dropdown trigger
+              </Button>
+            }>
+            <Menu>
+              <MenuItem to="/bar" icon="a" description="This is the description yeah">
+                This item has an icon
+              </MenuItem>
+              <MenuItem to="/bar" description="This is the description yeah">
+                This item doesn't have an icon
+              </MenuItem>
+              <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+                This item is active
+              </MenuItem>
+            </Menu>
+          </Dropdown>
+
+          <br /><br /><br />
+
+          <H2>Here's a menu on it's own</H2>
+          <Menu>
+            <MenuItem to="/bar" icon="a" description="This is the description yeah">
+              This item has an icon
+            </MenuItem>
+            <MenuItem to="/bar" description="This is the description yeah">
+              This item doesn't have an icon
+            </MenuItem>
+            <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+              This item is active
+            </MenuItem>
+          </Menu>
+
+          <br /><br />
 
           <H2>This is a heading 2 component</H2>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
 
           <H3>This is a heading 3 component</H3>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
 
           <H4>This is a heading 4 component</H4>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
 
           <H5>This is a heading 5 component</H5>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
 
           <H6>This is a heading 6 component</H6>
           <P>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+            vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+            Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
           </P>
 
           <Grid>
             <Row>
               <Column sm={6} xs={12}>
                 <Alert title="This is an alert heading" status={1} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column sm={6} xs={12}>
                 <P>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur, 
-                  vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh. 
-                  Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales. 
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+                  vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+                  Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
                 </P>
                 <P>
-                  Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum, 
-                  et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida. 
-                  Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo. 
+                  Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum,
+                  et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida.
+                  Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo.
                 </P>
                 <P>
-                  Vivamus sapien sapien, aliquam aliquam aliquet sit amet, molestie in dolor. Nulla facilisi. Donec imperdiet 
+                  Vivamus sapien sapien, aliquam aliquam aliquet sit amet, molestie in dolor. Nulla facilisi. Donec imperdiet
                   sapien lacus. Curabitur sed dui venenatis dui vehicula accumsan.
                 </P>
               </Column>
@@ -114,31 +151,31 @@ export default class Foo extends React.Component {
             <Row divisions={5}>
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={4} hasArrow={false}>
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={1} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={2} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5}>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
             </Row>
@@ -148,31 +185,31 @@ export default class Foo extends React.Component {
             <Row divisions={5} spacing={0}>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={4} hasArrow={false}>
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
-                  This is the alert content  
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={1} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={2} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
               <Column md={1} sm={5} flex>
                 <Alert title="This is an alert heading" status={3} hasArrow={false}>
-                  This is the alert content  
+                  This is the alert content
                 </Alert>
               </Column>
             </Row>
@@ -195,13 +232,13 @@ export default class Foo extends React.Component {
               Log a console message via "onClick()"
             </Button>
           </p>
-          
+
           <p>
             <Button type={3} href="http://www.google.com">
               Go to www.google.com via "href"
             </Button>
           </p>
-          
+
           <p>
             <Button to="/">
               Go to Home via "to"
@@ -278,8 +315,8 @@ export default class Foo extends React.Component {
 
           <br />
 
-          <InputGroup 
-            start={<Button>-</Button>} 
+          <InputGroup
+            start={<Button>-</Button>}
             end={<Button>+</Button>}
           >
             <InputText placeholder='Enter money' />
