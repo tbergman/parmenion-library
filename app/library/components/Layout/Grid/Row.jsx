@@ -8,9 +8,9 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme/index.js';
-import Column from './Column.jsx';
-import { divvy, passOn } from './utils';
+import styles from '../../../theme';
+import Column from './Column';
+import { passOn } from './utils';
 
 type Props = {
   children?: Array<React.Element<>>,
@@ -27,18 +27,14 @@ type Props = {
 }
 
 function RowContainer(props: Props) {
-  const { children, tagName, debug, divisions,
-    alignContent, alignItems, alignSelf, justifyContent, order, spacing, 
-    ...rest } = props;
-  const newChildren = passOn(children, [Column], (child) => {
-    return {
-      debug: typeof child.props.debug === 'undefined'
+  const { children, tagName, debug, divisions, spacing, ...rest } = props;
+  const newChildren = passOn(children, [Column], child => ({
+    debug: typeof child.props.debug === 'undefined'
         ? debug
         : child.props.debug,
-      divisions,
-      spacing,
-    };
-  });
+    divisions,
+    spacing,
+  }));
   return React.createElement(tagName || 'section', rest, newChildren);
 }
 
@@ -47,8 +43,8 @@ RowContainer.defaultProps = {
 };
 
 const Row = styled(RowContainer)`
-  display: ${(window.document.documentMode < 10) ? "block" : "flex"};
-  margin: 0 -${props => props.spacing >= 0 ? props.spacing/2 : parseInt(styles.components.spacing_horizontal,10)/2}rem;
+  display: ${(window.document.documentMode < 10) ? 'block' : 'flex'};
+  margin: 0 -${props => props.spacing >= 0 ? props.spacing / 2 : parseInt(styles.components.spacing_horizontal, 10) / 2}rem;
   width: auto;
   flex-direction: row;
   flex-wrap: wrap;

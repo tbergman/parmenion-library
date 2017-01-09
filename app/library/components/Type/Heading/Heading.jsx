@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 import styles from '../../../theme';
 
@@ -6,8 +5,8 @@ import styles from '../../../theme';
    Styles
 ========================================================================== */
 
-function reduceValue(value, reduction, unit) {
-  return `${(parseFloat(value,10)/reduction).toFixed(2)}rem`
+function reduceValue(value, reduction) {
+  return `${(parseFloat(value, 10) / reduction).toFixed(2)}rem`;
 }
 
 const H1 = styled.h1`
@@ -46,4 +45,4 @@ const H6 = styled.h6`
   margin-bottom: ${reduceValue(styles.components.spacing_vertical, 2)};
 `;
 
-export {H1, H2, H3, H4, H5, H6};
+export { H1, H2, H3, H4, H5, H6 };

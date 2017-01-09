@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme';
 import { Link as RouterLink } from 'react-router';
+import styles from '../../../theme';
 
 /* ==========================================================================
    Styles
@@ -42,22 +42,17 @@ const Link = styled(RouterLink)`
    React Component
 ========================================================================== */
 
-class BarMenuItem extends React.Component {
-  render() {
-    const {children, href, to} = this.props;
-    return (
-      <Item>
-        <Link href={href} to={to}>
-          {children}
-        </Link>
-      </Item>
-    );
-  }
-}
+const BarMenuItem = ({ children, href, to }) => (
+  <Item>
+    <Link href={href} to={to}>
+      {children}
+    </Link>
+  </Item>
+);
 
 BarMenuItem.propTypes = {
   href: React.PropTypes.string,
-  to: React.PropTypes.string
+  to: React.PropTypes.string,
 };
 
 BarMenuItem.defaultProps = {};

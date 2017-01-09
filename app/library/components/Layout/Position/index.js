@@ -1,1 +1,1 @@
-export default from './Position.jsx';
+export default from './Position';

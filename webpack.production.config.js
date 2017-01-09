@@ -53,11 +53,11 @@ module.exports = {
       }, {
         test: /\.less$/,
         loader: ExtractTextPlugin.extract("style-loader", "css-loader!less-loader!postcss-loader")
-      }      
+      }
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.less'],
+    extensions: ['', '.js', '.jsx', '.less'],
     root: [path.join(__dirname, './app')]
   },
   postcss: [

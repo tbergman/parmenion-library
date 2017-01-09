@@ -1,4 +1,0 @@
-{
-  "presets": ["es2015"],
-  "plugins": ["styled-components", "styled-components-selector"]
-}

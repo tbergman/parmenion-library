@@ -45,19 +45,16 @@ const TextArea = styled.textarea`
    React Component
 ========================================================================== */
 
-class InputTextArea extends React.Component {
-  render() {
-    const {rows} = this.props;
-    return <TextArea rows={rows} />;
-  }
-}
+export const InputTextArea = ({ rows }) => (
+  <TextArea rows={rows} />
+);
 
 InputTextArea.propTypes = {
-  rows: React.PropTypes.number
+  rows: React.PropTypes.number,
 };
 
 InputTextArea.defaultProps = {
-  rows: 4
+  rows: 4,
 };
 
 export default InputTextArea;

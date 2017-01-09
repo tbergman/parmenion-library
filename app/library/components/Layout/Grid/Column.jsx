@@ -8,8 +8,8 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme/index.js';
-import Row from './Row.jsx';
+import styles from '../../../theme/index';
+import Row from './Row';
 import { divvy, media, passOn } from './utils';
 
 type Props = {
@@ -31,30 +31,26 @@ type Props = {
 }
 
 function ColumnContainer(props: Props) {
-  const { children, tagName, debug, divisions, xs, sm, md, lg,
-    xsShift, smShift, mdShift, lgShift, 
-    ...rest } = props;
-  const newChildren = passOn(children, [Row], (child) => {
-    return {
-      debug: typeof child.props.debug === 'undefined'
+  const { children, tagName, debug, ...rest } = props;
+  const newChildren = passOn(children, [Row], child => ({
+    debug: typeof child.props.debug === 'undefined'
         ? debug
         : child.props.debug,
-    };
-  });
+  }));
   return React.createElement(tagName || 'div', rest, newChildren);
 }
 
 ColumnContainer.defaultProps = {
-  divisions: 12
+  divisions: 12,
 };
 
 const Column = styled(ColumnContainer)`
-  display: ${(window.document.documentMode < 10) ? "block" : props => props.flex ? "flex" : 'block'};
-  float: ${(window.document.documentMode < 10) ? "left" : "none"};
+  display: ${(window.document.documentMode < 10) ? 'block' : props => props.flex ? 'flex' : 'block'};
+  float: ${(window.document.documentMode < 10) ? 'left' : 'none'};
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 0.1rem solid #fff;` : ''}
   box-sizing: border-box;
-  ${props => `padding: 0 ${ props.spacing >= 0 ? (props.spacing/2) : parseInt(styles.components.spacing_horizontal,10)/2}rem;`}
+  ${props => `padding: 0 ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(styles.components.spacing_horizontal, 10) / 2}rem;`}
   width: 100%;
   ${props =>
     props.xs

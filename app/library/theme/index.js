@@ -1,13 +1,13 @@
-import colors from './colors.js'
-import type from './type.js'
-import components from './components.js'
-import forms from './forms.js'
+import colors from './colors';
+import type from './type';
+import components from './components';
+import forms from './forms';
 
 const style = {
-  colors: colors,
-  type: type,
-  components: components,
-  forms: forms
-}
+  colors,
+  type,
+  components,
+  forms,
+};
 
-export default style
+export default style;

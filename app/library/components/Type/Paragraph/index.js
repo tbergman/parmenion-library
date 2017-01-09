@@ -1,1 +1,1 @@
-export default from "./Paragraph.jsx";
+export default from './Paragraph';

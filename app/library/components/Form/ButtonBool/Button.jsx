@@ -11,21 +11,21 @@ import { Link } from 'react-router';
 
 // React component based on Link
 const Container = styled(Link)`
-  display: ${ props => props.isBlock ? 'block' : 'inline-block' };
-  padding: ${ props => props.isSmall ? `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}` : `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}` };
-  font-size: ${ props => props.isSmall ? "0.9em" : "1em" };
+  display: ${props => props.isBlock ? 'block' : 'inline-block'};
+  padding: ${props => props.isSmall ? `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}` : `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`};
+  font-size: ${props => props.isSmall ? '0.9em' : '1em'};
   border-radius: ${styles.components.border_radius};
   line-height: ${styles.type.line_height};
 
-  border: 0.1rem solid ${ props =>
+  border: 0.1rem solid ${props =>
     props.primary && tc(props.theme.colors.primary).darken(5).toString() ||
     props.secondary && tc(props.theme.colors.secondary).darken(5).toString() ||
     props.danger && tc(props.theme.colors.states.danger).darken(5).toString() ||
-    props.link && "transparent" ||
+    props.link && 'transparent' ||
     styles.colors.gray_light
   };
 
-  color: ${ props =>
+  color: ${props =>
     props.primary && 'white' ||
     props.secondary && 'white' ||
     props.danger && 'white' ||
@@ -33,7 +33,7 @@ const Container = styled(Link)`
     styles.type.text_color
   };
 
-  background-color: ${ props =>
+  background-color: ${props =>
     props.primary && props.theme.colors.primary ||
     props.secondary && props.theme.colors.secondary ||
     props.danger && props.theme.colors.states.danger ||
@@ -41,7 +41,7 @@ const Container = styled(Link)`
     'white'
   };
 
-  box-shadow: ${ props =>
+  box-shadow: ${props =>
     props.primary && styles.components.shadow ||
     props.secondary && styles.components.shadow ||
     props.danger && styles.components.shadow ||
@@ -97,10 +97,10 @@ const Container = styled(Link)`
 
 class Button extends React.Component {
   render() {
-    const {children, primary, secondary, danger, link, isSmall, isBlock, isDisabled, onClick, href, to, style} = this.props;
-    return <Container primary={primary} secondary={secondary} danger={danger} link={link} isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to} style={style}>
+    const { children, primary, secondary, danger, link, isSmall, isBlock, isDisabled, onClick, href, to, style } = this.props;
+    return (<Container primary={primary} secondary={secondary} danger={danger} link={link} isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to} style={style}>
       { children }
-    </Container>;
+    </Container>);
   }
 }
 
@@ -115,7 +115,7 @@ Button.propTypes = {
   onClick: React.PropTypes.func,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 Button.defaultProps = {
@@ -125,7 +125,7 @@ Button.defaultProps = {
   isDisabled: false,
   onClick: null,
   href: null,
-  to: null
+  to: null,
 };
 
 export default Button;

@@ -1,1 +1,1 @@
-export default from './InputGroup.jsx';
+export default from './InputGroup';

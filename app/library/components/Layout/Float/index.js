@@ -1,1 +1,1 @@
-export default from './Float.jsx';
+export default from './Float';

@@ -18,7 +18,7 @@ const Container = styled.span`
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: .25em;
-  background-color: ${ props =>
+  background-color: ${props =>
     props.success && props.theme.colors.states.success ||
     props.danger && props.theme.colors.states.danger ||
     props.warning && props.theme.colors.states.warning ||
@@ -36,7 +36,7 @@ const Container = styled.span`
 
 class Label extends React.Component {
   render() {
-    const {children, success, danger, warning, info} = this.props;
+    const { children, success, danger, warning, info } = this.props;
 
     return (
       <Container success={success} danger={danger} warning={warning} info={info}>
@@ -48,11 +48,11 @@ class Label extends React.Component {
 
 Label.propTypes = {
   type: React.PropTypes.number,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 Label.defaultProps = {
-  type: 0
+  type: 0,
 };
 
 export default Label;
