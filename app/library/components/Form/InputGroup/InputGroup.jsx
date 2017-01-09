@@ -93,32 +93,39 @@ const Container = styled.div`
    React Component
 ========================================================================== */
 
-class InputGroup extends React.Component {
-  render() {
-    const {children, start, end} = this.props;
+export const InputGroup = ({ children, start, end }) => {
+  let AddonStart;
+  let AddonEnd;
 
-    let AddonStart = start ? (typeof start === 'string') ? <AddonString>{start}</AddonString> : <AddonButton>{start}</AddonButton> : null;
-    let AddonEnd = end ? (typeof end === 'string') ? <AddonString>{end}</AddonString> : <AddonButton>{end}</AddonButton> : null;
-
-    return (
-      <Container>
-        {AddonStart}
-        {children}
-        {AddonEnd}
-      </Container>
-    );
+  if (start && typeof start === 'string') {
+    AddonStart = <AddonString>{start}</AddonString>;
+  } else if (start) {
+    AddonStart = <AddonButton>{start}</AddonButton>;
   }
-}
+
+  if (end && typeof end === 'string') {
+    AddonEnd = <AddonString>{end}</AddonString>;
+  } else if (end) {
+    AddonEnd = <AddonButton>{start}</AddonButton>;
+  }
+  return (
+    <Container>
+      {AddonStart}
+      {children}
+      {AddonEnd}
+    </Container>
+  );
+};
 
 InputGroup.propTypes = {
   children: React.PropTypes.node.isRequired,
   start: React.PropTypes.node,
-  end: React.PropTypes.node
+  end: React.PropTypes.node,
 };
 
 InputGroup.defaultProps = {
   start: null,
-  end: null
+  end: null,
 };
 
 export default InputGroup;

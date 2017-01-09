@@ -44,7 +44,7 @@ module.exports = {
         query: {
           "presets": ["react", "es2015", "stage-0", "react-hmre"]
         }
-      }, 
+      },
       {
         test: /\.json?$/,
         loader: 'json'
@@ -52,10 +52,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.less'],
+    extensions: ['', '.js', '.jsx', '.less'],
     root: [path.join(__dirname, './app')]
   },
-  postcss: [ 
+  postcss: [
     autoprefixer({ browsers: ['last 3 versions'] })
   ]
 };

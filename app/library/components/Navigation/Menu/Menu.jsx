@@ -1,14 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme';
 import tc from 'tinycolor2';
 import { Link as RouterLink } from 'react-router';
+import styles from '../../../theme';
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const Menu = styled.ul`
+export const Menu = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -56,24 +56,19 @@ const Link = styled(RouterLink)`
    React Component
 ========================================================================== */
 
-class MenuItem extends React.Component {
-  render() {
-    const {children, href, to, icon, description, isActive} = this.props;
-    return (
-      <Item>
-        <Link href={href} to={to} isActive={isActive}>
-          {icon && <Icon>{icon}</Icon> }
-          <Label>
-            {children}
-            <Description>
-              {description}
-            </Description>
-          </Label>
-        </Link>
-      </Item>
-    );
-  }
-}
+export const MenuItem = ({ children, href, to, icon, description, isActive }) => (
+  <Item>
+    <Link href={href} to={to} isActive={isActive}>
+      {icon && <Icon>{icon}</Icon> }
+      <Label>
+        {children}
+        <Description>
+          {description}
+        </Description>
+      </Label>
+    </Link>
+  </Item>
+);
 
 MenuItem.propTypes = {
   children: React.PropTypes.node.isRequired,
@@ -81,7 +76,7 @@ MenuItem.propTypes = {
   to: React.PropTypes.string,
   icon: React.PropTypes.string,
   description: React.PropTypes.string,
-  isActive: React.PropTypes.bool
+  isActive: React.PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
@@ -89,7 +84,5 @@ MenuItem.defaultProps = {
   to: null,
   icon: null,
   description: null,
-  isActive: false
+  isActive: false,
 };
-
-export { Menu, MenuItem };

@@ -1,1 +1,1 @@
-export default from './Alert.jsx';
+export default from './Alert';

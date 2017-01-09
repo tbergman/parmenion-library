@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import withTheme from '../../../../hoc/withTheme.jsx'
-import styles from '../../../theme/index.js';
 import tinycolor from 'tinycolor2';
-
+import withTheme from '../../../../hoc/withTheme';
+import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -25,12 +24,12 @@ const Container = styled.div`
   background: ${props => tinycolor(props.color).lighten(30).toString()};
   color: ${props => tinycolor(props.color).darken(30).toString()};
   font-size: 1em;
-  ${ props => props.hasArrow && `&:after {
+  ${props => props.hasArrow && `&:after {
     content: "▲";
     position: absolute;
     top: -1.4rem;
     left: 1.5rem;
-    color: ${props => tinycolor(props.color).lighten(20).toString()};
+    color: ${props2 => tinycolor(props2.color).lighten(20).toString()};
   }`}
 `;
 
@@ -45,12 +44,6 @@ const Header = styled.div`
   color: inherit;
 `;
 
-const Icon = styled.div`
-  float: left;
-  margin: 0.3em 1em 0 0;
-  font-size: 1em
-`;
-
 const Description = styled.div`
   margin: 0;
 `;
@@ -62,35 +55,35 @@ const Description = styled.div`
 
 class Alert extends React.Component {
   render() {
-    const {status, hasArrow, title, children, theme} = this.props;
-    
+    const { status, hasArrow, title, children, theme } = this.props;
+
     const color = (() => {
-      switch(status) {
-        case 1: 
+      switch (status) {
+        case 1:
           return theme.colors.states.success;
-        case 2: 
+        case 2:
           return theme.colors.states.danger;
-        case 3: 
+        case 3:
           return theme.colors.states.warning;
-        case 4: 
+        case 4:
           return theme.colors.states.info;
-        default: 
+        default:
           return styles.colors.grey_light;
       }
     })();
-    
-    return <Container color={color} hasArrow={hasArrow}>
+
+    return (<Container color={color} hasArrow={hasArrow}>
       <Header>{ title }</Header>
       <Description>
         { children }
       </Description>
-    </Container>;
+    </Container>);
   }
 }
 
 Alert.propTypes = {
   title: React.PropTypes.string,
   status: React.PropTypes.number,
-  hasArrow: React.PropTypes.bool
+  hasArrow: React.PropTypes.bool,
 };
 export default withTheme(Alert);

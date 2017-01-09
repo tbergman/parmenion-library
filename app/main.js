@@ -1,36 +1,36 @@
-import { createDevTools } from 'redux-devtools'
-import LogMonitor from 'redux-devtools-log-monitor'
-import DockMonitor from 'redux-devtools-dock-monitor'
+import { createDevTools } from 'redux-devtools';
+import LogMonitor from 'redux-devtools-log-monitor';
+import DockMonitor from 'redux-devtools-dock-monitor';
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { createStore, combineReducers } from 'redux'
-import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute, browserHistory } from 'react-router'
-import { syncHistoryWithStore, routerReducer } from 'react-router-redux'
-    
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { createStore, combineReducers } from 'redux';
+import { Provider } from 'react-redux';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+
 import { ThemeProvider, injectGlobal } from 'styled-components';
 import brand from 'brand';
 
-import * as reducers from './reducers'
-import { App, Home, Foo, Bar } from './containers'
+import * as reducers from './reducers';
+import { App, Home, Foo, Bar } from './containers';
 
 const reducer = combineReducers({
   ...reducers,
-  routing: routerReducer
-})
+  routing: routerReducer,
+});
 
 const DevTools = createDevTools(
   <DockMonitor toggleVisibilityKey="ctrl-h" changePositionKey="ctrl-q">
     <LogMonitor theme="tomorrow" preserveScrollTop={false} />
-  </DockMonitor>
-)
+  </DockMonitor>,
+);
 
 const store = createStore(
   reducer,
-  DevTools.instrument()
-)
-const history = syncHistoryWithStore(browserHistory, store)
+  DevTools.instrument(),
+);
+const history = syncHistoryWithStore(browserHistory, store);
 
 injectGlobal`
   * {
@@ -45,7 +45,7 @@ injectGlobal`
     font-family: ${brand.type.font};
     line-height: ${brand.type.line_height}
   }
-`
+`;
 
 ReactDOM.render(
   <ThemeProvider theme={brand}>
@@ -53,14 +53,14 @@ ReactDOM.render(
       <div>
         <Router history={history}>
           <Route path="/" component={App}>
-            <IndexRoute component={Home}/>
-            <Route path="foo" component={Foo}/>
-            <Route path="bar" component={Bar}/>
+            <IndexRoute component={Home} />
+            <Route path="foo" component={Foo} />
+            <Route path="bar" component={Bar} />
           </Route>
         </Router>
         <DevTools />
       </div>
     </Provider>
   </ThemeProvider>,
-  document.getElementById('root')
-)
+  document.getElementById('root'),
+);

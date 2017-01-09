@@ -19,19 +19,14 @@ const Container = styled.div`
    React Component
 ========================================================================== */
 
-class Bar extends React.Component {
-  render() {
-    const {children} = this.props;
-    return (
-      <Container>
-        {children}
-      </Container>
-    );
-  }
-}
+export const Bar = ({ children }) => (
+  <Container>
+    {children}
+  </Container>
+);
 
 Bar.propTypes = {
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 Bar.defaultProps = {};

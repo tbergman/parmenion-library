@@ -6,7 +6,7 @@ import React from 'react';
 // The passOn function applies a specific set of properties
 // to the children components. It will only apply the props
 // to a component type that exists in the ofTypes array.
-export default function(
+export default function (
   children: React.Children,
   ofTypes: Array<React.Component<>>,
   process: (r: React.Children) => Object = r => r) {
@@ -15,7 +15,7 @@ export default function(
     // and then process it.
     child => React.isValidElement(child) && ofTypes.indexOf(child.type) >= 0
       ? React.cloneElement(child, process(child))
-      : child
+      : child,
   );
   return response;
 }

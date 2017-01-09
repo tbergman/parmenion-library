@@ -8,12 +8,12 @@ import styles from '../../../theme';
 ========================================================================== */
 
 // Simplify long strings
-let padding_small = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
-let padding_default = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
+const paddingSmall = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
+const paddingDefault = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
 
 const Input = styled.input`
-    padding: ${props => props.isSmall ? padding_small : padding_default};
-    font-size: ${ props => props.isSmall ? "0.9em" : "1em" };
+    padding: ${props => props.isSmall ? paddingSmall : paddingDefault};
+    font-size: ${props => props.isSmall ? '0.9em' : '1em'};
     color: ${styles.forms.input_color};
     background-color: ${styles.forms.input_bg};
     border: 0.1rem solid ${styles.forms.input_border};
@@ -53,23 +53,20 @@ const Input = styled.input`
    React Component
 ========================================================================== */
 
-class InputText extends React.Component {
-  render() {
-    const {placeholder, type, isSmall} = this.props;
-    return <Input placeholder={placeholder} type={type} isSmall={isSmall}/>;
-  }
-}
+export const InputText = ({ placeholder, type, isSmall }) => (
+  <Input placeholder={placeholder} type={type} isSmall={isSmall} />
+);
 
 InputText.propTypes = {
   placeholder: React.PropTypes.string,
   type: React.PropTypes.string,
-  isSmall: React.PropTypes.bool
+  isSmall: React.PropTypes.bool,
 };
 
 InputText.defaultProps = {
   placeholder: null,
   isSmall: false,
-  type: "text"
+  type: 'text',
 };
 
 export default InputText;

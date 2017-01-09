@@ -46,10 +46,10 @@ const Info = styled(Default)`
 
 class Label extends React.Component {
   render() {
-    const {children, type} = this.props;
+    const { children, type } = this.props;
 
-    const Label = ((type) => {
-      switch(type) {
+    const InnerLabel = (() => {
+      switch (type) {
         case 1:
           return Success;
         case 2:
@@ -61,23 +61,23 @@ class Label extends React.Component {
         default:
           return Default;
       }
-    })(type);
+    })();
 
     return (
-      <Label>
+      <InnerLabel>
         { children }
-      </Label>
+      </InnerLabel>
     );
   }
 }
 
 Label.propTypes = {
   type: React.PropTypes.number,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 Label.defaultProps = {
-  type: 0
+  type: 0,
 };
 
 export default Label;

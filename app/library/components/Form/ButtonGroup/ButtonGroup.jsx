@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -8,10 +7,10 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Group = styled.div`
-    display: ${ props => props.isJustified ? 'table' : 'inline-block' };
-    width: ${ props => props.isJustified ? '100%' : 'auto' };
-    table-layout: ${ props => props.isJustified ? 'fixed' : 'auto' };
-    border-collapse: ${ props => props.isJustified ? 'separate' : 'auto' };
+    display: ${props => props.isJustified ? 'table' : 'inline-block'};
+    width: ${props => props.isJustified ? '100%' : 'auto'};
+    table-layout: ${props => props.isJustified ? 'fixed' : 'auto'};
+    border-collapse: ${props => props.isJustified ? 'separate' : 'auto'};
     position: relative;
     vertical-align: middle;
     > * {
@@ -41,7 +40,7 @@ const Group = styled.div`
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    ${ props => props.isJustified && `> * {
+    ${props => props.isJustified && `> * {
       float: none!important;
       display: table-cell!important;
       width: 1%!important;
@@ -53,24 +52,19 @@ const Group = styled.div`
    React Component
 ========================================================================== */
 
-class ButtonGroup extends React.Component {
-  render() {
-    const {isJustified, children} = this.props;
-    return (
-      <Group isJustified={isJustified}>
-        {children}
-      </Group>
-    );
-  }
-}
+export const ButtonGroup = ({ isJustified, children }) => (
+  <Group isJustified={isJustified}>
+    {children}
+  </Group>
+);
 
 ButtonGroup.propTypes = {
   isJustified: React.PropTypes.bool,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 ButtonGroup.defaultProps = {
-  isJustified: false
+  isJustified: false,
 };
 
 export default ButtonGroup;

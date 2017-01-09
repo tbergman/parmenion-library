@@ -1,4 +1,4 @@
-import Accordion from './Accordion.jsx';
-import AccordionPanel from './AccordionPanel.jsx';
+import Accordion from './Accordion';
+import AccordionPanel from './AccordionPanel';
 
 export { Accordion, AccordionPanel };

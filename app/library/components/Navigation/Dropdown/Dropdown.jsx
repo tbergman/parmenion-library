@@ -31,18 +31,18 @@ class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {isOpen: false};
+    this.state = { isOpen: false };
   }
 
   toggleMenu() {
-    this.setState({isOpen: !this.state.isOpen});
+    this.setState({ isOpen: !this.state.isOpen });
   }
 
   render() {
-    const {children, trigger, isRight} = this.props;
+    const { children, trigger, isRight } = this.props;
     return (
       <Container>
-        {React.cloneElement(trigger, {onClick: () => this.toggleMenu()})}
+        {React.cloneElement(trigger, { onClick: () => this.toggleMenu() })}
         <Menu isOpen={this.state.isOpen} isRight={isRight}>
           {children}
         </Menu>
@@ -54,11 +54,11 @@ class Dropdown extends React.Component {
 Dropdown.propTypes = {
   children: React.PropTypes.node.isRequired,
   trigger: React.PropTypes.node.isRequired,
-  isRight: React.PropTypes.bool
+  isRight: React.PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
-  isRight: false
+  isRight: false,
 };
 
 export default Dropdown;

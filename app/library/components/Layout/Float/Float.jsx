@@ -7,30 +7,25 @@ import styled from 'styled-components';
 ========================================================================== */
 
 const Container = styled.div`
-  float: ${props => props.right ? "right" : "left"};
+  float: ${props => props.right ? 'right' : 'left'};
 `;
 
 /* ==========================================================================
    React Component
 ========================================================================== */
 
-class Float extends React.Component {
-  render() {
-    const {children, right} = this.props;
-    return (
-      <Container right={right}>
-        {children}
-      </Container>
-    );
-  }
-}
+export const Float = ({ children, right }) => (
+  <Container right={right}>
+    {children}
+  </Container>
+);
 
 Float.propTypes = {
-  right: React.PropTypes.bool
+  right: React.PropTypes.bool,
 };
 
 Float.defaultProps = {
-  right: false
+  right: false,
 };
 
 export default Float;

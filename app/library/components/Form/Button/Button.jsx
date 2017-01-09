@@ -1,67 +1,66 @@
 import React from 'react';
 import styled from 'styled-components';
-import withTheme from '../../../../hoc/withTheme.jsx'
-import styles from '../../../theme';
 import tc from 'tinycolor2';
 import { Link } from 'react-router';
+import withTheme from '../../../../hoc/withTheme';
+import styles from '../../../theme';
 
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-const createButton = function(type, theme) {
-
+const createButton = function (type, theme) {
   // Style settings
-  const vars = ((type, theme) => {
-    switch(type) {
+  const vars = (() => {
+    switch (type) {
       case 1:
         return {
           background: theme.colors.primary,
           border: tc(theme.colors.primary).darken(5).toString(),
-          color: "white",
-          shadow: styles.components.shadow
-        } 
+          color: 'white',
+          shadow: styles.components.shadow,
+        };
       case 2:
         return {
           background: theme.colors.secondary,
           border: tc(theme.colors.secondary).darken(5).toString(),
-          color: "white",
-          shadow: styles.components.shadow
-        }
+          color: 'white',
+          shadow: styles.components.shadow,
+        };
       case 3:
         return {
           background: theme.colors.states.danger,
           border: tc(theme.colors.states.danger).darken(5).toString(),
-          color: "white",
-          shadow: styles.components.shadow
-        }
+          color: 'white',
+          shadow: styles.components.shadow,
+        };
       case 4:
         return {
-          background: "white",
-          border: "transparent",
+          background: 'white',
+          border: 'transparent',
           color: styles.type.text_color,
-          shadow: "none"
-        }
-      default: 
+          shadow: 'none',
+        };
+      default:
         return {
-          background: "white",
+          background: 'white',
           border: styles.colors.gray_light,
           color: styles.type.text_color,
-          shadow: styles.components.shadow
-        } 
-      }
-  })(type, theme);
+          shadow: styles.components.shadow,
+        };
+    }
+  })();
 
   // Simplify long strings
-  let padding_small = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
-  let padding_default = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
+  const paddingSmall = `${styles.components.padding_small_vertical} ${styles.components.padding_small_horizontal}`;
+  const paddingDefault = `${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal}`;
 
   // React component based on Link
   return styled(Link)`
-    display: ${ props => props.isBlock ? 'block' : 'inline-block' };
-    padding: ${ props => props.isSmall ? padding_small : padding_default };
-    font-size: ${ props => props.isSmall ? "0.9em" : "1em" };
+    display: ${props => props.isBlock ? 'block' : 'inline-block'};
+    padding: ${props => props.isSmall ? paddingSmall : paddingDefault};
+    font-size: ${props => props.isSmall ? '0.9em' : '1em'};
     border-radius: ${styles.components.border_radius};
     line-height: ${styles.type.line_height};
     border: 0.1rem solid ${vars.border};
@@ -117,23 +116,22 @@ const createButton = function(type, theme) {
       }
     }
   `;
-  
-}
+};
 
 
 /* ==========================================================================
    React Component
 ========================================================================== */
 
-class Button extends React.Component {
-  render() {
-    const {theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to} = this.props;
-    const ThemedButton = createButton(type, theme);
-    return <ThemedButton isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to}>
+export const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
+  const ThemedButton = createButton(type, theme);
+
+  return (
+    <ThemedButton isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to}>
       { children }
-    </ThemedButton>;
-  }
-}
+    </ThemedButton>
+  );
+};
 
 Button.propTypes = {
   type: React.PropTypes.number,
@@ -143,7 +141,7 @@ Button.propTypes = {
   onClick: React.PropTypes.func,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
-  children: React.PropTypes.node.isRequired
+  children: React.PropTypes.node.isRequired,
 };
 
 Button.defaultProps = {
@@ -153,7 +151,7 @@ Button.defaultProps = {
   isDisabled: false,
   onClick: null,
   href: null,
-  to: null
+  to: null,
 };
 
 export default withTheme(Button);

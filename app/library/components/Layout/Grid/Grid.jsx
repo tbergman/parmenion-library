@@ -11,13 +11,8 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-class Grid extends React.Component {
-  render() {    
-    const {children} = this.props;
-    return <Container>
-      { children }
-    </Container>;
-  }
-}
-
-export default Grid;
+export default ({ children }) => (
+  <Container>
+    { children }
+  </Container>
+);
