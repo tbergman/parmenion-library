@@ -11,26 +11,28 @@ import withTheme from '../../../../hoc/withTheme';
 /* Block styles
 ========================================================================== */
 
-const Container = styled.div`${({ theme }) => css`
-  position: relative;
-  display: inline-block;
-  margin: 0 0 ${theme.components.spacing_vertical} 0;
-  width: 100%;
-  padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
-  text-align: left;
-  border-radius: ${theme.components.border_radius};
-  border: 0.1rem solid ${props => tinycolor(props.color).lighten(20).toString()};
-  background: ${props => tinycolor(props.color).lighten(30).toString()};
-  color: ${props => tinycolor(props.color).darken(30).toString()};
-  font-size: 1em;
-  ${props => props.hasArrow && `&:after {
-    content: "▲";
-    position: absolute;
-    top: -1.4rem;
-    left: 1.5rem;
-    color: ${props2 => tinycolor(props2.color).lighten(20).toString()};
-  }`}
-`}`;
+const Container = styled.div`
+  ${({ theme, color, hasArrow }) => css`
+    position: relative;
+    display: inline-block;
+    margin: 0 0 ${theme.components.spacing_vertical} 0;
+    width: 100%;
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    text-align: left;
+    border-radius: ${theme.components.border_radius};
+    border: 0.1rem solid ${tinycolor(color).lighten(20).toString()};
+    background: ${tinycolor(color).lighten(30).toString()};
+    color: ${tinycolor(color).darken(30).toString()};
+    font-size: 1em;
+    ${hasArrow && `&:after {
+      content: "▲";
+      position: absolute;
+      top: -1.4rem;
+      left: 1.5rem;
+      color: ${tinycolor(color).lighten(20).toString()};
+    }`}
+  `}
+`;
 
 
 /* Element styles

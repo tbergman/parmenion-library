@@ -5,7 +5,8 @@ import styled, { css } from 'styled-components';
    Styles
 ========================================================================== */
 
-const TextArea = styled.textarea`${({ theme }) => css`
+const TextArea = styled.textarea`
+  ${({ theme }) => css`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     font-size: 1em;
     line-height: ${theme.type.line_height_computed};
@@ -37,7 +38,8 @@ const TextArea = styled.textarea`${({ theme }) => css`
     &[disabled] {
         cursor: ${theme.forms.cursor_disabled};
     }
-`}`;
+  `}
+`;
 
 
 /* ==========================================================================

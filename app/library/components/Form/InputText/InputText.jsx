@@ -6,19 +6,13 @@ import styled, { css } from 'styled-components';
    Styles
 ========================================================================== */
 
-const smallInput = theme => css`
-  padding: ${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal};
-  font-size: 0.9em;
-`;
-
-const normalInput = theme => css`
-  padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
-  font-size: 1em;
-`;
-
-const Input = styled.input`${({ theme, isSmall }) => css`
-    ${isSmall ? smallInput(theme) : normalInput(theme)}
-
+const Input = styled.input`
+  ${({ theme, isSmall }) => css`
+    padding: ${isSmall ?
+      `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}` :
+      `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}`
+    };
+    font-size: ${isSmall ? '0.9em' : '1em'};
     color: ${theme.forms.input_color};
     background-color: ${theme.forms.input_bg};
     border: 0.1rem solid ${theme.forms.input_border};
@@ -51,7 +45,8 @@ const Input = styled.input`${({ theme, isSmall }) => css`
     &[disabled] {
         cursor: ${theme.forms.cursor_disabled};
     }
-`}`;
+  `}
+`;
 
 
 /* ==========================================================================

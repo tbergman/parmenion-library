@@ -34,22 +34,22 @@ const Description = styled.span`
   font-size: 0.75em;
 `;
 
-const Link = styled(RouterLink)`${({ theme }) => css`
-  display: table;
-  width: 100%;
-  padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
-  border-bottom: 1px solid ${props => props.isActive ? 'transparent' : theme.colors.gray_lighter};
-  color: ${props => props.isActive ? 'white' : theme.type.text_color};
-  background-color: ${props => props.isActive ? theme.components.active_background : 'white'};
-  text-align: left;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    background-color: ${props => props.isActive ? tc(theme.components.active_background).darken(3).toString() : theme.colors.gray_lightest};
-  }
-
-`}`;
+const Link = styled(RouterLink)`
+  ${({ theme, isActive }) => css`
+    display: table;
+    width: 100%;
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    border-bottom: 1px solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
+    color: ${isActive ? 'white' : theme.type.text_color};
+    background-color: ${isActive ? theme.components.active_background : 'white'};
+    text-align: left;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background-color: ${isActive ? tc(theme.components.active_background).darken(3).toString() : theme.colors.gray_lightest};
+    }
+  `}
+`;
 
 /* ==========================================================================
    React Component

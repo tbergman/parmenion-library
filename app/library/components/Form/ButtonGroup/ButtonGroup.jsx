@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -7,10 +7,11 @@ import styled from 'styled-components';
 ========================================================================== */
 
 const Group = styled.div`
-    display: ${props => props.isJustified ? 'table' : 'inline-block'};
-    width: ${props => props.isJustified ? '100%' : 'auto'};
-    table-layout: ${props => props.isJustified ? 'fixed' : 'auto'};
-    border-collapse: ${props => props.isJustified ? 'separate' : 'auto'};
+  ${({ isJustified }) => css`
+    display: ${isJustified ? 'table' : 'inline-block'};
+    width: ${isJustified ? '100%' : 'auto'};
+    table-layout: ${isJustified ? 'fixed' : 'auto'};
+    border-collapse: ${isJustified ? 'separate' : 'auto'};
     position: relative;
     vertical-align: middle;
     > * {
@@ -40,11 +41,12 @@ const Group = styled.div`
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
     }
-    ${props => props.isJustified && `> * {
+    ${isJustified && `> * {
       float: none!important;
       display: table-cell!important;
       width: 1%!important;
     }`}
+  `}
 `;
 
 
