@@ -1,18 +1,14 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import tinycolor from 'tinycolor2';
-import withTheme from '../../../../hoc/withTheme';
 
 
 /* ==========================================================================
    Styles
 ========================================================================== */
 
-/* Block styles
-========================================================================== */
-
-const Container = styled.div`
-  ${({ theme, color, hasArrow }) => css`
+const Default = styled.div`
+  ${({ theme, hasArrow }) => css`
     position: relative;
     display: inline-block;
     margin: 0 0 ${theme.components.spacing_vertical} 0;
@@ -20,23 +16,63 @@ const Container = styled.div`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     text-align: left;
     border-radius: ${theme.components.border_radius};
-    border: 0.1rem solid ${tinycolor(color).lighten(20).toString()};
-    background: ${tinycolor(color).lighten(30).toString()};
-    color: ${tinycolor(color).darken(30).toString()};
+    border: 0.1rem solid ${tinycolor(theme.colors.grey_light).lighten(20).toString()};
+    background: ${tinycolor(theme.colors.grey_light).lighten(30).toString()};
+    color: ${tinycolor(theme.colors.grey_light).darken(30).toString()};
     font-size: 1em;
     ${hasArrow && `&:after {
       content: "▲";
       position: absolute;
-      top: -1.4rem;
+      top: -1.6rem;
       left: 1.5rem;
-      color: ${tinycolor(color).lighten(20).toString()};
+      color: ${tinycolor(theme.colors.grey_light).lighten(20).toString()};
     }`}
   `}
 `;
 
+const Success = styled(Default)`
+  ${({ theme, hasArrow }) => css`
+    border: 0.1rem solid ${tinycolor(theme.colors.states.success).lighten(20).toString()};
+    background: ${tinycolor(theme.colors.states.success).lighten(30).toString()};
+    color: ${tinycolor(theme.colors.states.success).darken(30).toString()};
+    ${hasArrow && `&:after {
+      color: ${tinycolor(theme.colors.states.success).lighten(20).toString()};
+    }`}
+  `}
+`;
 
-/* Element styles
-========================================================================== */
+const Danger = styled(Default)`
+  ${({ theme, hasArrow }) => css`
+    border: 0.1rem solid ${tinycolor(theme.colors.states.danger).lighten(20).toString()};
+    background: ${tinycolor(theme.colors.states.danger).lighten(30).toString()};
+    color: ${tinycolor(theme.colors.states.danger).darken(30).toString()};
+    ${hasArrow && `&:after {
+      color: ${tinycolor(theme.colors.states.danger).lighten(20).toString()};
+    }`}
+  `}
+`;
+
+const Warning = styled(Default)`
+  ${({ theme, hasArrow }) => css`
+    border: 0.1rem solid ${tinycolor(theme.colors.states.warning).lighten(20).toString()};
+    background: ${tinycolor(theme.colors.states.warning).lighten(30).toString()};
+    color: ${tinycolor(theme.colors.states.warning).darken(30).toString()};
+    ${hasArrow && `&:after {
+      color: ${tinycolor(theme.colors.states.warning).lighten(20).toString()};
+    }`}
+  `}
+`;
+
+const Info = styled(Default)`
+  ${({ theme, hasArrow }) => css`
+    border: 0.1rem solid ${tinycolor(theme.colors.states.info).lighten(20).toString()};
+    background: ${tinycolor(theme.colors.states.info).lighten(30).toString()};
+    color: ${tinycolor(theme.colors.states.info).darken(30).toString()};
+    ${hasArrow && `&:after {
+      color: ${tinycolor(theme.colors.states.info).lighten(20).toString()};
+    }`}
+  `}
+`;
 
 const Header = styled.div`
   margin-top: 0;
@@ -56,29 +92,29 @@ const Description = styled.div`
 
 class Alert extends React.Component {
   render() {
-    const { status, hasArrow, title, children, theme } = this.props;
+    const { status, hasArrow, title, children } = this.props;
 
-    const color = (() => {
+    const InnerAlert = (() => {
       switch (status) {
         case 1:
-          return theme.colors.states.success;
+          return Success;
         case 2:
-          return theme.colors.states.danger;
+          return Danger;
         case 3:
-          return theme.colors.states.warning;
+          return Warning;
         case 4:
-          return theme.colors.states.info;
+          return Info;
         default:
-          return theme.colors.grey_light;
+          return Default;
       }
     })();
 
-    return (<Container color={color} hasArrow={hasArrow}>
+    return (<InnerAlert hasArrow={hasArrow}>
       <Header>{ title }</Header>
       <Description>
         { children }
       </Description>
-    </Container>);
+    </InnerAlert>);
   }
 }
 
@@ -87,4 +123,4 @@ Alert.propTypes = {
   status: React.PropTypes.number,
   hasArrow: React.PropTypes.bool,
 };
-export default withTheme(Alert);
+export default Alert;
