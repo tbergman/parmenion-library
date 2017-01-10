@@ -123,7 +123,7 @@ const createButton = function (type, theme) {
    React Component
 ========================================================================== */
 
-export const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
+const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
   const ThemedButton = createButton(type, theme);
 
   return (

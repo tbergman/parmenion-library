@@ -1,19 +1,8 @@
 import React from 'react';
-import Alert from '../library/components/Status/Alert';
-import Button from '../library/components/Form/Button';
-import ButtonGroup from '../library/components/Form/ButtonGroup';
-import InputGroup from '../library/components/Form/InputGroup';
-import InputText from '../library/components/Form/InputText';
-import InputPassword from '../library/components/Form/InputPassword';
-import Textarea from '../library/components/Form/Textarea';
-import { Grid, Row, Column } from '../library/components/Layout/Grid';
-import { Bar, BarMenu, BarMenuItem } from '../library/components/Navigation/Bar';
-import Dropdown from '../library/components/Navigation/Dropdown';
-import { Menu, MenuItem } from '../library/components/Navigation/Menu';
-import Position from '../library/components/Layout/Position';
-import Float from '../library/components/Layout/Float';
-import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
-import P from '../library/components/Type/Paragraph';
+import {
+  Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
+  Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, H1, H2, H3, H4, H5, H6, P,
+} from 'library';
 
 export default props => (
   <div>

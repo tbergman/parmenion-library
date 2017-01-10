@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import InputText from '../InputText';
+import { InputText } from '../InputText';
 
 
 /* ==========================================================================

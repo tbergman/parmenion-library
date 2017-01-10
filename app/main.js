@@ -58,7 +58,7 @@ ReactDOM.render(
             <Route path="bar" component={Bar} />
           </Route>
         </Router>
-        <DevTools />
+        {/* <DevTools /> */}
       </div>
     </Provider>
   </ThemeProvider>,
