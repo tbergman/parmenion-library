@@ -122,7 +122,7 @@ export default props => (
     <Grid>
       <Row>
         <Column sm={6} xs={12}>
-          <Alert title="This is an alert heading" status={1} hasArrow={false}>
+          <Alert title="This is an alert heading" status={1}>
             This is the alert content
           </Alert>
         </Column>
