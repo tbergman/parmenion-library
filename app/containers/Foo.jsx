@@ -148,12 +148,12 @@ export default props => (
     <Grid>
       <Row divisions={5}>
         <Column md={1} sm={5}>
-          <Alert title="This is an alert heading" status={3} hasArrow={false}>
+          <Alert title="This is an alert heading" status={3}>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5}>
-          <Alert title="This is an alert heading" status={4} hasArrow={true}>
+          <Alert title="This is an alert heading" status={4} hasArrow>
             This is the alert content
             This is the alert content
             This is the alert content
@@ -162,17 +162,17 @@ export default props => (
           </Alert>
         </Column>
         <Column md={1} sm={5}>
-          <Alert title="This is an alert heading" status={1} hasArrow={false}>
+          <Alert title="This is an alert heading" status={1}>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5}>
-          <Alert title="This is an alert heading" status={2} hasArrow={true}>
+          <Alert title="This is an alert heading" status={2} hasArrow>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5}>
-          <Alert title="This is an alert heading" status={3} hasArrow={false}>
+          <Alert title="This is an alert heading" status={3}>
             This is the alert content
           </Alert>
         </Column>
@@ -182,12 +182,12 @@ export default props => (
     <Grid>
       <Row divisions={5} spacing={0}>
         <Column md={1} sm={5} flex>
-          <Alert title="This is an alert heading" status={3} hasArrow={true}>
+          <Alert title="This is an alert heading" status={3} hasArrow>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5} flex>
-          <Alert title="This is an alert heading" status={4} hasArrow={false}>
+          <Alert title="This is an alert heading" status={4}>
             This is the alert content
             This is the alert content
             This is the alert content
@@ -196,17 +196,17 @@ export default props => (
           </Alert>
         </Column>
         <Column md={1} sm={5} flex>
-          <Alert title="This is an alert heading" status={1} hasArrow={true}>
+          <Alert title="This is an alert heading" status={1} hasArrow>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5} flex>
-          <Alert title="This is an alert heading" status={2} hasArrow={false}>
+          <Alert title="This is an alert heading" status={2}>
             This is the alert content
           </Alert>
         </Column>
         <Column md={1} sm={5} flex>
-          <Alert title="This is an alert heading" status={3} hasArrow={true}>
+          <Alert title="This is an alert heading" status={3} hasArrow>
             This is the alert content
           </Alert>
         </Column>
