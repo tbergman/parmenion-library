@@ -107,7 +107,7 @@ export const InputGroup = ({ children, start, end }) => {
   if (end && typeof end === 'string') {
     AddonEnd = <AddonString>{end}</AddonString>;
   } else if (end) {
-    AddonEnd = <AddonButton>{start}</AddonButton>;
+    AddonEnd = <AddonButton>{end}</AddonButton>;
   }
   return (
     <Container>
