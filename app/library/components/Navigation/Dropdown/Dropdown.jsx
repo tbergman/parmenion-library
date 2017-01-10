@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -13,14 +12,16 @@ const Container = styled.div`
 `;
 
 const Menu = styled.div`
-  display: ${props => props.isOpen ? 'block' : 'none'};
-  position: absolute;
-  left: ${props => props.isRight ? 'auto' : '0'};
-  right: ${props => props.isRight ? '0' : 'auto'};
-  z-index: 1;
-  width:100%;
-  min-width: 20rem;
-  box-shadow: ${styles.components.shadow_large};
+  ${({ theme, isOpen, isRight }) => css`
+    display: ${isOpen ? 'block' : 'none'};
+    position: absolute;
+    left: ${isRight ? 'auto' : '0'};
+    right: ${isRight ? '0' : 'auto'};
+    z-index: 1;
+    width:100%;
+    min-width: 20rem;
+    box-shadow: ${theme.components.shadow_large};
+  `}
 `;
 
 /* ==========================================================================

@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -8,11 +7,13 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Container = styled.div`
-  margin: 0;
-  height: 6rem;
-  background-color: ${props => props.theme.colors.primary};
-  font-family: ${props => props.theme.type.font_heading};
-  box-shadow: ${styles.components.shadow};
+  ${({ theme }) => css`
+    margin: 0;
+    height: 6rem;
+    background-color: ${theme.colors.primary};
+    font-family: ${theme.type.font_heading};
+    box-shadow: ${theme.components.shadow};
+  `}
 `;
 
 /* ==========================================================================

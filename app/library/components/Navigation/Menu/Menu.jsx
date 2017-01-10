@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link as RouterLink } from 'react-router';
-import styles from '../../../theme';
 
 /* ==========================================================================
    Styles
@@ -36,20 +35,20 @@ const Description = styled.span`
 `;
 
 const Link = styled(RouterLink)`
-  display: table;
-  width: 100%;
-  padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
-  border-bottom: 1px solid ${props => props.isActive ? 'transparent' : styles.colors.gray_lighter};
-  color: ${props => props.isActive ? 'white' : styles.type.text_color};
-  background-color: ${props => props.isActive ? styles.components.active_background : 'white'};
-  text-align: left;
-  text-decoration: none;
-
-  &:hover,
-  &:focus {
-    background-color: ${props => props.isActive ? tc(styles.components.active_background).darken(3).toString() : styles.colors.gray_lightest};
-  }
-
+  ${({ theme, isActive }) => css`
+    display: table;
+    width: 100%;
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    border-bottom: 1px solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
+    color: ${isActive ? 'white' : theme.type.text_color};
+    background-color: ${isActive ? theme.components.active_background : 'white'};
+    text-align: left;
+    text-decoration: none;
+    &:hover,
+    &:focus {
+      background-color: ${isActive ? tc(theme.components.active_background).darken(3).toString() : theme.colors.gray_lightest};
+    }
+  `}
 `;
 
 /* ==========================================================================

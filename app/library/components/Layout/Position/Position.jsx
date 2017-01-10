@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -7,12 +7,14 @@ import styled from 'styled-components';
 ========================================================================== */
 
 const Container = styled.div`
-  position: ${props => props.fixed ? 'fixed' : 'absolute'};
-  z-index: ${props => props.zindex ? props.zindex : 1};
-  top: ${props => props.top ? '0' : 'auto'};
-  right: ${props => props.right ? '0' : 'auto'};
-  bottom: ${props => props.bottom ? '0' : 'auto'};
-  left: ${props => props.left ? '0' : 'auto'};
+  ${({ fixed, zindex, top, right, bottom, left }) => css`
+    position: ${fixed ? 'fixed' : 'absolute'};
+    z-index: ${zindex || '1'};
+    top: ${top ? '0' : 'auto'};
+    right: ${right ? '0' : 'auto'};
+    bottom: ${bottom ? '0' : 'auto'};
+    left: ${left ? '0' : 'auto'};
+  `}
 `;
 
 /* ==========================================================================

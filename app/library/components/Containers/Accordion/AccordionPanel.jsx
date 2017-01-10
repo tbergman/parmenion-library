@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 import tc from 'tinycolor2';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -10,38 +9,42 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Container = styled.div`
-  margin-bottom: 0;
-  background-color: white;
-  border: 1px solid ${styles.components.border_color};
-  border-radius: ${styles.components.border_radius};
-  & + & {
-    margin-top: -0.1rem;
-  }
+  ${({ theme }) => css`
+    margin-bottom: 0;
+    background-color: white;
+    border: 1px solid ${theme.components.border_color};
+    border-radius: ${theme.components.border_radius};
+    & + & {
+      margin-top: -0.1rem;
+    }
+  `}
 `;
 
 const Title = styled.h4`
-  font-size: ${styles.type.font_size_h4};
+  font-size: ${props => props.theme.type.font_size_h4};
   margin: 0;
 `;
 
-const Heading = styled.a`
-  display: block;
-  position: relative;
-  padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
-  padding-right: 5rem;
-  border-bottom: 0;
-  border-top-right-radius: ${styles.components.border_radius};
-  border-top-left-radius: ${styles.components.border_radius};
-  color: ${styles.type.text_color};
-  background-color: ${props => props.isOpen ? tc(styles.colors.gray_lightest).darken(5).toString() : styles.colors.gray_lightest};
-  border-color: ${styles.components.border_color};
-  text-decoration: none!important;
-  &:hover {
-    background-color: ${props => props.isOpen ? tc(styles.colors.gray_lightest).darken(7).toString() : tc(styles.colors.gray_lightest).darken(3).toString()};
-    /* > $//{Title} {
-      color: red;
-    }*/
-  }
+const Heading = styled.div`
+  ${({ theme, isOpen }) => css`
+    display: block;
+    position: relative;
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    padding-right: 5rem;
+    border-bottom: 0;
+    border-top-right-radius: ${theme.components.border_radius};
+    border-top-left-radius: ${theme.components.border_radius};
+    color: ${theme.type.text_color};
+    background-color: ${isOpen ? tc(theme.colors.gray_lightest).darken(5).toString() : theme.colors.gray_lightest};
+    border-color: ${theme.components.border_color};
+    text-decoration: none!important;
+    &:hover {
+      background-color: ${isOpen ? tc(theme.colors.gray_lightest).darken(7).toString() : tc(theme.colors.gray_lightest).darken(3).toString()};
+      /* > $//{Title} {
+        color: red;
+      }*/
+    }
+  `}
 `;
 
 const Body = styled.div`
@@ -52,7 +55,9 @@ const Body = styled.div`
 `;
 
 const BodyInner = styled.div`
-  padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
+  ${({ theme }) => css`
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+  `}
 `;
 
 /* ==========================================================================

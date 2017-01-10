@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -8,20 +7,22 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Default = styled.span`
-  display: inline;
-  padding: .3em .6em;
-  font-size: 0.75em;
-  font-weight: bold;
-  line-height: 1;
-  color: white;
-  text-align: center;
-  white-space: nowrap;
-  vertical-align: baseline;
-  border-radius: .25em;
-  background-color: ${styles.colors.gray};
-  &:empty {
-      display: none;
-  }
+  ${({ theme }) => css`
+    display: inline;
+    padding: .3em .6em;
+    font-size: 0.75em;
+    font-weight: bold;
+    line-height: 1;
+    color: white;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: ${theme.colors.gray};
+    &:empty {
+        display: none;
+    }
+  `}
 `;
 
 const Success = styled(Default)`

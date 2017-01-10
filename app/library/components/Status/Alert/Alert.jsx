@@ -1,8 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import tinycolor from 'tinycolor2';
 import withTheme from '../../../../hoc/withTheme';
-import styles from '../../../theme';
 
 
 /* ==========================================================================
@@ -13,24 +12,26 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const Container = styled.div`
-  position: relative;
-  display: inline-block;
-  margin: 0 0 ${styles.components.spacing_vertical} 0;
-  width: 100%;
-  padding: ${styles.components.padding_base_vertical} ${styles.components.padding_base_horizontal};
-  text-align: left;
-  border-radius: ${styles.components.border_radius};
-  border: 0.1rem solid ${props => tinycolor(props.color).lighten(20).toString()};
-  background: ${props => tinycolor(props.color).lighten(30).toString()};
-  color: ${props => tinycolor(props.color).darken(30).toString()};
-  font-size: 1em;
-  ${props => props.hasArrow && `&:after {
-    content: "▲";
-    position: absolute;
-    top: -1.4rem;
-    left: 1.5rem;
-    color: ${props2 => tinycolor(props2.color).lighten(20).toString()};
-  }`}
+  ${({ theme, color, hasArrow }) => css`
+    position: relative;
+    display: inline-block;
+    margin: 0 0 ${theme.components.spacing_vertical} 0;
+    width: 100%;
+    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    text-align: left;
+    border-radius: ${theme.components.border_radius};
+    border: 0.1rem solid ${tinycolor(color).lighten(20).toString()};
+    background: ${tinycolor(color).lighten(30).toString()};
+    color: ${tinycolor(color).darken(30).toString()};
+    font-size: 1em;
+    ${hasArrow && `&:after {
+      content: "▲";
+      position: absolute;
+      top: -1.4rem;
+      left: 1.5rem;
+      color: ${tinycolor(color).lighten(20).toString()};
+    }`}
+  `}
 `;
 
 
@@ -40,7 +41,7 @@ const Container = styled.div`
 const Header = styled.div`
   margin-top: 0;
   margin-bottom: 0.25rem;
-  font-size: ${styles.type.font_size_h4};
+  font-size: ${props => props.theme.type.font_size_h4};
   color: inherit;
 `;
 
@@ -68,7 +69,7 @@ class Alert extends React.Component {
         case 4:
           return theme.colors.states.info;
         default:
-          return styles.colors.grey_light;
+          return theme.colors.grey_light;
       }
     })();
 

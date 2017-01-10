@@ -1,6 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
-import styles from '../../../theme';
+import styled, { css } from 'styled-components';
 
 
 /* ==========================================================================
@@ -8,29 +7,31 @@ import styles from '../../../theme';
 ========================================================================== */
 
 const AddonString = styled.span`
-  padding: 0 ${styles.components.padding_base_horizontal};
-  font-size: 1em;
-  color: ${styles.forms.input_color};
-  background-color: ${styles.colors.gray_lighter};
-  border: 0.1rem solid ${styles.forms.input_border};
-  border-radius: ${styles.forms.input_border_radius};
-  display: table-cell;
-  width: 1%;
-  font-weight: normal;
-  line-height: 1;
-  vertical-align: middle;
-  text-align: center;
-  white-space: nowrap;
-  &:first-child {
-    border-right: 0;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
-  &:last-child {
-    border-left: 0;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
-  }
+  ${({ theme }) => css`
+    padding: 0 ${theme.components.padding_base_horizontal};
+    font-size: 1em;
+    color: ${theme.forms.input_color};
+    background-color: ${theme.colors.gray_lighter};
+    border: 0.1rem solid ${theme.forms.input_border};
+    border-radius: ${theme.forms.input_border_radius};
+    display: table-cell;
+    width: 1%;
+    font-weight: normal;
+    line-height: 1;
+    vertical-align: middle;
+    text-align: center;
+    white-space: nowrap;
+    &:first-child {
+      border-right: 0;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+  `}
 `;
 
 const AddonButton = styled.span`
