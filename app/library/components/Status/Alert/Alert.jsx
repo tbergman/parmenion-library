@@ -80,37 +80,43 @@ const Description = styled.div`
   margin: 0;
 `;
 
-class Alert extends React.Component {
-  render() {
-    const { status, hasArrow, title, children } = this.props;
+const Alert = ({ children, status, hasArrow, title }) => {
+  const InnerAlert = (() => {
+    switch (status) {
+      case 1:
+        return Success;
+      case 2:
+        return Danger;
+      case 3:
+        return Warning;
+      case 4:
+        return Info;
+      default:
+        return Default;
+    }
+  })();
 
-    const InnerAlert = (() => {
-      switch (status) {
-        case 1:
-          return Success;
-        case 2:
-          return Danger;
-        case 3:
-          return Warning;
-        case 4:
-          return Info;
-        default:
-          return Default;
-      }
-    })();
-
-    return (<InnerAlert hasArrow={hasArrow}>
+  return (
+    <InnerAlert hasArrow={hasArrow}>
       <Header>{ title }</Header>
       <Description>
         { children }
       </Description>
-    </InnerAlert>);
-  }
-}
+    </InnerAlert>
+  );
+};
 
 Alert.propTypes = {
   title: React.PropTypes.string,
   status: React.PropTypes.number,
   hasArrow: React.PropTypes.bool,
+  children: React.PropTypes.node.isRequired,
 };
+
+Alert.defaultProps = {
+  title: null,
+  status: null,
+  hasArrow: false,
+};
+
 export default Alert;

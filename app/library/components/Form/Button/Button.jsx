@@ -187,7 +187,7 @@ const LinkButton = styled(Default)`
   `}
 `;
 
-export const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
+const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
   const InnerButton = (() => {
     switch (type) {
       case 1:

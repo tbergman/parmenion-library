@@ -84,7 +84,7 @@ const AddonButton = styled.span`
   }
 `;
 
-export const InputGroup = ({ children, start, end }) => {
+const InputGroup = ({ children, start, end }) => {
   let AddonStart;
   let AddonEnd;
 

@@ -36,32 +36,28 @@ const Info = styled(Default)`
   background-color: ${props => props.theme.colors.states.info};
 `;
 
-class Label extends React.Component {
-  render() {
-    const { children, type } = this.props;
+const Label = ({ children, type }) => {
+  const InnerLabel = (() => {
+    switch (type) {
+      case 1:
+        return Success;
+      case 2:
+        return Danger;
+      case 3:
+        return Warning;
+      case 4:
+        return Info;
+      default:
+        return Default;
+    }
+  })();
 
-    const InnerLabel = (() => {
-      switch (type) {
-        case 1:
-          return Success;
-        case 2:
-          return Danger;
-        case 3:
-          return Warning;
-        case 4:
-          return Info;
-        default:
-          return Default;
-      }
-    })();
-
-    return (
-      <InnerLabel>
-        { children }
-      </InnerLabel>
-    );
-  }
-}
+  return (
+    <InnerLabel>
+      { children }
+    </InnerLabel>
+  );
+};
 
 Label.propTypes = {
   type: React.PropTypes.number,

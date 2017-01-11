@@ -36,7 +36,7 @@ const InputTextInner = styled.input`
   `}
 `;
 
-export const InputText = ({ placeholder, type, isSmall }) => (
+const InputText = ({ placeholder, type, isSmall }) => (
   <InputTextInner placeholder={placeholder} type={type} isSmall={isSmall} />
 );
 

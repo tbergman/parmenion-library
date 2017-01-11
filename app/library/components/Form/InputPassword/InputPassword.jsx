@@ -1,7 +1,7 @@
 import React from 'react';
 import InputText from '../InputText';
 
-export const InputPassword = ({ placeholder }) => (
+const InputPassword = ({ placeholder }) => (
   <InputText placeholder={placeholder} type="password" />
 );
 

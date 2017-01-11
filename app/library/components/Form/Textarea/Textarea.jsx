@@ -36,7 +36,7 @@ const TextArea = styled.textarea`
   `}
 `;
 
-export const InputTextArea = ({ rows }) => (
+const InputTextArea = ({ rows }) => (
   <TextArea rows={rows} />
 );
 
