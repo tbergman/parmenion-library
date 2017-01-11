@@ -1,12 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-const Container = styled.div`
+const Bar = styled.div`
   ${({ theme }) => css`
     margin: 0;
     height: 6rem;
@@ -15,16 +10,6 @@ const Container = styled.div`
     box-shadow: ${theme.components.shadow};
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
-
-export const Bar = ({ children }) => (
-  <Container>
-    {children}
-  </Container>
-);
 
 Bar.propTypes = {
   children: React.PropTypes.node.isRequired,

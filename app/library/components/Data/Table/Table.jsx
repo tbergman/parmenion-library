@@ -2,10 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import tinycolor from 'tinycolor2';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const Container = styled.div`
   ${({ theme, breakpoint }) => css`
     overflow-x: auto;
@@ -79,10 +75,6 @@ const InnerTable = styled.table`
     }
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 const Table = ({ children, isLight, isHover, isStriped, breakpoint }) => (
   <Container breakpoint={breakpoint}>

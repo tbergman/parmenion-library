@@ -1,10 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const TextArea = styled.textarea`
   ${({ theme }) => css`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
@@ -29,7 +25,6 @@ const TextArea = styled.textarea`
       box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
     }
 
-    // Disabled and read-only inputs
     &[disabled],
     &[readonly] {
         background-color: ${theme.forms.input_bg_disabled};
@@ -40,11 +35,6 @@ const TextArea = styled.textarea`
     }
   `}
 `;
-
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 export const InputTextArea = ({ rows }) => (
   <TextArea rows={rows} />

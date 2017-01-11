@@ -2,10 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link as RouterLink } from 'react-router';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const BarMenu = styled.ul`
   margin: 0;
   padding: 0;
@@ -36,10 +32,6 @@ const Link = styled(RouterLink)`
     text-decoration:inherit;
   }
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 const BarMenuItem = ({ children, href, to }) => (
   <Item>

@@ -1,12 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-const Input = styled.input`
+const InputTextInner = styled.input`
   ${({ theme, isSmall }) => css`
     padding: ${isSmall ?
       `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}` :
@@ -30,13 +25,6 @@ const Input = styled.input`
       box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
     }
 
-    /* Fix: Unstyle the caret on <select>s in IE10+. */
-    &::-ms-expand {
-        border: 0;
-        background-color: transparent;
-    }
-
-    /* Disabled and read-only inputs */
     &[disabled],
     &[readonly] {
         background-color: ${theme.forms.input_bg_disabled};
@@ -48,13 +36,8 @@ const Input = styled.input`
   `}
 `;
 
-
-/* ==========================================================================
-   React Component
-========================================================================== */
-
 export const InputText = ({ placeholder, type, isSmall }) => (
-  <Input placeholder={placeholder} type={type} isSmall={isSmall} />
+  <InputTextInner placeholder={placeholder} type={type} isSmall={isSmall} />
 );
 
 InputText.propTypes = {

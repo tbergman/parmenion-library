@@ -1,10 +1,6 @@
 import React from 'react';
 import AccordionPanel from './AccordionPanel';
 
-/* ==========================================================================
-   React Component
-========================================================================== */
-
 class Accordion extends React.Component {
 
   constructor(props) {

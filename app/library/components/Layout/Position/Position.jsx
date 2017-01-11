@@ -1,12 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-const Container = styled.div`
+const Position = styled.div`
   ${({ fixed, zindex, top, right, bottom, left }) => css`
     position: ${fixed ? 'fixed' : 'absolute'};
     z-index: ${zindex || '1'};
@@ -16,16 +11,6 @@ const Container = styled.div`
     left: ${left ? '0' : 'auto'};
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
-
-export const Position = ({ children, fixed, zindex, top, right, bottom, left }) => (
-  <Container fixed={fixed} zindex={zindex} top={top} right={right} bottom={bottom} left={left}>
-    {children}
-  </Container>
-);
 
 Position.propTypes = {
   fixed: React.PropTypes.bool,

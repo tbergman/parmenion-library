@@ -1,11 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const Container = styled.div`
   display: inline-block;
   position: relative;
@@ -23,10 +18,6 @@ const Menu = styled.div`
     box-shadow: ${theme.components.shadow_large};
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 class Dropdown extends React.Component {
 

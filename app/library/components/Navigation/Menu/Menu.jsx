@@ -3,11 +3,7 @@ import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link as RouterLink } from 'react-router';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-export const Menu = styled.ul`
+const Menu = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -51,11 +47,7 @@ const Link = styled(RouterLink)`
   `}
 `;
 
-/* ==========================================================================
-   React Component
-========================================================================== */
-
-export const MenuItem = ({ children, href, to, icon, description, isActive }) => (
+const MenuItem = ({ children, href, to, icon, description, isActive }) => (
   <Item>
     <Link href={href} to={to} isActive={isActive}>
       {icon && <Icon>{icon}</Icon> }
@@ -85,3 +77,5 @@ MenuItem.defaultProps = {
   description: null,
   isActive: false,
 };
+
+export { Menu, MenuItem };
