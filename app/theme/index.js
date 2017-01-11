@@ -29,6 +29,10 @@ const brand = {
     border_radius: '0.25rem',
     active_background: colors.primary,
   },
+  breakpoints: {
+    ...base.breakpoints,
+    xs_max: '767px',
+  },
 };
 
 export default brand;

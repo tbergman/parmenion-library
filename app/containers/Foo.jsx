@@ -12,6 +12,7 @@ import Dropdown from '../library/components/Navigation/Dropdown';
 import { Menu, MenuItem } from '../library/components/Navigation/Menu';
 import Position from '../library/components/Layout/Position';
 import Float from '../library/components/Layout/Float';
+import Table from '../library/components/Data/Table';
 import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
 import P from '../library/components/Type/Paragraph';
 
@@ -46,6 +47,41 @@ export default props => (
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
+    <Table isStriped isLight isHover breakpoint={800}>
+      <thead>
+        <tr>
+          <th>Hello</th>
+          <th>Hello</th>
+          <th>Hello</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          </td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+        <tr>
+          <td>Hi</td>
+          <td>Hi</td>
+          <td>Hi</td>
+        </tr>
+      </tbody>
+    </Table>
 
     <Dropdown
       trigger={
