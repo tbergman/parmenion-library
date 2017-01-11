@@ -13,6 +13,7 @@ import { Menu, MenuItem } from '../library/components/Navigation/Menu';
 import Position from '../library/components/Layout/Position';
 import Float from '../library/components/Layout/Float';
 import Table from '../library/components/Data/Table';
+import List from '../library/components/Data/List';
 import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
 import P from '../library/components/Type/Paragraph';
 
@@ -47,6 +48,46 @@ export default props => (
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
+    <List hasBullets>
+      <li>This is a list item 1</li>
+      <li>This is a list item 2</li>
+      <li>This is a list item 3</li>
+      <li>This is a list item 4</li>
+      <li>This is a list item 5</li>
+    </List>
+
+    <List isSpaced>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+    </List>
+
+    <List isSpaced hasBullets>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+    </List>
+
+    <List isInline>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+    </List>
+
+    <List isInline isSpaced>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+      <li>This is a list item</li>
+    </List>
 
     <Table isStriped isLight isHover breakpoint={800}>
       <thead>
