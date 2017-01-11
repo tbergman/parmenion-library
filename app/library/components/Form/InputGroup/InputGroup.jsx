@@ -1,10 +1,29 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
+const InputGroupInner = styled.div`
+  position: relative;
+  display: table;
+  border-collapse: separate;
+  > input {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 100%;
+    margin-bottom: 0;
+    &:first-child {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &:last-child {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    &:not(:first-child):not(:last-child) {
+      border-radius: 0;
+    }
+  }
+`;
 
 const AddonString = styled.span`
   ${({ theme }) => css`
@@ -65,35 +84,6 @@ const AddonButton = styled.span`
   }
 `;
 
-const Container = styled.div`
-  position: relative;
-  display: table;
-  border-collapse: separate;
-  > input {
-    position: relative;
-    z-index: 2;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    &:last-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    &:not(:first-child):not(:last-child) {
-      border-radius: 0;
-    }
-  }
-`;
-
-
-/* ==========================================================================
-   React Component
-========================================================================== */
-
 export const InputGroup = ({ children, start, end }) => {
   let AddonStart;
   let AddonEnd;
@@ -110,11 +100,11 @@ export const InputGroup = ({ children, start, end }) => {
     AddonEnd = <AddonButton>{end}</AddonButton>;
   }
   return (
-    <Container>
+    <InputGroupInner>
       {AddonStart}
       {children}
       {AddonEnd}
-    </Container>
+    </InputGroupInner>
   );
 };
 

@@ -1,10 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const List = styled.ul`
   ${({ theme, hasBullets, isSpaced, isInline }) => css`
     margin: 0 0 ${theme.components.spacing_vertical} 0;
@@ -25,10 +21,6 @@ const List = styled.ul`
     }
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 List.propTypes = {
   hasBullets: React.PropTypes.bool,

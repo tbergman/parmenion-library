@@ -2,11 +2,6 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import tinycolor from 'tinycolor2';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const Default = styled.div`
   ${({ theme, hasArrow }) => css`
     position: relative;
@@ -84,11 +79,6 @@ const Header = styled.div`
 const Description = styled.div`
   margin: 0;
 `;
-
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 class Alert extends React.Component {
   render() {

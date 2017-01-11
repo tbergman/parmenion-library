@@ -3,12 +3,7 @@ import ReactDom from 'react-dom';
 import tc from 'tinycolor2';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-const Container = styled.div`
+const AccordionPanelInner = styled.div`
   ${({ theme }) => css`
     margin-bottom: 0;
     background-color: white;
@@ -40,6 +35,7 @@ const Heading = styled.div`
     text-decoration: none!important;
     &:hover {
       background-color: ${isOpen ? tc(theme.colors.gray_lightest).darken(7).toString() : tc(theme.colors.gray_lightest).darken(3).toString()};
+      cursor: pointer;
       /* > $//{Title} {
         color: red;
       }*/
@@ -59,10 +55,6 @@ const BodyInner = styled.div`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 class AccordionPanel extends React.Component {
 
@@ -90,7 +82,7 @@ class AccordionPanel extends React.Component {
   render() {
     const { title, children, isOpen, onClick } = this.props;
     return (
-      <Container onClick={onClick}>
+      <AccordionPanelInner onClick={onClick}>
         <Heading href="#" isOpen={isOpen}>
           <Title>{title}</Title>
         </Heading>
@@ -103,7 +95,7 @@ class AccordionPanel extends React.Component {
             {children}
           </BodyInner>
         </Body>
-      </Container>
+      </AccordionPanelInner>
     );
   }
 

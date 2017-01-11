@@ -1,11 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const Default = styled.span`
   ${({ theme }) => css`
     display: inline;
@@ -40,10 +35,6 @@ const Warning = styled(Default)`
 const Info = styled(Default)`
   background-color: ${props => props.theme.colors.states.info};
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 class Label extends React.Component {
   render() {

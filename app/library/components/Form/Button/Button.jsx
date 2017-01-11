@@ -3,11 +3,6 @@ import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link } from 'react-router';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const Default = styled(Link)`
   ${({ theme, isSmall, isBlock }) => css`
     display: ${isBlock ? 'block' : 'inline-block'};
@@ -191,10 +186,6 @@ const LinkButton = styled(Default)`
     }
   `}
 `;
-
-/* ==========================================================================
-   React Component
-========================================================================== */
 
 export const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
   const InnerButton = (() => {

@@ -1,12 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-
-/* ==========================================================================
-   Styles
-========================================================================== */
-
-const Group = styled.div`
+const ButtonGroup = styled.div`
   ${({ isJustified }) => css`
     display: ${isJustified ? 'table' : 'inline-block'};
     width: ${isJustified ? '100%' : 'auto'};
@@ -19,8 +14,7 @@ const Group = styled.div`
       float: left;
       &:hover,
       &:focus,
-      &:active,
-      &.is-active {
+      &:active {
         z-index: 2;
       }
     }
@@ -48,17 +42,6 @@ const Group = styled.div`
     }`}
   `}
 `;
-
-
-/* ==========================================================================
-   React Component
-========================================================================== */
-
-export const ButtonGroup = ({ isJustified, children }) => (
-  <Group isJustified={isJustified}>
-    {children}
-  </Group>
-);
 
 ButtonGroup.propTypes = {
   isJustified: React.PropTypes.bool,
