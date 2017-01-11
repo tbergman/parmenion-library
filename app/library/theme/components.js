@@ -7,6 +7,7 @@ const components = {
   padding_base_horizontal: '1.2rem',
   padding_small_vertical: '0.4rem',
   padding_small_horizontal: '1rem',
+  cell_padding: '1.2rem',
   border_color: colors.gray_lighter,
   active_color: 'white',
   active_background: 'white',
