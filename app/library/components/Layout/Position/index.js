@@ -1,1 +1,1 @@
-export default from './Position';
+export Position from './Position';

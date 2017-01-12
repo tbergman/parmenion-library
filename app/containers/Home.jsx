@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Button from 'library/components/Form/Button';
-import ButtonGroup from 'library/components/Form/ButtonGroup';
+import { Button, ButtonGroup } from 'library';
 
 import * as countActions from '../actions/count';
 

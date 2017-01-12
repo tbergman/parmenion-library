@@ -16,7 +16,8 @@
     "build": "rimraf dist && cross-env NODE_ENV=production webpack --config ./webpack.production.config.js --progress --profile --colors",
     "lint": "eslint --ext .js,.jsx .",
     "styleguide-server": "styleguidist server",
-    "styleguide-build": "styleguidist build"
+    "styleguide-build": "styleguidist build",
+    "styleguide-publish": "npm run styleguide-build && gh-pages -d styleguide"
   },
   "dependencies": {
     "aphrodite": "^1.1.0",
@@ -55,6 +56,7 @@
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^1.0.1",
+    "gh-pages": "^0.12.0",
     "html-webpack-plugin": "^1.6.1",
     "jscs": "^2.1.1",
     "jsdom": "^6.5.1",
@@ -65,7 +67,7 @@
     "mocha-jsdom": "^1.0.0",
     "postcss-loader": "^0.6.0",
     "react-addons-test-utils": "^0.14.3",
-    "react-styleguidist": "^4.5.4",
+    "react-styleguidist": "github:madjam002/react-styleguidist#multiple-components",
     "react-transform-hmr": "^1.0.0",
     "rimraf": "^2.4.3",
     "sinon": "^1.16.1",

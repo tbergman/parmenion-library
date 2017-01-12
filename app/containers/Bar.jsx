@@ -1,6 +1,6 @@
 import React from 'react';
 import { Accordion, AccordionPanel } from '../library/components/Containers/Accordion';
-import Label from '../library/components/Decoration/Label';
+import { Label } from '../library/components/Form/Label';
 
 export default props => (
   <Accordion>

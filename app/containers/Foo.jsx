@@ -1,26 +1,10 @@
 import React from 'react';
-import Alert from '../library/components/Status/Alert';
-import Button from '../library/components/Form/Button';
-import ButtonGroup from '../library/components/Form/ButtonGroup';
-import InputGroup from '../library/components/Form/InputGroup';
-import InputText from '../library/components/Form/InputText';
-import InputPassword from '../library/components/Form/InputPassword';
-import Textarea from '../library/components/Form/Textarea';
-import { Grid, Row, Column } from '../library/components/Layout/Grid';
-import { Bar, BarMenu, BarMenuItem } from '../library/components/Navigation/Bar';
-import Dropdown from '../library/components/Navigation/Dropdown';
-import { Menu, MenuItem } from '../library/components/Navigation/Menu';
-import Position from '../library/components/Layout/Position';
-import Float from '../library/components/Layout/Float';
-import Table from '../library/components/Data/Table';
-import List from '../library/components/Data/List';
-import Select from '../library/components/Form/Select';
-import Radio from '../library/components/Form/Radio';
-import Checkbox from '../library/components/Form/Checkbox';
-import Label from '../library/components/Form/Label';
-import Group from '../library/components/Form/Group';
-import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
-import P from '../library/components/Type/Paragraph';
+
+import {
+  Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
+  Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P,
+} from 'library';
 
 export default props => (
   <div>

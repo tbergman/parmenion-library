@@ -1,40 +1,69 @@
-const path = require('path')
+/* eslint-disable */
+
+const path = require('path');
 
 module.exports = {
   title: 'Parmenion Library',
-  components: './app/library/components/**/*.jsx',
   serverPort: 3005,
   previewDelay: 0,
-  showCode: true,
-  updateWebpackConfig(webpackConfig) {
-   const dir = path.join(__dirname, 'app')
+  showCode: false,
+  resolver: require('react-docgen').resolver.findAllExportedComponentDefinitions,
+  sections: [
+    {
+      name: 'Typography',
+      content: './docs/typography.md',
+      sections: [
+        { name: 'Components', components: './app/library/components/Type/**/*.jsx' },
+      ],
+    },
+    {
+      name: 'Forms',
+      sections: [
+        { name: 'Components', components: './app/library/components/Form/**/*.jsx' },
+      ],
+    },
+    {
+      name: 'Navigation',
+      sections: [
+        { name: 'Components', components: './app/library/components/Navigation/**/*.jsx' },
+      ],
+    },
+  ],
+  updateWebpackConfig(webpackConfig, env) {
+    const dir = path.join(__dirname, 'app');
+    const isProd = env === 'production';
 
-   webpackConfig.resolve.alias['rsg-components/Wrapper'] = path.join(__dirname, 'resources/styleguide/wrapper')
+    webpackConfig.resolve.alias['rsg-components/Wrapper'] = path.join(__dirname, 'resources/styleguide/wrapper');
+    webpackConfig.resolve.alias['library'] = path.join(__dirname, './app/library');
 
-   webpackConfig.module.loaders.push(
-     {
-       test: /\.jsx?$/,
-       include: dir,
-       loader: 'babel',
-       query: {
-         "presets": ["react", "es2015", "stage-0", "react-hmre"]
-       }
-     },
-     {
-       test: /\.jsx?$/,
-       include: path.join(__dirname, 'resources'),
-       loader: 'babel',
-       query: {
-         "presets": ["react", "es2015", "stage-0", "react-hmre"]
-       }
-     },
-     {
-       test: /\.json?$/,
-       include: dir,
-       loader: 'json'
-     }
-   )
+    const presets = !isProd
+      ? ['react', 'es2015', 'stage-0', 'react-hmre']
+      : ['react', 'es2015', 'stage-0']
 
-   return webpackConfig
- },
-}
+    webpackConfig.module.loaders.push(
+      {
+        test: /\.jsx?$/,
+        include: dir,
+        loader: 'babel',
+        query: {
+          presets,
+        },
+      },
+      {
+        test: /\.jsx?$/,
+        include: path.join(__dirname, 'resources'),
+        loader: 'babel',
+        query: {
+          presets,
+        },
+      },
+      {
+        test: /\.json?$/,
+        include: dir,
+        loader: 'json',
+      }
+    );
+
+    return webpackConfig;
+  },
+};

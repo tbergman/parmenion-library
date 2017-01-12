@@ -211,7 +211,7 @@ const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, 
 };
 
 Button.propTypes = {
-  type: React.PropTypes.number,
+  type: React.PropTypes.oneOf([0, 1, 2, 3, 4]),
   isSmall: React.PropTypes.bool,
   isBlock: React.PropTypes.bool,
   isDisabled: React.PropTypes.bool,
