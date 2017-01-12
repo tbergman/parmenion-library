@@ -51,14 +51,12 @@ const Group = ({ theme, children, label, isHorizontal }) => {
 
 Group.propTypes = {
   children: React.PropTypes.node.isRequired,
-  label: React.PropTypes.node,
+  label: React.PropTypes.node.isRequired,
   isHorizontal: React.PropTypes.bool,
 };
 
 Group.defaultProps = {
-  isSmall: false,
-  isInline: false,
-  status: 0,
+  isHorizontal: false,
 };
 
 export default withTheme(Group);
