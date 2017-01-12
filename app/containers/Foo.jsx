@@ -15,6 +15,7 @@ import Float from '../library/components/Layout/Float';
 import Table from '../library/components/Data/Table';
 import List from '../library/components/Data/List';
 import Select from '../library/components/Form/Select';
+import Radio from '../library/components/Form/Radio';
 import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
 import P from '../library/components/Type/Paragraph';
 
@@ -49,6 +50,22 @@ export default props => (
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
+    <Radio id="r1" name="radiogroup" value="1" status={1} isInline isSmall>
+      This is option 1
+    </Radio>
+    <Radio id="r2" name="radiogroup" value="2" status={2} isInline isSmall>
+      This is option 2
+    </Radio>
+    <Radio id="r3" name="radiogroup" value="3" status={3} isInline disabled>
+      This is option 3
+    </Radio>
+    <Radio id="r4" name="radiogroup" value="4" status={4} isInline>
+      This is option 4
+    </Radio>
+    <Radio id="r5" name="radiogroup" value="5" isInline>
+      This is option 5
+    </Radio>
 
     <Select>
       <option value="0">Please select</option>
