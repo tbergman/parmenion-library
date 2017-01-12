@@ -14,6 +14,7 @@ import Position from '../library/components/Layout/Position';
 import Float from '../library/components/Layout/Float';
 import Table from '../library/components/Data/Table';
 import List from '../library/components/Data/List';
+import Select from '../library/components/Form/Select';
 import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
 import P from '../library/components/Type/Paragraph';
 
@@ -48,6 +49,12 @@ export default props => (
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
+    <Select>
+      <option value="0">Please select</option>
+      <option value="1">option 1</option>
+      <option value="2">option 2</option>
+    </Select>
 
     <List hasBullets>
       <li>This is a list item 1</li>

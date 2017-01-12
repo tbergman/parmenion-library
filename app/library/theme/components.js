@@ -13,6 +13,7 @@ const components = {
   active_background: 'white',
   shadow: '0 0.1rem 0.3rem rgba(0,0,0,.125)',
   shadow_large: '0.2rem 0.3rem 1rem rgba(0,0,0,.25)',
+  border_radius: '3px',
 };
 
 export default components;
