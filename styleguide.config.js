@@ -4,25 +4,41 @@ const path = require('path');
 
 module.exports = {
   title: 'Parmenion Library',
-  components: './app/library/components/**/*.jsx',
   serverPort: 3005,
   previewDelay: 0,
-  showCode: true,
-  resolver: require('react-docgen').resolver.findAllComponentDefinitions,
+  showCode: false,
+  resolver: require('react-docgen').resolver.findAllExportedComponentDefinitions,
   sections: [
     {
-      name: 'Components',
-      components: './app/library/components/**/*.jsx',
+      name: 'Typography',
+      content: './docs/typography.md',
+      sections: [
+        { name: 'Components', components: './app/library/components/Type/**/*.jsx' },
+      ],
     },
     {
-      name: 'Typography',
-      content: 'docs/typography.md',
+      name: 'Forms',
+      sections: [
+        { name: 'Components', components: './app/library/components/Form/**/*.jsx' },
+      ],
+    },
+    {
+      name: 'Navigation',
+      sections: [
+        { name: 'Components', components: './app/library/components/Navigation/**/*.jsx' },
+      ],
     },
   ],
-  updateWebpackConfig(webpackConfig) {
+  updateWebpackConfig(webpackConfig, env) {
     const dir = path.join(__dirname, 'app');
+    const isProd = env === 'production';
 
     webpackConfig.resolve.alias['rsg-components/Wrapper'] = path.join(__dirname, 'resources/styleguide/wrapper');
+    webpackConfig.resolve.alias['library'] = path.join(__dirname, './app/library');
+
+    const presets = !isProd
+      ? ['react', 'es2015', 'stage-0', 'react-hmre']
+      : ['react', 'es2015', 'stage-0']
 
     webpackConfig.module.loaders.push(
       {
@@ -30,7 +46,7 @@ module.exports = {
         include: dir,
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015', 'stage-0', 'react-hmre'],
+          presets,
         },
       },
       {
@@ -38,7 +54,7 @@ module.exports = {
         include: path.join(__dirname, 'resources'),
         loader: 'babel',
         query: {
-          presets: ['react', 'es2015', 'stage-0', 'react-hmre'],
+          presets,
         },
       },
       {
