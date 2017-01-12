@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 const InputTextInner = styled.input`
   ${({ theme, isSmall }) => css`
     padding: ${isSmall ?
-      `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}` :
+      `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
       `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}`
     };
     font-size: ${isSmall ? '0.9em' : '1em'};
