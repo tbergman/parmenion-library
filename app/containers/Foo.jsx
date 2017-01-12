@@ -16,6 +16,9 @@ import Table from '../library/components/Data/Table';
 import List from '../library/components/Data/List';
 import Select from '../library/components/Form/Select';
 import Radio from '../library/components/Form/Radio';
+import Checkbox from '../library/components/Form/Checkbox';
+import Label from '../library/components/Form/Label';
+import Group from '../library/components/Form/Group';
 import { H1, H2, H3, H4, H5, H6 } from '../library/components/Type/Heading';
 import P from '../library/components/Type/Paragraph';
 
@@ -51,27 +54,41 @@ export default props => (
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
 
-    <Radio id="r1" name="radiogroup" value="1" status={1} isInline isSmall>
-      This is option 1
-    </Radio>
-    <Radio id="r2" name="radiogroup" value="2" status={2} isInline isSmall>
-      This is option 2
-    </Radio>
-    <Radio id="r3" name="radiogroup" value="3" status={3} isInline disabled>
-      This is option 3
-    </Radio>
-    <Radio id="r4" name="radiogroup" value="4" status={4} isInline>
-      This is option 4
-    </Radio>
-    <Radio id="r5" name="radiogroup" value="5" isInline>
-      This is option 5
-    </Radio>
+    <Group label={<Label>This is a group label: </Label>}>
+      <Checkbox id="c1" name="checkboxgroup" value="1" status={1} isInline>
+        This is option 1
+      </Checkbox>
+      <Checkbox id="c2" name="checkboxgroup" value="2" status={2} isInline>
+        This is option 2
+      </Checkbox>
+      <Checkbox id="c3" name="checkboxgroup" value="3" status={3} isInline>
+        This is option 3
+      </Checkbox>
+    </Group>
 
-    <Select>
-      <option value="0">Please select</option>
-      <option value="1">option 1</option>
-      <option value="2">option 2</option>
-    </Select>
+    <Group label={<Label>This is another group label: </Label>} isHorizontal>
+      <Radio id="r1" name="radiogroup" value="1" status={1} isInline>
+        This is option 1
+      </Radio>
+      <Radio id="r2" name="radiogroup" value="2" status={2} isInline>
+        This is option 2
+      </Radio>
+      <Radio id="r3" name="radiogroup" value="3" status={3} isInline>
+        This is option 3
+      </Radio>
+    </Group>
+
+    <Group label={<Label>This is another group label: </Label>} isHorizontal>
+      <InputText placeholder="Enter your text here" />
+    </Group>
+
+    <Group label={<Label>This is another group label: </Label>} isHorizontal>
+      <Select>
+        <option value="0">Please select</option>
+        <option value="1">option 1</option>
+        <option value="2">option 2</option>
+      </Select>
+    </Group>
 
     <List hasBullets>
       <li>This is a list item 1</li>

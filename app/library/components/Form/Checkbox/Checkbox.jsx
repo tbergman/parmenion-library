@@ -2,7 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 
-const InnerRadio = styled.div`
+const InnerCheckbox = styled.div`
   ${({ theme, isInline }) => css`
     display: inline-block;
     margin-right: ${parseInt(theme.components.spacing_horizontal, 10) / 2}rem
@@ -67,7 +67,7 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, status }) => {
+const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, status }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -84,16 +84,16 @@ const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline
   })();
 
   return (
-    <InnerRadio isInline={isInline}>
+    <InnerCheckbox isInline={isInline}>
       <Label htmlFor={id} isSmall={isSmall} disabled={disabled}>
-        <Input type="radio" name={name} id={id} disabled={disabled} />
+        <Input type="checkbox" name={name} id={id} disabled={disabled} />
         { children }
       </Label>
-    </InnerRadio>
+    </InnerCheckbox>
   );
 };
 
-Radio.propTypes = {
+Checkbox.propTypes = {
   children: React.PropTypes.node.isRequired,
   id: React.PropTypes.string.isRequired,
   name: React.PropTypes.string.isRequired,
@@ -103,10 +103,10 @@ Radio.propTypes = {
   status: React.PropTypes.number,
 };
 
-Radio.defaultProps = {
+Checkbox.defaultProps = {
   isSmall: false,
   isInline: false,
   status: 0,
 };
 
-export default Radio;
+export default Checkbox;
