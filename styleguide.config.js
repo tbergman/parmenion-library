@@ -8,6 +8,7 @@ module.exports = {
   previewDelay: 0,
   showCode: false,
   resolver: require('react-docgen').resolver.findAllExportedComponentDefinitions,
+  getExampleFilename: componentpath => path.join(path.dirname(componentpath), 'README.md'),
   sections: [
     {
       name: 'Typography',
@@ -23,11 +24,35 @@ module.exports = {
       ],
     },
     {
+      name: 'Containers',
+      sections: [
+        { name: 'Components', components: './app/library/components/Containers/**/*.jsx' },
+      ],
+    },
+    {
       name: 'Navigation',
       sections: [
         { name: 'Components', components: './app/library/components/Navigation/**/*.jsx' },
       ],
     },
+    {
+      name: 'Status',
+      sections: [
+        { name: 'Components', components: './app/library/components/Status/**/*.jsx' },
+      ],
+    },
+    {
+      name: 'Data',
+      sections: [
+        { name: 'Components', components: './app/library/components/Data/**/*.jsx' },
+      ],
+    },
+    // {
+    //   name: 'Layout',
+    //   sections: [
+    //     { name: 'Components', components: './app/library/components/Layout/**/*.jsx' },
+    //   ],
+    // },
   ],
   updateWebpackConfig(webpackConfig, env) {
     const dir = path.join(__dirname, 'app');

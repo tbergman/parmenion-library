@@ -56,6 +56,9 @@ const BodyInner = styled.div`
   `}
 `;
 
+/**
+ * @example ./README.md#AccordionPanel
+ */
 class AccordionPanel extends React.Component {
 
   constructor(props) {
