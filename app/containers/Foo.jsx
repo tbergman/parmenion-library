@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon,
 } from 'library';
 
 export default props => (
@@ -12,8 +12,14 @@ export default props => (
       <Bar>
         <Float right>
           <BarMenu>
-            <BarMenuItem href="http://www.parmenion.co.uk">
-              Parmenion
+            <BarMenuItem to="/">
+              <Icon icon="comment" size={1.5} isInverted />
+            </BarMenuItem>
+            <BarMenuItem to="/">
+              <Icon icon="infoCircle" size={1.5} isInverted />
+            </BarMenuItem>
+            <BarMenuItem to="/">
+              <Icon icon="cog" size={1.5} isInverted />
             </BarMenuItem>
           </BarMenu>
         </Float>
@@ -31,12 +37,95 @@ export default props => (
       </Bar>
     </Position>
 
+
     <H1>This is a heading 1 component</H1>
     <P>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+    <Button to="/">
+      <Icon icon="infoCircle" /> This is my icon in a button yeah
+    </Button>
+
+    <p>
+      <Icon icon="arrowRight" /> This is another icon
+    </p>
+
+    <p>
+      <Icon icon="arrowUp" size={1} />
+      <Icon icon="arrowDown" size={2} />
+      <Icon icon="arrowLeft" size={3} />
+      <Icon icon="arrowRight" size={4} />
+      <Icon icon="balanceScale" size={5} />
+      <Icon icon="ban" />
+      <Icon icon="bank" />
+      <Icon icon="bell" />
+      <Icon icon="bolt" />
+      <Icon icon="book" />
+      <Icon icon="calendar" />
+      <Icon icon="caretDown" />
+      <Icon icon="caretUp" />
+      <Icon icon="chain" />
+      <Icon icon="check" />
+      <Icon icon="checkCircle" />
+      <Icon icon="chevronDown" />
+      <Icon icon="chevronLeft" />
+      <Icon icon="chevronRight" />
+      <Icon icon="chevronUp" />
+      <Icon icon="clock" />
+      <Icon icon="close" />
+      <Icon icon="fork" />
+      <Icon icon="cog" />
+      <Icon icon="comment" />
+      <Icon icon="commentCheck" />
+      <Icon icon="commenting" />
+      <Icon icon="compress" />
+      <Icon icon="creditCard" />
+      <Icon icon="download" />
+      <Icon icon="envelope" />
+      <Icon icon="exchange" />
+      <Icon icon="exclamation" />
+      <Icon icon="expand" />
+      <Icon icon="externalLink" />
+      <Icon icon="file" />
+      <Icon icon="fileExcel" />
+      <Icon icon="fileImage" />
+      <Icon icon="filePdf" />
+      <Icon icon="filePowerpoint" />
+      <Icon icon="fileText" />
+      <Icon icon="fileWord" />
+      <Icon icon="group" />
+      <Icon icon="home" />
+      <Icon icon="cursor" />
+      <Icon icon="infoCircle" />
+      <Icon icon="key" />
+      <Icon icon="lineChat" />
+      <Icon icon="list" />
+      <Icon icon="listNumber" />
+      <Icon icon="lock" />
+      <Icon icon="minus" />
+      <Icon icon="minusCircle" />
+      <Icon icon="pencil" />
+      <Icon icon="pieChart" />
+      <Icon icon="plus" />
+      <Icon icon="plusCircle" />
+      <Icon icon="print" />
+      <Icon icon="questionCircle" />
+      <Icon icon="search" />
+      <Icon icon="shield" />
+      <Icon icon="signIn" />
+      <Icon icon="signOut" />
+      <Icon icon="tag" />
+      <Icon icon="tasks" />
+      <Icon icon="timesCircle" />
+      <Icon icon="tint" />
+      <Icon icon="upload" />
+      <Icon icon="user" />
+      <Icon icon="userPlus" />
+      <Icon icon="userSecret" />
+      <Icon icon="userTimes" />
+    </p>
 
     <Group label={<Label>This is a group label: </Label>}>
       <Checkbox id="c1" name="checkboxgroup" value="1" status={1} isInline>
