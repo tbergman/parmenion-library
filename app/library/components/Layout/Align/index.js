@@ -1,1 +1,1 @@
-export default from './Align';
+export Align from './Align';

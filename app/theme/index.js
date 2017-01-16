@@ -21,7 +21,7 @@ const brand = {
     font_heading: 'Calibri, serif',
     font_size: '1.6rem',
     size: '1.6rem',
-    line_height: '1.428571429',
+    line_height: '24px',
   },
   components: {
     ...base.components,

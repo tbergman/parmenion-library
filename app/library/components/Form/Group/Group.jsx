@@ -1,14 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { Grid, Row, Column } from '../../Layout/Grid';
-import Align from '../../Layout/Align';
-import Visible from '../../Layout/Visible';
+import { Grid, Row, Column, Align, Visible } from '../../Layout';
 import withTheme from '../../../../hoc/withTheme';
 
 const Container = styled.div`
   ${({ theme }) => css`
     display: block;
-    margin-bottom: ${theme.components.spacing_vertical}
   `}
 `;
 
