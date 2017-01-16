@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip,
 } from 'library';
 
 export default props => (
@@ -37,16 +37,32 @@ export default props => (
       </Bar>
     </Position>
 
-
     <H1>This is a heading 1 component</H1>
     <P>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
     <Button to="/">
       <Icon icon="infoCircle" /> This is my icon in a button yeah
     </Button>
+
+    <Tooltip text="Hey this is a tooltip" position={0}>
+      <Button to="/">Top</Button>
+    </Tooltip>
+
+    <Tooltip text="This is a longer tooltip to the right" position={1}>
+      <Button to="/">Right</Button>
+    </Tooltip>
+
+    <Tooltip text="Hey this is a tooltip" position={2}>
+      <Button to="/">Bottom</Button>
+    </Tooltip>
+
+    <Tooltip text="Hey this is a tooltip too" position={3}>
+      <Button to="/">Left</Button>
+    </Tooltip>
 
     <p>
       <Icon icon="arrowRight" /> This is another icon
