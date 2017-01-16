@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 
 const StackedStyle = styled.div`
@@ -9,16 +9,24 @@ const StackedStyle = styled.div`
 const Cell = styled.div`
   &:not(:last-child) {
     margin-top: ${props => props.theme.layout.push(props.spaceBefore || 0)};
-    margin-bottom: ${props => props.theme.layout.push(props.spaceAfter || 1)};
+    margin-bottom: ${props => props.theme.layout.push(props.spaceAfter || 0)};
   }
 `;
 
 export const Stacked = props => (
   <StackedStyle {...props}>
     {React.Children.map(props.children, child =>
-      <Cell spaceBefore={child.props.spaceBefore} spaceAfter={child.props.spaceAfter}>
+      <Cell spaceBefore={child.props.spaceBefore} spaceAfter={child.props.spaceAfter || props.spaceBetween}>
         {child}
       </Cell>,
     )}
   </StackedStyle>
 );
+
+Stacked.defaultProps = {
+  spaceBetween: 1,
+};
+
+Stacked.propTypes = {
+  spaceBetween: PropTypes.number,
+};
