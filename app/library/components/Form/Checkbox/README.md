@@ -3,7 +3,7 @@
     import {Checkbox} from 'library'
 
     <Checkbox>
-      Normal radio button
+      Normal checkbox button
     </Checkbox>
 
 **Statuses**
