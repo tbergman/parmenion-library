@@ -64,7 +64,7 @@ const Column = styled(ColumnContainer)`
   }
   ${props =>
     props.xs
-      ? `width: ${divvy(props.divisions, props.xs)}%; margin-bottom: 0;`
+      ? `width: ${divvy(props.divisions, props.xs)}%; margin-bottom: 0 !important;`
       : null
   }
   ${props =>
@@ -75,7 +75,7 @@ const Column = styled(ColumnContainer)`
   ${media.sm`
     ${props =>
       props.sm
-        ? `width: ${divvy(props.divisions, props.sm)}%; margin-bottom: 0;`
+        ? `width: ${divvy(props.divisions, props.sm)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props => props.smShift
@@ -86,7 +86,7 @@ const Column = styled(ColumnContainer)`
   ${media.md`
     ${props =>
       props.md
-        ? `width: ${divvy(props.divisions, props.md)}%; margin-bottom: 0;`
+        ? `width: ${divvy(props.divisions, props.md)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props =>
@@ -98,7 +98,7 @@ const Column = styled(ColumnContainer)`
   ${media.lg`
     ${props =>
       props.lg
-        ? `width: ${divvy(props.divisions, props.lg)}%; margin-bottom: 0;`
+        ? `width: ${divvy(props.divisions, props.lg)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props =>
