@@ -276,7 +276,7 @@ export default props => (
 
     <br /><br /><br />
 
-    <H2>Here{'\''}s a menu on it{'\''}s own</H2>
+    <H2>{"Here's a menu on it's own"}</H2>
     <Menu>
       <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah">
         This item has an icon
