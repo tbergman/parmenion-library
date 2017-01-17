@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner,
 } from 'library';
 
 export default props => (
@@ -218,6 +218,35 @@ export default props => (
       <li>This is a list item</li>
       <li>This is a list item</li>
     </List>
+
+    <P>
+      {'Here is a spinner that fits inline'}
+      <Spinner />
+    </P>
+
+    <div style={{ position: 'relative' }}>
+      <Overlay />
+      <Spinner isCentered />
+      <P>
+        This is some content within a relatively positioned block that has
+        an overlay.
+      </P>
+      <P>
+        <Button>This is a button right here <Tag>I love buttons</Tag></Button>
+      </P>
+    </div>
+
+    <div style={{ position: 'relative' }}>
+      <Overlay isInverted />
+      <Spinner isInverted isCentered />
+      <P>
+        This is some content within a relatively positioned block that has
+        a dark overlay.
+      </P>
+      <P>
+        <Button>This is a button right here <Tag>I love buttons</Tag></Button>
+      </P>
+    </div>
 
     <Table isStriped isLight isHover breakpoint={800}>
       <thead>
