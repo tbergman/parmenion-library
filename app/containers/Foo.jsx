@@ -262,13 +262,13 @@ export default props => (
       }
     >
       <Menu>
-        <MenuItem to="/bar" icon="a" description="This is the description yeah">
+        <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
           This item has an icon
         </MenuItem>
         <MenuItem to="/bar" description="This is the description yeah">
           This item doesn{'\''}t have an icon
         </MenuItem>
-        <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
           This item is active
         </MenuItem>
       </Menu>
@@ -278,13 +278,13 @@ export default props => (
 
     <H2>Here{'\''}s a menu on it{'\''}s own</H2>
     <Menu>
-      <MenuItem to="/bar" icon="a" description="This is the description yeah">
+      <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah">
         This item has an icon
       </MenuItem>
       <MenuItem to="/bar" description="This is the description yeah">
         This item doesn{'\''}t have an icon
       </MenuItem>
-      <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+      <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
         This item is active
       </MenuItem>
     </Menu>

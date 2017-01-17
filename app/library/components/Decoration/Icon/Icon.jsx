@@ -88,9 +88,6 @@ const Container = styled.span`
         fill: ${isInverted ? 'white' : theme.type.text_color};
       }
     }
-    a:hover & svg path {
-      fill: ${isInverted ? 'white' : theme.type.text_color};
-    }
   `}
 `;
 
