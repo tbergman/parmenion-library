@@ -38,11 +38,11 @@ const Success = styled(Default)`
 
 const Danger = styled(Default)`
   ${({ theme, hasArrow }) => css`
-    border: 0.1rem solid ${tinycolor(theme.colors.states.danger).lighten(20).toString()};
-    background: ${tinycolor(theme.colors.states.danger).lighten(30).toString()};
-    color: ${tinycolor(theme.colors.states.danger).darken(30).toString()};
+    border: 0.1rem solid ${tinycolor(theme.colors.states.danger).lighten(30).toString()};
+    background: ${tinycolor(theme.colors.states.danger).lighten(40).toString()};
+    color: ${tinycolor(theme.colors.states.danger).darken(20).toString()};
     ${hasArrow && `&:after {
-      color: ${tinycolor(theme.colors.states.danger).lighten(20).toString()};
+      color: ${tinycolor(theme.colors.states.danger).lighten(30).toString()};
     }`}
   `}
 `;
