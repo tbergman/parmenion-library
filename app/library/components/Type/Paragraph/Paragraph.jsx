@@ -14,4 +14,4 @@ const PBase = styled.p`
 /** A paragraph component for rendering a block of text. */
 export const P = props => <PBase {...props} />;
 
-P.propTypes = { children: React.PropTypes.node.isRequired };
+P.propTypes = { children: PropTypes.node.isRequired };

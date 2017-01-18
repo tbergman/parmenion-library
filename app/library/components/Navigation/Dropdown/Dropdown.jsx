@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.span`
   display: inline-block;
   position: relative;
 `;
@@ -12,6 +12,7 @@ const Menu = styled.div`
     position: absolute;
     left: ${isRight ? 'auto' : '0'};
     right: ${isRight ? '0' : 'auto'};
+    line-height: 2rem;
     z-index: 1;
     width:100%;
     min-width: 20rem;

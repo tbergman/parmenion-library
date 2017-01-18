@@ -33,6 +33,24 @@ export default props => (
           <BarMenuItem to="/bar">
             Bar
           </BarMenuItem>
+          <BarMenuItem
+            menu={
+              <Menu>
+                <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                  This item has an icon
+                </MenuItem>
+                <MenuItem to="/bar" description="This is the description yeah">
+                  This item doesn{'\''}t have an icon
+                </MenuItem>
+                <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                  This item is active
+                </MenuItem>
+              </Menu>
+            }
+          >
+            Dropdown <Icon icon="caretDown" isInverted />
+          </BarMenuItem>
+
         </BarMenu>
       </Bar>
     </Position>
