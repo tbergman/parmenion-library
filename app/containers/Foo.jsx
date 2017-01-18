@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
-  Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
+  Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
   Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner,
 } from 'library';
 
@@ -18,7 +18,7 @@ export default props => (
             <BarMenuItem to="/">
               <Icon icon="infoCircle" size={1.5} isInverted />
             </BarMenuItem>
-            <BarMenuItem
+            <BarMenuItemDropdown
               isHover
               isRight
               menu={
@@ -36,7 +36,7 @@ export default props => (
               }
             >
               <Icon icon="cog" size={1.5} isInverted />
-            </BarMenuItem>
+            </BarMenuItemDropdown>
           </BarMenu>
         </Float>
         <BarMenu>
@@ -49,7 +49,7 @@ export default props => (
           <BarMenuItem to="/bar">
             Bar
           </BarMenuItem>
-          <BarMenuItem
+          <BarMenuItemDropdown
             menu={
               <Menu>
                 <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
@@ -65,8 +65,8 @@ export default props => (
             }
           >
             Dropdown click <Icon icon="caretDown" isInverted />
-          </BarMenuItem>
-          <BarMenuItem
+          </BarMenuItemDropdown>
+          <BarMenuItemDropdown
             isHover
             menu={
               <Menu>
@@ -83,7 +83,7 @@ export default props => (
             }
           >
             Dropdown hover <Icon icon="caretDown" isInverted />
-          </BarMenuItem>
+          </BarMenuItemDropdown>
 
         </BarMenu>
       </Bar>
