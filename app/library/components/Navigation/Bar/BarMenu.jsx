@@ -52,11 +52,13 @@ const Trigger = styled.span`
   }
 `;
 
-const BarMenuItem = ({ children, href, to, menu }) => {
+const BarMenuItem = ({ children, href, to, menu, isHover, isRight }) => {
   if (menu) {
     return (
       <Item>
         <Dropdown
+          isHover={isHover}
+          isRight={isRight}
           trigger={
             <Trigger>{ children }</Trigger>
           }
@@ -80,10 +82,13 @@ BarMenuItem.propTypes = {
   to: React.PropTypes.string,
   menu: React.PropTypes.node,
   children: React.PropTypes.node,
+  isHover: React.PropTypes.bool,
+  isRight: React.PropTypes.bool,
 };
 
 BarMenuItem.defaultProps = {
-  isStatic: false,
+  isHover: false,
+  isRight: false,
 };
 
 export { BarMenu, BarMenuItem };

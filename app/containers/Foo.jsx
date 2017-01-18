@@ -18,7 +18,23 @@ export default props => (
             <BarMenuItem to="/">
               <Icon icon="infoCircle" size={1.5} isInverted />
             </BarMenuItem>
-            <BarMenuItem to="/">
+            <BarMenuItem
+              isHover
+              isRight
+              menu={
+                <Menu>
+                  <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                    This item has an icon
+                  </MenuItem>
+                  <MenuItem to="/bar" description="This is the description yeah">
+                    This item doesn{'\''}t have an icon
+                  </MenuItem>
+                  <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                    This item is active
+                  </MenuItem>
+                </Menu>
+              }
+            >
               <Icon icon="cog" size={1.5} isInverted />
             </BarMenuItem>
           </BarMenu>
@@ -48,7 +64,25 @@ export default props => (
               </Menu>
             }
           >
-            Dropdown <Icon icon="caretDown" isInverted />
+            Dropdown click <Icon icon="caretDown" isInverted />
+          </BarMenuItem>
+          <BarMenuItem
+            isHover
+            menu={
+              <Menu>
+                <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                  This item has an icon
+                </MenuItem>
+                <MenuItem to="/bar" description="This is the description yeah">
+                  This item doesn{'\''}t have an icon
+                </MenuItem>
+                <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                  This item is active
+                </MenuItem>
+              </Menu>
+            }
+          >
+            Dropdown hover <Icon icon="caretDown" isInverted />
           </BarMenuItem>
 
         </BarMenu>
