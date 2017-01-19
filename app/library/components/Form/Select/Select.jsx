@@ -5,6 +5,7 @@ import { MenuContainer, Menu, MenuItem } from './SelectMenu';
 
 const InnerSelect = styled.div`
   ${({ theme, isAutocomplete }) => css`
+    position: relative;
     ${!isAutocomplete && `&:after {
       content: "▼";
       position: absolute;
