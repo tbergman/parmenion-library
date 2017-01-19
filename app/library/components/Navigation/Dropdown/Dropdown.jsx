@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Container = styled.div`
+const Container = styled.span`
   display: inline-block;
   position: relative;
 `;
@@ -12,6 +12,7 @@ const Menu = styled.div`
     position: absolute;
     left: ${isRight ? 'auto' : '0'};
     right: ${isRight ? '0' : 'auto'};
+    line-height: 2rem;
     z-index: 1;
     width:100%;
     min-width: 20rem;
@@ -31,10 +32,14 @@ class Dropdown extends React.Component {
   }
 
   render() {
-    const { children, trigger, isRight } = this.props;
+    const { children, trigger, isRight, isHover } = this.props;
     return (
-      <Container>
-        {React.cloneElement(trigger, { onClick: () => this.toggleMenu() })}
+      <Container
+        onMouseEnter={isHover && (() => this.toggleMenu())}
+        onMouseLeave={isHover && (() => this.toggleMenu())}
+        onClick={!isHover && (() => this.toggleMenu())}
+      >
+        {trigger}
         <Menu isOpen={this.state.isOpen} isRight={isRight}>
           {children}
         </Menu>
@@ -47,10 +52,12 @@ Dropdown.propTypes = {
   children: React.PropTypes.node.isRequired,
   trigger: React.PropTypes.node.isRequired,
   isRight: React.PropTypes.bool,
+  isHover: React.PropTypes.bool,
 };
 
 Dropdown.defaultProps = {
   isRight: false,
+  isHover: false,
 };
 
 export default Dropdown;

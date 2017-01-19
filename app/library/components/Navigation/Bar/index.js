@@ -1,4 +1,6 @@
 import Bar from './Bar';
-import { BarMenu, BarMenuItem } from './BarMenu';
+import BarMenu from './BarMenu';
+import BarMenuItem from './BarMenuItem';
+import BarMenuItemDropdown from './BarMenuItemDropdown';
 
-export { Bar, BarMenu, BarMenuItem };
+export { Bar, BarMenu, BarMenuItem, BarMenuItemDropdown };

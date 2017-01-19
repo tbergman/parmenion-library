@@ -2,8 +2,8 @@ import React from 'react';
 
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
-  Bar, BarMenu, BarMenuItem, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H2, H3, H4, H5, H6,
+  Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
+  Checkbox, Label, Group, PageHeader, H2, H3, H4, H5, H6, Icon, Tooltip, Overlay, Tag, Spinner,
 } from 'library';
 
 export default props => (
@@ -12,9 +12,31 @@ export default props => (
       <Bar>
         <Float right>
           <BarMenu>
-            <BarMenuItem href="http://www.parmenion.co.uk">
-              Parmenion
+            <BarMenuItem to="/">
+              <Icon icon="comment" size={1.5} isInverted />
             </BarMenuItem>
+            <BarMenuItem to="/">
+              <Icon icon="infoCircle" size={1.5} isInverted />
+            </BarMenuItem>
+            <BarMenuItemDropdown
+              isHover
+              isRight
+              menu={
+                <Menu>
+                  <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                    This item has an icon
+                  </MenuItem>
+                  <MenuItem to="/bar" description="This is the description yeah">
+                    This item doesn{'\''}t have an icon
+                  </MenuItem>
+                  <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                    This item is active
+                  </MenuItem>
+                </Menu>
+              }
+            >
+              <Icon icon="cog" size={1.5} isInverted />
+            </BarMenuItemDropdown>
           </BarMenu>
         </Float>
         <BarMenu>
@@ -27,10 +49,151 @@ export default props => (
           <BarMenuItem to="/bar">
             Bar
           </BarMenuItem>
+          <BarMenuItemDropdown
+            menu={
+              <Menu>
+                <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                  This item has an icon
+                </MenuItem>
+                <MenuItem to="/bar" description="This is the description yeah">
+                  This item doesn{'\''}t have an icon
+                </MenuItem>
+                <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                  This item is active
+                </MenuItem>
+              </Menu>
+            }
+          >
+            Dropdown click <Icon icon="caretDown" isInverted />
+          </BarMenuItemDropdown>
+          <BarMenuItemDropdown
+            isHover
+            menu={
+              <Menu>
+                <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
+                  This item has an icon
+                </MenuItem>
+                <MenuItem to="/bar" description="This is the description yeah">
+                  This item doesn{'\''}t have an icon
+                </MenuItem>
+                <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+                  This item is active
+                </MenuItem>
+              </Menu>
+            }
+          >
+            Dropdown hover <Icon icon="caretDown" isInverted />
+          </BarMenuItemDropdown>
+
         </BarMenu>
       </Bar>
     </Position>
 
+    <PageHeader>This is a heading 1 component</PageHeader>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+      vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+      Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
+    </p>
+
+    <Button to="/">
+      <Icon icon="infoCircle" /> This is my icon in a button yeah
+    </Button>
+
+    <Tooltip text="Hey this is a tooltip" position={0}>
+      <Button to="/">Top</Button>
+    </Tooltip>
+
+    <Tooltip text="This is a longer tooltip to the right" position={1}>
+      <Button to="/">Right</Button>
+    </Tooltip>
+
+    <Tooltip text="Hey this is a tooltip" position={2}>
+      <Button to="/">Bottom</Button>
+    </Tooltip>
+
+    <Tooltip text="Hey this is a tooltip too" position={3}>
+      <Button to="/">Left</Button>
+    </Tooltip>
+
+    <p>
+      <Icon icon="arrowRight" /> This is another icon
+    </p>
+
+    <p>
+      <Icon icon="arrowUp" size={1} />
+      <Icon icon="arrowDown" size={2} />
+      <Icon icon="arrowLeft" size={3} />
+      <Icon icon="arrowRight" size={4} />
+      <Icon icon="balanceScale" size={5} />
+      <Icon icon="ban" />
+      <Icon icon="bank" />
+      <Icon icon="bell" />
+      <Icon icon="bolt" />
+      <Icon icon="book" />
+      <Icon icon="calendar" />
+      <Icon icon="caretDown" />
+      <Icon icon="caretUp" />
+      <Icon icon="chain" />
+      <Icon icon="check" />
+      <Icon icon="checkCircle" />
+      <Icon icon="chevronDown" />
+      <Icon icon="chevronLeft" />
+      <Icon icon="chevronRight" />
+      <Icon icon="chevronUp" />
+      <Icon icon="clock" />
+      <Icon icon="close" />
+      <Icon icon="fork" />
+      <Icon icon="cog" />
+      <Icon icon="comment" />
+      <Icon icon="commentCheck" />
+      <Icon icon="commenting" />
+      <Icon icon="compress" />
+      <Icon icon="creditCard" />
+      <Icon icon="download" />
+      <Icon icon="envelope" />
+      <Icon icon="exchange" />
+      <Icon icon="exclamation" />
+      <Icon icon="expand" />
+      <Icon icon="externalLink" />
+      <Icon icon="file" />
+      <Icon icon="fileExcel" />
+      <Icon icon="fileImage" />
+      <Icon icon="filePdf" />
+      <Icon icon="filePowerpoint" />
+      <Icon icon="fileText" />
+      <Icon icon="fileWord" />
+      <Icon icon="group" />
+      <Icon icon="home" />
+      <Icon icon="cursor" />
+      <Icon icon="infoCircle" />
+      <Icon icon="key" />
+      <Icon icon="lineChat" />
+      <Icon icon="list" />
+      <Icon icon="listNumber" />
+      <Icon icon="lock" />
+      <Icon icon="minus" />
+      <Icon icon="minusCircle" />
+      <Icon icon="pencil" />
+      <Icon icon="pieChart" />
+      <Icon icon="plus" />
+      <Icon icon="plusCircle" />
+      <Icon icon="print" />
+      <Icon icon="questionCircle" />
+      <Icon icon="search" />
+      <Icon icon="shield" />
+      <Icon icon="signIn" />
+      <Icon icon="signOut" />
+      <Icon icon="tag" />
+      <Icon icon="tasks" />
+      <Icon icon="timesCircle" />
+      <Icon icon="tint" />
+      <Icon icon="upload" />
+      <Icon icon="user" />
+      <Icon icon="userPlus" />
+      <Icon icon="userSecret" />
+      <Icon icon="userTimes" />
+    </p>
     <Group label={<Label>This is a group label: </Label>}>
       <Checkbox id="c1" name="checkboxgroup" value="1" status={1} isInline>
         This is option 1
@@ -107,6 +270,35 @@ export default props => (
       <li>This is a list item</li>
     </List>
 
+    <p>
+      {'Here is a spinner that fits inline'}
+      <Spinner />
+    </p>
+
+    <div style={{ position: 'relative' }}>
+      <Overlay />
+      <Spinner isCentered />
+      <p>
+        This is some content within a relatively positioned block that has
+        an overlay.
+      </p>
+      <p>
+        <Button>This is a button right here <Tag>I love buttons</Tag></Button>
+      </p>
+    </div>
+
+    <div style={{ position: 'relative' }}>
+      <Overlay isInverted />
+      <Spinner isInverted isCentered />
+      <p>
+        This is some content within a relatively positioned block that has
+        a dark overlay.
+      </p>
+      <p>
+        <Button>This is a button right here <Tag>I love buttons</Tag></Button>
+      </p>
+    </div>
+
     <Table isStriped isLight isHover breakpoint={800}>
       <thead>
         <tr>
@@ -150,13 +342,13 @@ export default props => (
       }
     >
       <Menu>
-        <MenuItem to="/bar" icon="a" description="This is the description yeah">
+        <MenuItem to="/bar" icon={<Icon icon="calendar" />} description="This is the description yeah">
           This item has an icon
         </MenuItem>
         <MenuItem to="/bar" description="This is the description yeah">
           This item doesn{'\''}t have an icon
         </MenuItem>
-        <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
           This item is active
         </MenuItem>
       </Menu>
@@ -164,15 +356,15 @@ export default props => (
 
     <br /><br /><br />
 
-    <H2>Here{'\''}s a menu on it{'\''}s own</H2>
+    <H2>{"Here's a menu on it's own"}</H2>
     <Menu>
-      <MenuItem to="/bar" icon="a" description="This is the description yeah">
+      <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah">
         This item has an icon
       </MenuItem>
       <MenuItem to="/bar" description="This is the description yeah">
         This item doesn{'\''}t have an icon
       </MenuItem>
-      <MenuItem to="/bar" icon="c" description="This is the description yeah" isActive>
+      <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
         This item is active
       </MenuItem>
     </Menu>

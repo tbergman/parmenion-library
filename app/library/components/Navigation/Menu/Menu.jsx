@@ -15,7 +15,7 @@ const Item = styled.li`
   position: relative;
 `;
 
-const Icon = styled.span`
+const IconContainer = styled.span`
   display: table-cell;
   width: 2.2rem;
   min-width: 2.2rem;
@@ -51,25 +51,32 @@ const Link = styled(RouterLink)`
 const Menu = props => <MenuStyle {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, href, to, icon, description, isActive }) => (
-  <Item>
-    <Link href={href} to={to} isActive={isActive}>
-      {icon && <Icon>{icon}</Icon> }
-      <Label>
-        {children}
-        <Description>
-          {description}
-        </Description>
-      </Label>
-    </Link>
-  </Item>
-);
+const MenuItem = ({ children, href, to, icon, description, isActive }) => {
+  const InnerIcon = icon && React.cloneElement(icon, {
+    isInverted: isActive,
+    size: 0.8,
+  });
+
+  return (
+    <Item>
+      <Link href={href} to={to} isActive={isActive}>
+        {icon && <IconContainer>{InnerIcon}</IconContainer> }
+        <Label>
+          {children}
+          <Description>
+            {description}
+          </Description>
+        </Label>
+      </Link>
+    </Item>
+  );
+};
 
 MenuItem.propTypes = {
   children: React.PropTypes.node.isRequired,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
-  icon: React.PropTypes.string,
+  icon: React.PropTypes.node,
   description: React.PropTypes.string,
   isActive: React.PropTypes.bool,
 };
