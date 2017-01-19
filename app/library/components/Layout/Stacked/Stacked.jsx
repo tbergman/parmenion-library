@@ -16,9 +16,11 @@ const Cell = styled.div`
 export const Stacked = props => (
   <StackedStyle {...props}>
     {React.Children.map(props.children, child =>
-      <Cell spaceBefore={child.props.spaceBefore} spaceAfter={child.props.spaceAfter || props.spaceBetween}>
+      child
+      ? <Cell spaceBefore={child.props && child.props.spaceBefore} spaceAfter={(child.props && child.props.spaceAfter) || props.spaceBetween}>
         {child}
-      </Cell>,
+      </Cell>
+      : null,
     )}
   </StackedStyle>
 );
