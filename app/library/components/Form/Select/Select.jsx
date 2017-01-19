@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { filter } from 'fuzzaldrin';
 import { InputText } from '../InputText';
 import { MenuContainer, Menu, MenuItem } from './SelectMenu';
 
@@ -21,50 +22,74 @@ class Select extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = { isOpen: false, selectedId: 0, selectedName: null };
+
+    const selectedItem = this.props.items.find(item => item.id === props.value);
+    this.state = { isOpen: false, currentName: selectedItem != null ? selectedItem.name : null };
   }
 
-  onSelect(item) {
-    this.setState({ selectedId: item.id, selectedName: item.name });
-  }
+  componentWillReceiveProps(nextProps) {
+    const selectedItem = this.props.items.find(item => item.id === nextProps.value);
 
-  onSearch(e) {
-    const nameMatch = this.props.items.filter(item => item.name === e.target.value);
-    // If only one item in list matches current search term then select it
-    if (nameMatch.length === 1) {
-      this.setState({ selectedId: nameMatch[0].id, selectedName: e.target.value });
-    } else {
-      this.setState({ selectedId: null, selectedName: e.target.value });
+    if (selectedItem) {
+      this.setState({ currentName: selectedItem.name });
     }
   }
 
-  onBlur() {
-    // Wait until selection has registered before closing menu, as blur still
-    // fires even if child element selected.
-    // TODO: Find a better way than using setTimeout.
-    const self = this;
-    setTimeout(() => self.setState({ isOpen: false }), 100);
+  onSearch = (e) => {
+    this.setState({ currentName: e.target.value });
   }
 
-  getFilteredItems() {
+  onBlur = (e) => {
+    // don't blur dropdown if user is dragging mouse over dropdown items
+    if (this.isMousePressed) {
+      e.preventDefault();
+      return;
+    }
+
+    this.setState({ isOpen: false });
+    this.isMousePressed = false;
+  }
+
+  onMouseDown = () => {
+    this.isMousePressed = true;
+  }
+
+  onMouseUp = () => {
+    this.isMousePressed = false;
+  }
+
+  getFilteredItems = () => {
     const { items, isAutocomplete } = this.props;
-    return items.filter(item => (
-      !isAutocomplete ||
-      !this.state.selectedName ||
-      item.name.search(this.state.selectedName) !== -1
-    ));
+
+    if (!isAutocomplete || this.state.currentName === '') {
+      return items;
+    }
+
+    return filter(items, this.state.currentName, { key: 'name' });
   }
 
-  toggleMenu() {
+  selectItem = (item) => {
+    if (this.props.onChange) {
+      this.props.onChange(item.id);
+    }
+
+    this.setState({ isOpen: false, temporarySelectedId: null });
+  }
+
+  toggleMenu = () => {
     this.setState({ isOpen: !this.state.isOpen });
   }
 
-  moveSelection(e) {
+  moveSelection = (e) => {
     e.preventDefault();
     const items = this.getFilteredItems();
     const itemsLength = items.length;
     if (!itemsLength) return;
-    const itemArrayIndex = items.findIndex(x => x.id === this.state.selectedId);
+
+    const selectedId = this.state.temporarySelectedId != null
+      ? this.state.temporarySelectedId
+      : this.props.value;
+    const itemArrayIndex = items.findIndex(x => x.id === selectedId);
 
     const selectedItemIndex = (() => {
       if (e.key === 'ArrowDown') {
@@ -74,26 +99,19 @@ class Select extends React.Component {
     })();
 
     this.setState({
-      selectedId: items[selectedItemIndex].id,
-      isOpen: true,
+      temporarySelectedId: items[selectedItemIndex].id,
     });
   }
 
-  applySelection(e) {
+  applySelection = (e) => {
     e.preventDefault();
-    const items = this.getFilteredItems();
-    const itemsLength = items.length;
-    if (!itemsLength) return;
-    const itemArrayIndex = items.findIndex(x => x.id === this.state.selectedId);
 
-    this.setState({
-      selectedId: items[itemArrayIndex].id,
-      selectedName: items[itemArrayIndex].name,
-      isOpen: false,
-    });
+    if (this.state.temporarySelectedId != null) {
+      this.selectItem(this.props.items.find(item => item.id === this.state.temporarySelectedId));
+    }
   }
 
-  handleKeyDown(e) {
+  handleKeyDown = (e) => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
       this.moveSelection(e);
     } else if (e.key === 'Enter') {
@@ -106,24 +124,35 @@ class Select extends React.Component {
   render() {
     const { placeholder, isSmall, isAutocomplete, id } = this.props;
 
+    const selectedId = this.state.temporarySelectedId != null
+      ? this.state.temporarySelectedId
+      : this.props.value;
+
     const items = this.getFilteredItems();
     const itemsToRender = items.map((item, index) => (
-      <MenuItem isActive={item.id === this.state.selectedId} key={item.id} onMouseDown={() => this.onSelect(item)}>
+      <MenuItem
+        isActive={item.id === selectedId}
+        key={item.id}
+        onClick={this.selectItem.bind(this, item)}
+        onMouseDown={this.onMouseDown}
+        onMouseUp={this.onMouseUp}
+      >
         {item.name}
       </MenuItem>
     ));
 
     return (
-      <InnerSelect onBlur={() => this.onBlur()} isAutocomplete={isAutocomplete}>
-        <input type="hidden" value={this.state.selectedId} id={id} />
+      <InnerSelect isAutocomplete={isAutocomplete}>
+        <input type="hidden" value={this.props.value} id={id} />
         <InputText
           placeholder={placeholder}
           isSmall={isSmall}
-          value={this.state.selectedName}
+          value={this.state.currentName}
           isReadOnly={!isAutocomplete}
-          onChange={e => this.onSearch(e)}
-          onClick={() => this.toggleMenu()}
-          onKeyDown={e => this.handleKeyDown(e)}
+          onChange={this.onSearch}
+          onClick={this.toggleMenu}
+          onKeyDown={this.handleKeyDown}
+          onBlur={this.onBlur}
         />
         <MenuContainer isOpen={this.state.isOpen}>
           <Menu>

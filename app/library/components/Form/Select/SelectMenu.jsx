@@ -13,6 +13,7 @@ const MenuContainer = styled.div`
     box-shadow: ${theme.components.shadow_large};
     max-height: 25rem;
     overflow: auto;
+    user-select: none;
   `}
 `;
 
@@ -50,11 +51,9 @@ const Link = styled.span`
 const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, isActive, onMouseDown }) => (
+const MenuItem = props => (
   <Item>
-    <Link isActive={isActive} onMouseDown={onMouseDown}>
-      {children}
-    </Link>
+    <Link {...props} />
   </Item>
 );
 

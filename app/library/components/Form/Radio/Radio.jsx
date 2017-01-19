@@ -67,7 +67,9 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, status }) => {
+const onRadioChange = onChangeFn => e => onChangeFn(e.target.value);
+
+const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, status, onChange }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -86,7 +88,7 @@ const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline
   return (
     <InnerRadio isInline={isInline}>
       <Label htmlFor={id} isSmall={isSmall} disabled={disabled}>
-        <Input type="radio" name={name} id={id} disabled={disabled} />
+        <Input type="radio" name={name} id={id} disabled={disabled} checked={checked} value={value} onChange={onRadioChange(onChange)} />
         { children }
       </Label>
     </InnerRadio>

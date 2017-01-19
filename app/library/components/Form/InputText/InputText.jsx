@@ -37,16 +37,10 @@ const InnerInputText = styled.input`
   `}
 `;
 
-const InputText = ({ placeholder, type, isSmall, isReadOnly, value, onChange, onClick, onKeyDown }) => (
+const InputText = ({ isReadOnly, ...props }) => (
   <InnerInputText
-    placeholder={placeholder}
-    type={type}
-    isSmall={isSmall}
+    {...props}
     readOnly={isReadOnly}
-    value={value}
-    onChange={e => onChange(e)}
-    onClick={e => onClick(e)}
-    onKeyDown={e => onKeyDown(e)}
   />
 );
 
