@@ -36,20 +36,36 @@ const InputTextInner = styled.input`
   `}
 `;
 
-const InputText = ({ placeholder, type, isSmall }) => (
-  <InputTextInner placeholder={placeholder} type={type} isSmall={isSmall} />
+const InputText = ({ placeholder, type, isSmall, value, onChange, onClick, onKeyDown }) => (
+  <InputTextInner
+    placeholder={placeholder}
+    type={type}
+    isSmall={isSmall}
+    value={value}
+    onChange={e => onChange(e)}
+    onClick={e => onClick(e)}
+    onKeyDown={e => onKeyDown(e)}
+  />
 );
 
 InputText.propTypes = {
   placeholder: React.PropTypes.string,
   type: React.PropTypes.string,
   isSmall: React.PropTypes.bool,
+  value: React.PropTypes.string,
+  onChange: React.PropTypes.func,
+  onClick: React.PropTypes.func,
+  onKeyDown: React.PropTypes.func,
 };
 
 InputText.defaultProps = {
   placeholder: null,
   isSmall: false,
   type: 'text',
+  value: null,
+  onChange: null,
+  onClick: null,
+  onKeyDown: null,
 };
 
 export default InputText;

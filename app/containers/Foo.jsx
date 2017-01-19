@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner, Autocomplete,
 } from 'library';
 
 export default props => (
@@ -95,6 +95,86 @@ export default props => (
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
+
+    <Group label={<Label>This is another group label: </Label>} isHorizontal>
+      <Autocomplete
+        placeholder="Search for options"
+        items={[
+          {
+            id: 1,
+            name: 'Option A',
+          },
+          {
+            id: 2,
+            name: 'Option B',
+          },
+          {
+            id: 3,
+            name: 'Option C',
+          },
+          {
+            id: 4,
+            name: 'Option D',
+          },
+          {
+            id: 5,
+            name: 'Option E',
+          },
+          {
+            id: 6,
+            name: 'Option F',
+          },
+          {
+            id: 7,
+            name: 'Option AA',
+          },
+          {
+            id: 8,
+            name: 'Option B',
+          },
+          {
+            id: 9,
+            name: 'Option C',
+          },
+          {
+            id: 11,
+            name: 'Option D',
+          },
+          {
+            id: 12,
+            name: 'Option E',
+          },
+          {
+            id: 13,
+            name: 'Option F',
+          },
+          {
+            id: 14,
+            name: 'Option AAA',
+          },
+          {
+            id: 15,
+            name: 'Option B',
+          },
+          {
+            id: 16,
+            name: 'Option C',
+          },
+          {
+            id: 17,
+            name: 'Option D',
+          },
+          {
+            id: 22,
+            name: 'Option E',
+          },
+          {
+            id: 23,
+            name: 'Option F',
+          },
+        ]}
+      />
+    </Group>
 
     <Button to="/">
       <Icon icon="infoCircle" /> This is my icon in a button yeah
