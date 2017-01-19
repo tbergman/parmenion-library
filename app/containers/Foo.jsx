@@ -96,6 +96,134 @@ export default props => (
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </p>
 
+    <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
+      <Select
+        id="SelectAutoComplete"
+        placeholder="Search for options"
+        isAutocomplete
+        items={[
+          {
+            id: 1,
+            name: 'Option A',
+          },
+          {
+            id: 2,
+            name: 'Option B',
+          },
+          {
+            id: 3,
+            name: 'Option C',
+          },
+          {
+            id: 4,
+            name: 'Option D',
+          },
+          {
+            id: 5,
+            name: 'Option E',
+          },
+          {
+            id: 6,
+            name: 'Option F',
+          },
+          {
+            id: 7,
+            name: 'Option AA',
+          },
+          {
+            id: 8,
+            name: 'Option B',
+          },
+          {
+            id: 9,
+            name: 'Option C',
+          },
+          {
+            id: 11,
+            name: 'Option D',
+          },
+          {
+            id: 12,
+            name: 'Option E',
+          },
+          {
+            id: 13,
+            name: 'Option F',
+          },
+          {
+            id: 14,
+            name: 'Option AAA',
+          },
+          {
+            id: 15,
+            name: 'Option B',
+          },
+          {
+            id: 16,
+            name: 'Option C',
+          },
+          {
+            id: 17,
+            name: 'Option D',
+          },
+          {
+            id: 22,
+            name: 'Option E',
+          },
+          {
+            id: 23,
+            name: 'Option F',
+          },
+        ]}
+      />
+    </Group>
+
+
+    <Group label={<Label>This is a select without autocomplete: </Label>} isHorizontal>
+      <Select
+        id="SelectNormal"
+        placeholder="Please select"
+        items={[
+          {
+            id: 1,
+            name: 'Apples',
+          },
+          {
+            id: 2,
+            name: 'Pears',
+          },
+          {
+            id: 3,
+            name: 'Bananas',
+          },
+          {
+            id: 4,
+            name: 'Oranges',
+          },
+          {
+            id: 5,
+            name: 'Grapes',
+          },
+          {
+            id: 6,
+            name: 'Pineapples',
+          },
+          {
+            id: 7,
+            name: 'Lemons',
+          },
+          {
+            id: 8,
+            name: 'Limes',
+          },
+          {
+            id: 9,
+            name: 'Strawberries',
+          },
+        ]}
+      />
+    </Group>
+
     <Button to="/">
       <Icon icon="infoCircle" /> This is my icon in a button yeah
     </Button>
@@ -220,14 +348,6 @@ export default props => (
 
     <Group label={<Label>This is another group label: </Label>} isHorizontal>
       <InputText placeholder="Enter your text here" />
-    </Group>
-
-    <Group label={<Label>This is another group label: </Label>} isHorizontal>
-      <Select>
-        <option value="0">Please select</option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-      </Select>
     </Group>
 
     <List hasBullets>
