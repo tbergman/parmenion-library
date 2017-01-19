@@ -25,22 +25,24 @@ const InputTextInner = styled.input`
       box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
     }
 
-    &[disabled],
-    &[readonly] {
+    &[disabled] {
         background-color: ${theme.forms.input_bg_disabled};
         opacity: 1;
-    }
-    &[disabled] {
         cursor: ${theme.forms.cursor_disabled};
+    }
+
+    &[readonly] {
+        cursor: pointer;
     }
   `}
 `;
 
-const InputText = ({ placeholder, type, isSmall, value, onChange, onClick, onKeyDown }) => (
+const InputText = ({ placeholder, type, isSmall, isReadOnly, value, onChange, onClick, onKeyDown }) => (
   <InputTextInner
     placeholder={placeholder}
     type={type}
     isSmall={isSmall}
+    readOnly={isReadOnly}
     value={value}
     onChange={e => onChange(e)}
     onClick={e => onClick(e)}
@@ -52,6 +54,7 @@ InputText.propTypes = {
   placeholder: React.PropTypes.string,
   type: React.PropTypes.string,
   isSmall: React.PropTypes.bool,
+  isReadOnly: React.PropTypes.bool,
   value: React.PropTypes.string,
   onChange: React.PropTypes.func,
   onClick: React.PropTypes.func,
@@ -61,6 +64,7 @@ InputText.propTypes = {
 InputText.defaultProps = {
   placeholder: null,
   isSmall: false,
+  isReadOnly: false,
   type: 'text',
   value: null,
   onChange: null,

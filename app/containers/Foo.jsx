@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner, Autocomplete,
+  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner,
 } from 'library';
 
 export default props => (
@@ -96,9 +96,11 @@ export default props => (
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
     </P>
 
-    <Group label={<Label>This is another group label: </Label>} isHorizontal>
-      <Autocomplete
+    <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
+      <Select
+        id="SelectAutoComplete"
         placeholder="Search for options"
+        isAutocomplete
         items={[
           {
             id: 1,
@@ -171,6 +173,52 @@ export default props => (
           {
             id: 23,
             name: 'Option F',
+          },
+        ]}
+      />
+    </Group>
+
+
+    <Group label={<Label>This is a select without autocomplete: </Label>} isHorizontal>
+      <Select
+        id="SelectNormal"
+        placeholder="Please select"
+        items={[
+          {
+            id: 1,
+            name: 'Apples',
+          },
+          {
+            id: 2,
+            name: 'Pears',
+          },
+          {
+            id: 3,
+            name: 'Bananas',
+          },
+          {
+            id: 4,
+            name: 'Oranges',
+          },
+          {
+            id: 5,
+            name: 'Grapes',
+          },
+          {
+            id: 6,
+            name: 'Pineapples',
+          },
+          {
+            id: 7,
+            name: 'Lemons',
+          },
+          {
+            id: 8,
+            name: 'Limes',
+          },
+          {
+            id: 9,
+            name: 'Strawberries',
           },
         ]}
       />
@@ -301,14 +349,6 @@ export default props => (
 
     <Group label={<Label>This is another group label: </Label>} isHorizontal>
       <InputText placeholder="Enter your text here" />
-    </Group>
-
-    <Group label={<Label>This is another group label: </Label>} isHorizontal>
-      <Select>
-        <option value="0">Please select</option>
-        <option value="1">option 1</option>
-        <option value="2">option 2</option>
-      </Select>
     </Group>
 
     <List hasBullets>

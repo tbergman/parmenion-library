@@ -2,6 +2,20 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 
+const MenuContainer = styled.div`
+  ${({ theme, isOpen }) => css`
+    display: ${isOpen ? 'block' : 'none'};
+    position: absolute;
+    left: 0;
+    line-height: 2rem;
+    width:100%;
+    z-index: 1;
+    box-shadow: ${theme.components.shadow_large};
+    max-height: 30rem;
+    overflow: auto;
+  `}
+`;
+
 const InnerMenu = styled.ul`
   margin: 0;
   padding: 0;
@@ -55,4 +69,4 @@ MenuItem.defaultProps = {
   onClick: null,
 };
 
-export { Menu, MenuItem };
+export { MenuContainer, Menu, MenuItem };
