@@ -2,48 +2,71 @@ There are various typography related components available for use.
 
 # Content
 
-A standard paragraph component is available:
+Mixed content (paragraphs, headers, lists) should be wrapped with the `<Content />` component.
+You are then able to use standard typography-related HTML elements within the `<Content />` component:
 
-    import {P} from 'library'
+    import {Content} from 'library'
 
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+    <Content>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
 
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
+    </Content>
 
-# Headings
+## Headings
 
-    import {H1, H2, H3, H4, H5, H6, P} from 'library'
+All of the standard headers (1-6) are available within the context of the `<Content />` component:
 
-    <H1>Header 1</H1>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+    import {Content} from 'library'
 
-    <H2>Header 2</H2>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+    <Content>
+      <h1>Header 1</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
 
-    <H3>Header 3</H3>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+      <h2>Header 2</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
 
-    <H4>Header 4</H4>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+      <h3>Header 3</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
 
-    <H5>Header 5</H5>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+      <h4>Header 4</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
 
-    <H6>Header 6</H6>
-    <P>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
-    </P>
+      <h5>Header 5</h5>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
+
+      <h6>Header 6</h6>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc feugiat leo quis sem hendrerit sagittis. Cras ut efficitur sem. Morbi luctus risus sit amet nulla auctor, eu finibus nunc euismod.
+      </p>
+    </Content>
+
+# Standalone Components
+
+Alternatively, if you're just placing a single header and no other content, you may use one of the standalone semantic components. These components do not have a margin or padding, and depend on being enclosed in a layout component such as `<Stacked />`.
+
+    import {Stacked, PageHeader, H2, H3, H4, H5, H6} from 'library'
+
+    <Stacked>
+      <PageHeader>This is a page header!</PageHeader>
+
+      <H2>Header 2</H2>
+      <H3>Header 3</H3>
+      <H4>Header 4</H4>
+      <H5>Header 5</H5>
+      <H6>Header 6</H6>
+    </Stacked>

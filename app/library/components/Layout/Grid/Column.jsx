@@ -18,6 +18,7 @@ type Props = {
   debug?: boolean,
   divisions?: number,
   flex?: boolean,
+  fill?: number,
   spacing?: number,
   xs?: number,
   sm?: number,
@@ -50,10 +51,20 @@ const Column = styled(ColumnContainer)`
   border: 0.1rem solid #fff;` : ''}
   box-sizing: border-box;
   ${props => `padding: 0 ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;`}
-  width: 100%;
+  ${props =>
+    (props.xs || props.sm || props.md || props.lg) ? `
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: ${props.theme.layout.push(1)};
+      }
+    ` : null
+  }
+  ${props =>
+    props.fill ? 'flex: 1;' : null
+  }
   ${props =>
     props.xs
-      ? `width: ${divvy(props.divisions, props.xs)}%;`
+      ? `width: ${divvy(props.divisions, props.xs)}%; margin-bottom: 0 !important;`
       : null
   }
   ${props =>
@@ -64,7 +75,7 @@ const Column = styled(ColumnContainer)`
   ${media.sm`
     ${props =>
       props.sm
-        ? `width: ${divvy(props.divisions, props.sm)}%;`
+        ? `width: ${divvy(props.divisions, props.sm)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props => props.smShift
@@ -75,7 +86,7 @@ const Column = styled(ColumnContainer)`
   ${media.md`
     ${props =>
       props.md
-        ? `width: ${divvy(props.divisions, props.md)}%;`
+        ? `width: ${divvy(props.divisions, props.md)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props =>
@@ -87,7 +98,7 @@ const Column = styled(ColumnContainer)`
   ${media.lg`
     ${props =>
       props.lg
-        ? `width: ${divvy(props.divisions, props.lg)}%;`
+        ? `width: ${divvy(props.divisions, props.lg)}%; margin-bottom: 0 !important;`
         : null
     }
     ${props =>

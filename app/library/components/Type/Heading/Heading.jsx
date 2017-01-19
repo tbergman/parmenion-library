@@ -5,60 +5,55 @@ import styled, { css } from 'styled-components';
    Styles
 ========================================================================== */
 
-function reduceValue(value, reduction) {
-  return `${(parseFloat(value, 10) / reduction).toFixed(2)}rem`;
-}
+const resetMargins = css`
+  margin-top: 0;
+  margin-bottom: 0;
+`;
 
-const H1Base = styled.h1`
+const H1 = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h1};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 1)};
+    ${resetMargins};
   `}
 `;
 
 const H2Base = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h2};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 1.2)};
+    ${resetMargins};
   `}
 `;
 
 const H3Base = styled.h3`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h3};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 1.4)};
+    ${resetMargins};
   `}
 `;
 
 const H4Base = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h4};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 1.6)};
+    ${resetMargins};
   `}
 `;
 
 const H5Base = styled.h5`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h5};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 1.8)};
+    ${resetMargins};
   `}
 `;
 
 const H6Base = styled.h6`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h6};
-    margin-top: 0;
-    margin-bottom: ${reduceValue(theme.components.spacing_vertical, 2)};
+    ${resetMargins};
   `}
 `;
 
-export const H1 = props => <H1Base {...props} />;
-H1.propTypes = { children: PropTypes.string };
+export const PageHeader = props => <H1 {...props} />;
+PageHeader.propTypes = { children: PropTypes.string };
 
 export const H2 = props => <H2Base {...props} />;
 H2.propTypes = { children: PropTypes.string };

@@ -22,7 +22,9 @@
 
 **Block**
 
-    import {Button, P} from 'library'
+    import {Button, Stacked} from 'library'
 
-    <P><Button>I'm not a block</Button></P>
-    <P><Button isBlock>I am a block</Button></P>
+    <Stacked>
+      <Button>I'm not a block</Button>
+      <Button isBlock>I am a block</Button>
+    </Stacked>

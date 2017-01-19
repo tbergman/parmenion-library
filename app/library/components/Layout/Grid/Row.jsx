@@ -41,7 +41,7 @@ RowContainer.defaultProps = {
   divisions: 12,
 };
 
-const Row = styled(RowContainer)`
+const RowStyle = styled(RowContainer)`
   display: ${(window.document.documentMode < 10) ? 'block' : 'flex'};
   margin: 0 -${props => props.spacing >= 0 ? props.spacing / 2 : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;
   width: auto;
@@ -69,5 +69,6 @@ const Row = styled(RowContainer)`
   }
 `;
 
+const Row = props => <RowStyle {...props} />;
 
 export default Row;

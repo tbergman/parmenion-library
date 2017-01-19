@@ -12,11 +12,10 @@
 
 **Sizes**
 
-    import {InputText, P} from 'library'
+    import {InputText, Stacked} from 'library'
 
-    <P>
+    <Stacked>
       <InputText placeholder="Normal size" />
-    </P>
-    <P>
+
       <InputText placeholder="Small size" isSmall />
-    </P>
+    </Stacked>

@@ -3,7 +3,7 @@ import React from 'react';
 import {
   Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
-  Checkbox, Label, Group, H1, H2, H3, H4, H5, H6, P, Icon, Tooltip, Overlay, Tag, Spinner,
+  Checkbox, Label, Group, PageHeader, H2, H3, H4, H5, H6, Icon, Tooltip, Overlay, Tag, Spinner,
 } from 'library';
 
 export default props => (
@@ -89,12 +89,12 @@ export default props => (
       </Bar>
     </Position>
 
-    <H1>This is a heading 1 component</H1>
-    <P>
+    <PageHeader>This is a heading 1 component</PageHeader>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <Button to="/">
       <Icon icon="infoCircle" /> This is my icon in a button yeah
@@ -194,7 +194,6 @@ export default props => (
       <Icon icon="userSecret" />
       <Icon icon="userTimes" />
     </p>
-
     <Group label={<Label>This is a group label: </Label>}>
       <Checkbox id="c1" name="checkboxgroup" value="1" status={1} isInline>
         This is option 1
@@ -271,33 +270,33 @@ export default props => (
       <li>This is a list item</li>
     </List>
 
-    <P>
+    <p>
       {'Here is a spinner that fits inline'}
       <Spinner />
-    </P>
+    </p>
 
     <div style={{ position: 'relative' }}>
       <Overlay />
       <Spinner isCentered />
-      <P>
+      <p>
         This is some content within a relatively positioned block that has
         an overlay.
-      </P>
-      <P>
+      </p>
+      <p>
         <Button>This is a button right here <Tag>I love buttons</Tag></Button>
-      </P>
+      </p>
     </div>
 
     <div style={{ position: 'relative' }}>
       <Overlay isInverted />
       <Spinner isInverted isCentered />
-      <P>
+      <p>
         This is some content within a relatively positioned block that has
         a dark overlay.
-      </P>
-      <P>
+      </p>
+      <p>
         <Button>This is a button right here <Tag>I love buttons</Tag></Button>
-      </P>
+      </p>
     </div>
 
     <Table isStriped isLight isHover breakpoint={800}>
@@ -373,39 +372,39 @@ export default props => (
     <br /><br />
 
     <H2>This is a heading 2 component</H2>
-    <P>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <H3>This is a heading 3 component</H3>
-    <P>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <H4>This is a heading 4 component</H4>
-    <P>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <H5>This is a heading 5 component</H5>
-    <P>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <H6>This is a heading 6 component</H6>
-    <P>
+    <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
       vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
       Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-    </P>
+    </p>
 
     <Grid>
       <Row>
@@ -415,20 +414,20 @@ export default props => (
           </Alert>
         </Column>
         <Column sm={6} xs={12}>
-          <P>
+          <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
             vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
             Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
-          </P>
-          <P>
+          </p>
+          <p>
             Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum,
             et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida.
             Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo.
-          </P>
-          <P>
+          </p>
+          <p>
             Vivamus sapien sapien, aliquam aliquam aliquet sit amet, molestie in dolor. Nulla facilisi. Donec imperdiet
             sapien lacus. Curabitur sed dui venenatis dui vehicula accumsan.
-          </P>
+          </p>
         </Column>
       </Row>
     </Grid>

@@ -47,12 +47,12 @@ module.exports = {
         { name: 'Components', components: './app/library/components/Data/**/*.jsx' },
       ],
     },
-    // {
-    //   name: 'Layout',
-    //   sections: [
-    //     { name: 'Components', components: './app/library/components/Layout/**/*.jsx' },
-    //   ],
-    // },
+    {
+      name: 'Layout',
+      sections: [
+        { name: 'Components', components: './app/library/components/Layout/**/*.jsx' },
+      ],
+    },
   ],
   updateWebpackConfig(webpackConfig, env) {
     const dir = path.join(__dirname, 'app');

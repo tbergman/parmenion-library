@@ -34,16 +34,17 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 injectGlobal`
   * {
-    box-sizing: border-box
+    box-sizing: border-box;
+    margin: 0;
   }
   html {
     font-size: ${theme.components.base_size};
   }
   body {
-    margin: 20px;
+    margin: ${theme.layout.push(2)};
     font-size: ${theme.type.size};
     font-family: ${theme.type.font};
-    line-height: ${theme.type.line_height}
+    line-height: ${theme.layout.push(2)};
   }
 `;
 

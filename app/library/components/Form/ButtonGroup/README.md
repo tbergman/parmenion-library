@@ -9,23 +9,21 @@
 
 **Different styles**
 
-    import {ButtonGroup, Button, P} from 'library'
+    import {ButtonGroup, Button, Stacked} from 'library'
 
-    <P>
+    <Stacked>
       <ButtonGroup>
         <Button>Normal</Button>
         <Button type={1}>Primary</Button>
         <Button type={2}>Secondary</Button>
         <Button type={3}>Danger</Button>
       </ButtonGroup>
-    </P>
 
-    <P>
       <ButtonGroup>
         <Button type={1}>Save changes</Button>
         <Button>Cancel</Button>
       </ButtonGroup>
-    </P>
+    </Stacked>
 
 **Transparent**
 
