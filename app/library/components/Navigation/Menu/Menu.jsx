@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link as RouterLink } from 'react-router';
 
-const MenuStyle = styled.ul`
+const InnerMenu = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
@@ -48,7 +48,7 @@ const Link = styled(RouterLink)`
 `;
 
 /** @example ./README.md#Menu */
-const Menu = props => <MenuStyle {...props} />;
+const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
 const MenuItem = ({ children, href, to, icon, description, isActive }) => {
