@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const ListStyle = styled.ul`
+const InnerList = styled.ul`
   ${({ theme, hasBullets, isSpaced, isInline }) => css`
     margin: 0 0 ${theme.components.spacing_vertical} 0;
     padding: 0;
@@ -22,7 +22,7 @@ const ListStyle = styled.ul`
   `}
 `;
 
-const List = props => <ListStyle {...props} />;
+const List = props => <InnerList {...props} />;
 
 List.propTypes = {
   hasBullets: React.PropTypes.bool,
