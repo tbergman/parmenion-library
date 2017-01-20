@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import { Grid, Row, Column, Align, Visible } from '../../Layout';
 import withTheme from '../../../../hoc/withTheme';
 
-const Container = styled.div`
+const InnerGroup = styled.div`
   ${({ theme }) => css`
     display: block;
   `}
@@ -12,7 +12,7 @@ const Container = styled.div`
 const Group = ({ theme, children, label, isHorizontal }) => {
   if (isHorizontal) {
     return (
-      <Container>
+      <InnerGroup>
         <Grid>
           <Row>
             <Column sm={3} xs={12}>
@@ -32,17 +32,17 @@ const Group = ({ theme, children, label, isHorizontal }) => {
             </Column>
           </Row>
         </Grid>
-      </Container>
+      </InnerGroup>
     );
   }
 
   return (
-    <Container>
+    <InnerGroup>
       <Align left>
         { label }
       </Align>
       { children }
-    </Container>
+    </InnerGroup>
   );
 };
 
