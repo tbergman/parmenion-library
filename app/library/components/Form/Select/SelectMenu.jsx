@@ -33,7 +33,7 @@ const Link = styled.span`
     display: block;
     width: 100%;
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
-    border-bottom: 1px solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
+    border-bottom: 0.1rem solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
     color: ${isActive ? 'white' : theme.type.text_color};
     background-color: ${isActive ? theme.components.active_background : 'white'};
     text-align: left;

@@ -55,7 +55,7 @@ const Column = styled(ColumnContainer)`
     (props.xs || props.sm || props.md || props.lg) ? `
       width: 100%;
       &:not(:last-child) {
-        margin-bottom: ${props.theme.layout.push(1)};
+        margin-bottom: ${props.theme.components.spacing_vertical};
       }
     ` : null
   }

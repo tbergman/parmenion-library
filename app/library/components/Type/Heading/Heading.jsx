@@ -1,10 +1,6 @@
 import React, { PropTypes } from 'react';
 import styled, { css } from 'styled-components';
 
-/* ==========================================================================
-   Styles
-========================================================================== */
-
 const resetMargins = css`
   margin-top: 0;
   margin-bottom: 0;

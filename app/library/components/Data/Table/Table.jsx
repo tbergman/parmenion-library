@@ -11,7 +11,7 @@ const Container = styled.div`
       width: 100%;
       overflow-y: hidden;
       -ms-overflow-style: -ms-autohiding-scrollbar;
-      border: 1px solid ${theme.components.border_color};
+      border: 0.1rem solid ${theme.components.border_color};
       > table {
         margin-bottom: 0;
         > thead,
@@ -33,14 +33,14 @@ const InnerTable = styled.table`
   ${({ theme, isLight, isHover, isStriped }) => css`
     width: 100%;
     max-width: 100%;
-    border: ${isLight ? 'none' : `1px solid ${theme.components.border_color}`};
+    border: ${isLight ? 'none' : `0.1rem solid ${theme.components.border_color}`};
     border-collapse: collapse;
     border-spacing: 0;
     th, td {
       position: relative;
       padding: ${theme.components.cell_padding};
-      border-top: ${isLight ? 'none' : `1px solid ${theme.components.border_color}`};
-      border-bottom: ${isLight ? `1px solid ${theme.components.border_color}` : 'none'};
+      border-top: ${isLight ? 'none' : `0.1rem solid ${theme.components.border_color}`};
+      border-bottom: ${isLight ? `0.1rem solid ${theme.components.border_color}` : 'none'};
       vertical-align: top;
       text-align: left;
     }
@@ -60,7 +60,7 @@ const InnerTable = styled.table`
       }
     }
     > tbody {
-      border-top: ${isLight ? `1px solid ${theme.components.border_color}` : 'none'};
+      border-top: ${isLight ? `0.1rem solid ${theme.components.border_color}` : 'none'};
     }
     ${isStriped &&
       `> tbody > tr:nth-of-type(odd) {

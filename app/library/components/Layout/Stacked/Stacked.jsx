@@ -6,10 +6,14 @@ const StackedStyle = styled.div`
   flex-direction: column;
 `;
 
+function increaseValue(value, increase) {
+  return `${(parseFloat(value, 10) * increase).toFixed(2)}rem`;
+}
+
 const Cell = styled.div`
   &:not(:last-child) {
-    margin-top: ${props => props.theme.layout.push(props.spaceBefore || 0)};
-    margin-bottom: ${props => props.theme.layout.push(props.spaceAfter || 0)};
+    margin-top: ${props => props.spaceBefore ? increaseValue(props.theme.components.spacing_vertical, props.spaceBefore) : 0};
+    margin-bottom: ${props => props.spaceAfter ? increaseValue(props.theme.components.spacing_vertical, props.spaceAfter) : 0};
   }
 `;
 

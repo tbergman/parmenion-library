@@ -41,10 +41,10 @@ injectGlobal`
     font-size: ${theme.components.base_size};
   }
   body {
-    margin: ${theme.layout.push(2)};
+    margin: 2rem;
     font-size: ${theme.type.size};
     font-family: ${theme.type.font};
-    line-height: ${theme.layout.push(2)};
+    line-height: ${theme.type.line_height};
   }
 `;
 

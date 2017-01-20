@@ -12,27 +12,39 @@ const colors = {
   },
 };
 
+const type = {
+  ...base.type,
+  font: 'Arial, sans-serif',
+  font_heading: 'Calibri, serif',
+  font_size: '1.6rem',
+  size: '1.6rem',
+  line_height: '1.428571429',
+};
+
+const components = {
+  ...base.components,
+  base_size: '62.5%',  // 10px
+  border_radius: '0.3rem',
+  active_background: colors.primary,
+};
+
+const forms = {
+  ...base.forms,
+  input_border_radius: components.border_radius,
+};
+
+const breakpoints = {
+  ...base.breakpoints,
+  xs_max: '767px',
+};
+
 const brand = {
   ...base,
   colors,
-  type: {
-    ...base.type,
-    font: 'Arial, sans-serif',
-    font_heading: 'Calibri, serif',
-    font_size: '1.6rem',
-    size: '1.6rem',
-    line_height: '24px',
-  },
-  components: {
-    ...base.components,
-    base_size: '62.5%',  // 10px
-    border_radius: '0.25rem',
-    active_background: colors.primary,
-  },
-  breakpoints: {
-    ...base.breakpoints,
-    xs_max: '767px',
-  },
+  type,
+  components,
+  forms,
+  breakpoints,
 };
 
 export default brand;
