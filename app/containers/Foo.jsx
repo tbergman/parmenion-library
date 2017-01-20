@@ -658,7 +658,7 @@ export default props => (
 
       <InputPassword placeholder="Enter your password" />
 
-      <Textarea rows={4} />
+      <Textarea rows={10} id="MyId" />
 
       <ButtonGroup>
         <Button>

@@ -5,7 +5,7 @@ const TextArea = styled.textarea`
   ${({ theme }) => css`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     font-size: 1em;
-    line-height: ${theme.type.line_height_computed};
+    line-height: inherit;
     color: ${theme.forms.input_color};
     background-color: ${theme.forms.input_bg};
     border: 0.1rem solid ${theme.forms.input_border};
@@ -36,16 +36,12 @@ const TextArea = styled.textarea`
   `}
 `;
 
-const InputTextArea = ({ rows }) => (
-  <TextArea rows={rows} />
-);
-
-InputTextArea.propTypes = {
+TextArea.propTypes = {
   rows: React.PropTypes.number,
 };
 
-InputTextArea.defaultProps = {
+TextArea.defaultProps = {
   rows: 4,
 };
 
-export default InputTextArea;
+export default TextArea;
