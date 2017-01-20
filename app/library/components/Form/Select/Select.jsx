@@ -10,8 +10,9 @@ const InnerSelect = styled.div`
     ${!isAutocomplete && `&:after {
       content: "▼";
       position: absolute;
-      right: 1rem;
-      top: 1rem;
+      right: ${theme.components.padding_base_horizontal};
+      top: 50%;
+      margin-top: -0.8rem;
       color: ${theme.type.text_color};
       font-size: 0.8em;
     }`}
