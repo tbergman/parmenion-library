@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Container = styled.span`
+const InnerDropdown = styled.span`
   display: inline-block;
   position: relative;
 `;
@@ -34,7 +34,7 @@ class Dropdown extends React.Component {
   render() {
     const { children, trigger, isRight, isHover } = this.props;
     return (
-      <Container
+      <InnerDropdown
         onMouseEnter={isHover && (() => this.toggleMenu())}
         onMouseLeave={isHover && (() => this.toggleMenu())}
         onClick={!isHover && (() => this.toggleMenu())}
@@ -43,7 +43,7 @@ class Dropdown extends React.Component {
         <Menu isOpen={this.state.isOpen} isRight={isRight}>
           {children}
         </Menu>
-      </Container>
+      </InnerDropdown>
     );
   }
 }
