@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Dropdown } from '../Dropdown';
 
-const InnerBarMenuItem = styled.li`
+const InnerBarMenuItemDropdown = styled.li`
   display: inline-block;
   position: relative;
   height: 6rem;
@@ -30,7 +30,7 @@ const Trigger = styled.span`
 `;
 
 const BarMenuItemDropdown = ({ children, menu, isHover, isRight }) => (
-  <InnerBarMenuItem>
+  <InnerBarMenuItemDropdown>
     <Dropdown
       isHover={isHover}
       isRight={isRight}
@@ -40,7 +40,7 @@ const BarMenuItemDropdown = ({ children, menu, isHover, isRight }) => (
     >
       { menu }
     </Dropdown>
-  </InnerBarMenuItem>
+  </InnerBarMenuItemDropdown>
 );
 
 BarMenuItemDropdown.propTypes = {
