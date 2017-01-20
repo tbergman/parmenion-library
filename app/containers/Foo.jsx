@@ -535,7 +535,7 @@ export default props => (
       <Grid>
         <Row>
           <Column sm={6} xs={12}>
-            <Alert title="This is an alert heading" icon={<Icon icon="calendar" size={2} />} status={4}>
+            <Alert title="This is an alert heading" icon={<Icon icon="calendar" size={2} />}>
               <Content>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
