@@ -3,9 +3,9 @@ import colors from './colors';
 const components = {
   spacing_horizontal: '2rem',
   spacing_vertical: '2rem',
-  padding_base_vertical: '0.6rem',
-  padding_base_horizontal: '1.2rem',
-  padding_small_vertical: '0.4rem',
+  padding_base_vertical: '1rem',
+  padding_base_horizontal: '2rem',
+  padding_small_vertical: '0.5rem',
   padding_small_horizontal: '1rem',
   cell_padding: '1.2rem',
   border_color: colors.gray_lighter,
