@@ -529,8 +529,19 @@ export default props => (
       <Grid>
         <Row>
           <Column sm={6} xs={12}>
-            <Alert title="This is an alert heading" status={1}>
-              This is the alert content
+            <Alert title="This is an alert heading" icon={<Icon icon="calendar" size={2} />} >
+              <Content>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,
+                  vitae efficitur tortor tristique. Mauris vitae ligula ut ligula rutrum pretium nec id nibh.
+                  Nullam non nibh laoreet, porttitor lacus at, cursus velit. Sed sodales orci nec iaculis sodales.
+                </p>
+                <p>
+                  Praesent pharetra nulla non nunc sollicitudin, ut dapibus massa luctus. Nam imperdiet metus ac mi condimentum,
+                  et scelerisque nisi fringilla. Nulla dapibus dui tempor efficitur lobortis. Curabitur rhoncus laoreet gravida.
+                  Nulla porta risus sapien, sed scelerisque sem pretium eu. Suspendisse at interdum justo.
+                </p>
+              </Content>
             </Alert>
           </Column>
           <Column sm={6} xs={12}>
@@ -557,12 +568,12 @@ export default props => (
       <Grid>
         <Row divisions={5}>
           <Column md={1} sm={5}>
-            <Alert title="This is an alert heading" status={3}>
+            <Alert title="This is an alert heading" status={3} isSmall>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5}>
-            <Alert title="This is an alert heading" status={4} hasArrow>
+            <Alert title="This is an alert heading" status={4} isSmall hasArrow>
               This is the alert content
               This is the alert content
               This is the alert content
@@ -571,17 +582,17 @@ export default props => (
             </Alert>
           </Column>
           <Column md={1} sm={5}>
-            <Alert title="This is an alert heading" status={1}>
+            <Alert title="This is an alert heading" status={1} isSmall>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5}>
-            <Alert title="This is an alert heading" status={2} hasArrow>
+            <Alert title="This is an alert heading" status={2} isSmall hasArrow>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5}>
-            <Alert title="This is an alert heading" status={3}>
+            <Alert title="This is an alert heading" status={3} isSmall>
               This is the alert content
             </Alert>
           </Column>
@@ -591,12 +602,12 @@ export default props => (
       <Grid>
         <Row divisions={5} spacing={0}>
           <Column md={1} sm={5} flex>
-            <Alert title="This is an alert heading" status={3} hasArrow>
+            <Alert title="This is an alert heading" status={3} isSmall hasArrow>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5} flex>
-            <Alert title="This is an alert heading" status={4}>
+            <Alert title="This is an alert heading" status={4} isSmall>
               This is the alert content
               This is the alert content
               This is the alert content
@@ -605,17 +616,17 @@ export default props => (
             </Alert>
           </Column>
           <Column md={1} sm={5} flex>
-            <Alert title="This is an alert heading" status={1} hasArrow>
+            <Alert title="This is an alert heading" status={1} isSmall hasArrow>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5} flex>
-            <Alert title="This is an alert heading" status={2}>
+            <Alert title="This is an alert heading" status={2} isSmall>
               This is the alert content
             </Alert>
           </Column>
           <Column md={1} sm={5} flex>
-            <Alert title="This is an alert heading" status={3} hasArrow>
+            <Alert title="This is an alert heading" status={3} isSmall hasArrow>
               This is the alert content
             </Alert>
           </Column>

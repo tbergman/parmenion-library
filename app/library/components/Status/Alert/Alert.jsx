@@ -3,17 +3,20 @@ import styled, { css } from 'styled-components';
 import tinycolor from 'tinycolor2';
 
 const Default = styled.div`
-  ${({ theme, hasArrow }) => css`
+  ${({ theme, hasArrow, isSmall }) => css`
     position: relative;
-    display: inline-block;
+    display: table;
     margin: 0 0 ${theme.components.spacing_vertical} 0;
     width: 100%;
-    padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
+    padding: ${isSmall ?
+      `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
+      `${theme.components.padding_base_horizontal}`
+    };
     text-align: left;
     border-radius: ${theme.components.border_radius};
-    border: 0.1rem solid ${tinycolor(theme.colors.grey_light).lighten(20).toString()};
-    background: ${tinycolor(theme.colors.grey_light).lighten(30).toString()};
-    color: ${tinycolor(theme.colors.grey_light).darken(30).toString()};
+    border: 0.1rem solid ${theme.colors.gray_lighter};
+    background: ${theme.colors.gray_lighter};
+    color: ${theme.type.text_color};
     font-size: 1em;
     ${hasArrow && `&:after {
       content: "▲";
@@ -71,7 +74,7 @@ const Info = styled(Default)`
 
 const Header = styled.div`
   margin-top: 0;
-  margin-bottom: 0.25rem;
+  margin-bottom: 1rem;
   font-size: ${props => props.theme.type.font_size_h4};
   color: inherit;
 `;
@@ -80,7 +83,27 @@ const Description = styled.div`
   margin: 0;
 `;
 
-const Alert = ({ children, status, hasArrow, title }) => {
+const LeftColumn = styled.div`
+  display: table-cell;
+  width: 0.1rem;
+  text-align: right;
+  vertical-align: top;
+`;
+
+const RightColumn = styled.div`
+  display: table-cell;
+  width: auto;
+  text-align: left;
+  vertical-align: top;
+`;
+
+const AlertIcon = styled.div`
+  ${({ theme }) => css`
+    padding: 0 ${theme.components.padding_base_horizontal} 0 0;
+  `}
+`;
+
+const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
   const InnerAlert = (() => {
     switch (status) {
       case 1:
@@ -96,8 +119,24 @@ const Alert = ({ children, status, hasArrow, title }) => {
     }
   })();
 
+  if (icon) {
+    return (
+      <InnerAlert hasArrow={hasArrow} isSmall={isSmall}>
+        <LeftColumn>
+          <AlertIcon>{ icon }</AlertIcon>
+        </LeftColumn>
+        <RightColumn>
+          <Header>{ title }</Header>
+          <Description>
+            { children }
+          </Description>
+        </RightColumn>
+      </InnerAlert>
+    );
+  }
+
   return (
-    <InnerAlert hasArrow={hasArrow}>
+    <InnerAlert hasArrow={hasArrow} isSmall={isSmall}>
       <Header>{ title }</Header>
       <Description>
         { children }
@@ -108,15 +147,19 @@ const Alert = ({ children, status, hasArrow, title }) => {
 
 Alert.propTypes = {
   title: React.PropTypes.string,
+  icon: React.PropTypes.node,
   status: React.PropTypes.number,
   hasArrow: React.PropTypes.bool,
+  isSmall: React.PropTypes.bool,
   children: React.PropTypes.node.isRequired,
 };
 
 Alert.defaultProps = {
   title: null,
+  icon: null,
   status: null,
   hasArrow: false,
+  isSmall: false,
 };
 
 export default Alert;
