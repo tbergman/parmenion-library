@@ -18,7 +18,7 @@ class Accordion extends React.Component {
   render() {
     const { children } = this.props;
 
-    const panels = children.map((panel, index) => (
+    const panels = React.Children.map(children, (panel, index) => (
       <AccordionPanel
         title={panel.props.title}
         isOpen={index === this.state.openPanelIndex}
