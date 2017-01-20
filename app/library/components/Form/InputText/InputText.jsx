@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const InputTextInner = styled.input`
+const InnerInputText = styled.input`
   ${({ theme, isSmall }) => css`
     padding: ${isSmall ?
       `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
@@ -38,7 +38,7 @@ const InputTextInner = styled.input`
 `;
 
 const InputText = ({ placeholder, type, isSmall, isReadOnly, value, onChange, onClick, onKeyDown }) => (
-  <InputTextInner
+  <InnerInputText
     placeholder={placeholder}
     type={type}
     isSmall={isSmall}
