@@ -4,24 +4,22 @@ import styled, { css } from 'styled-components';
 const InnerInputGroup = styled.div`
   position: relative;
   display: table;
+  width: 100%;
   border-collapse: separate;
-  > input {
-    position: relative;
-    z-index: 2;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
-    &:first-child {
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-    }
-    &:last-child {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
-    }
-    &:not(:first-child):not(:last-child) {
-      border-radius: 0;
-    }
+`;
+
+const InputContainer = styled.div`
+  display: table-cell;
+  &:not(:last-child) input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  &:not(:first-child) input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  & + & input {
+    border-left: 0;
   }
 `;
 
@@ -99,10 +97,17 @@ const InputGroup = ({ children, start, end }) => {
   } else if (end) {
     AddonEnd = <AddonButton>{end}</AddonButton>;
   }
+
+  const inputs = React.Children.map(children, input => (
+    <InputContainer key={input.props.id}>
+      {input}
+    </InputContainer>
+  ));
+
   return (
     <InnerInputGroup>
       {AddonStart}
-      {children}
+      {inputs}
       {AddonEnd}
     </InnerInputGroup>
   );

@@ -94,85 +94,91 @@ export default props => (
       <PageHeader>This is a heading 1 component</PageHeader>
 
       <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
-        <Select
-          id="SelectAutoComplete"
-          placeholder="Search for options"
-          isAutocomplete
-          items={[
-            {
-              id: 1,
-              name: 'Option A',
-            },
-            {
-              id: 2,
-              name: 'Option B',
-            },
-            {
-              id: 3,
-              name: 'Option C',
-            },
-            {
-              id: 4,
-              name: 'Option D',
-            },
-            {
-              id: 5,
-              name: 'Option E',
-            },
-            {
-              id: 6,
-              name: 'Option F',
-            },
-            {
-              id: 7,
-              name: 'Option AA',
-            },
-            {
-              id: 8,
-              name: 'Option B',
-            },
-            {
-              id: 9,
-              name: 'Option C',
-            },
-            {
-              id: 11,
-              name: 'Option D',
-            },
-            {
-              id: 12,
-              name: 'Option E',
-            },
-            {
-              id: 13,
-              name: 'Option F',
-            },
-            {
-              id: 14,
-              name: 'Option AAA',
-            },
-            {
-              id: 15,
-              name: 'Option B',
-            },
-            {
-              id: 16,
-              name: 'Option C',
-            },
-            {
-              id: 17,
-              name: 'Option D',
-            },
-            {
-              id: 22,
-              name: 'Option E',
-            },
-            {
-              id: 23,
-              name: 'Option F',
-            },
-          ]}
-        />
+        <InputGroup start="£" end="%">
+          <InputText placeholder="Enter your text here" id="vi1" />
+          <InputText placeholder="Enter your text here" id="vi2" />
+          <Select
+            id="vi3"
+            placeholder="Search for options"
+            isAutocomplete
+            items={[
+              {
+                id: 1,
+                name: 'Option A',
+              },
+              {
+                id: 2,
+                name: 'Option AA',
+              },
+              {
+                id: 3,
+                name: 'Option AAA',
+              },
+            ]}
+          />
+        </InputGroup>
+      </Group>
+
+      <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
+        <InputGroup start="£">
+          <InputText placeholder="Enter your text here" id="iii1" />
+          <InputText placeholder="Enter your text here" id="iii2" />
+          <Select
+            id="iii3"
+            placeholder="Search for options"
+            isAutocomplete
+            items={[
+              {
+                id: 1,
+                name: 'Option A',
+              },
+              {
+                id: 2,
+                name: 'Option AA',
+              },
+              {
+                id: 3,
+                name: 'Option AAA',
+              },
+            ]}
+          />
+        </InputGroup>
+      </Group>
+
+      <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
+        <InputGroup end="%">
+          <InputText placeholder="Enter your text here" id="ii1" />
+          <InputText placeholder="Enter your text here" id="ii2" />
+          <Select
+            id="ii3"
+            placeholder="Search for options"
+            isAutocomplete
+            items={[
+              {
+                id: 1,
+                name: 'Option A',
+              },
+              {
+                id: 2,
+                name: 'Option AA',
+              },
+              {
+                id: 3,
+                name: 'Option AAA',
+              },
+            ]}
+          />
+        </InputGroup>
+      </Group>
+
+      <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
+        <InputGroup>
+          <InputText placeholder="Enter your text here" id="i1" />
+          <InputText placeholder="Enter your text here" id="i2" />
+          <InputText placeholder="Enter your text here" id="i3" />
+          <InputText placeholder="Enter your text here" id="i4" />
+          <InputText placeholder="Enter your text here" id="i5" />
+        </InputGroup>
       </Group>
 
 
