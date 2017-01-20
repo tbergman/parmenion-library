@@ -484,13 +484,13 @@ export default props => (
 
       <H2>{"Here's a menu on it's own"}</H2>
       <Menu>
-        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah">
+        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" hasArrow>
           This item has an icon
         </MenuItem>
-        <MenuItem to="/bar" description="This is the description yeah">
+        <MenuItem to="/bar" description="This is the description yeah" hasArrow>
           This item doesn{'\''}t have an icon
         </MenuItem>
-        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive>
+        <MenuItem to="/bar" icon={<Icon icon="file" />} description="This is the description yeah" isActive hasArrow>
           This item is active
         </MenuItem>
       </Menu>
@@ -535,7 +535,7 @@ export default props => (
       <Grid>
         <Row>
           <Column sm={6} xs={12}>
-            <Alert title="This is an alert heading" icon={<Icon icon="calendar" size={2} />} >
+            <Alert title="This is an alert heading" icon={<Icon icon="calendar" size={2} />} status={4}>
               <Content>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris condimentum tellus ac sapien consectetur,

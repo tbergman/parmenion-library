@@ -2,6 +2,7 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link as RouterLink } from 'react-router';
+import { Icon } from '../../Decoration';
 
 const InnerMenu = styled.ul`
   margin: 0;
@@ -19,6 +20,14 @@ const IconContainer = styled.span`
   display: table-cell;
   width: 2.2rem;
   min-width: 2.2rem;
+`;
+
+const ArrowContainer = styled.span`
+  display: table-cell;
+  width: 2.2rem;
+  min-width: 2.2rem;
+  vertical-align: middle;
+  text-align: right;
 `;
 
 const Label = styled.span`
@@ -51,7 +60,7 @@ const Link = styled(RouterLink)`
 const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, href, to, icon, description, isActive }) => {
+const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow }) => {
   const InnerIcon = icon && React.cloneElement(icon, {
     isInverted: isActive,
     size: 0.8,
@@ -67,6 +76,11 @@ const MenuItem = ({ children, href, to, icon, description, isActive }) => {
             {description}
           </Description>
         </Label>
+        {hasArrow && (
+          <ArrowContainer>
+            <Icon icon="chevronRight" size={1.25} isInverted={isActive} />
+          </ArrowContainer>
+        )}
       </Link>
     </Item>
   );
