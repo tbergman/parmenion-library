@@ -36,9 +36,6 @@ const Heading = styled.div`
     &:hover {
       background-color: ${isOpen ? tc(theme.colors.gray_lightest).darken(7).toString() : tc(theme.colors.gray_lightest).darken(3).toString()};
       cursor: pointer;
-      /* > $//{Title} {
-        color: red;
-      }*/
     }
   `}
 `;
