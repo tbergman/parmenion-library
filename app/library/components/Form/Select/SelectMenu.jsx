@@ -11,7 +11,7 @@ const MenuContainer = styled.div`
     width:100%;
     z-index: 1;
     box-shadow: ${theme.components.shadow_large};
-    max-height: 30rem;
+    max-height: 25rem;
     overflow: auto;
   `}
 `;
@@ -50,9 +50,9 @@ const Link = styled.span`
 const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, isActive, onClick }) => (
+const MenuItem = ({ children, isActive, onMouseDown }) => (
   <Item>
-    <Link isActive={isActive} onClick={onClick}>
+    <Link isActive={isActive} onMouseDown={onMouseDown}>
       {children}
     </Link>
   </Item>
@@ -61,12 +61,12 @@ const MenuItem = ({ children, isActive, onClick }) => (
 MenuItem.propTypes = {
   children: React.PropTypes.node.isRequired,
   isActive: React.PropTypes.bool,
-  onClick: React.PropTypes.func,
+  onMouseDown: React.PropTypes.func,
 };
 
 MenuItem.defaultProps = {
   isActive: false,
-  onClick: null,
+  onMouseDown: null,
 };
 
 export { MenuContainer, Menu, MenuItem };

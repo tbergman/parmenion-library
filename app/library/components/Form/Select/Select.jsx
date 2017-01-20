@@ -108,7 +108,7 @@ class Select extends React.Component {
 
     const items = this.getFilteredItems();
     const itemsToRender = items.map((item, index) => (
-      <MenuItem isActive={item.id === this.state.selectedId} key={item.id} onClick={() => this.onSelect(item)}>
+      <MenuItem isActive={item.id === this.state.selectedId} key={item.id} onMouseDown={() => this.onSelect(item)}>
         {item.name}
       </MenuItem>
     ));
