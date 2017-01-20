@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const InputGroupInner = styled.div`
+const InnerInputGroup = styled.div`
   position: relative;
   display: table;
   border-collapse: separate;
@@ -100,11 +100,11 @@ const InputGroup = ({ children, start, end }) => {
     AddonEnd = <AddonButton>{end}</AddonButton>;
   }
   return (
-    <InputGroupInner>
+    <InnerInputGroup>
       {AddonStart}
       {children}
       {AddonEnd}
-    </InputGroupInner>
+    </InnerInputGroup>
   );
 };
 
