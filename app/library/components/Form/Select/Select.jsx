@@ -115,8 +115,11 @@ class Select extends React.Component {
   handleKeyDown = (e) => {
     if (e.key === 'ArrowUp' || e.key === 'ArrowDown') {
       this.moveSelection(e);
+      this.setState({ isOpen: true });
     } else if (e.key === 'Enter') {
       this.applySelection(e);
+    } else if (e.key === 'Escape') {
+      this.setState({ isOpen: false });
     } else {
       this.setState({ isOpen: true });
     }
