@@ -11,6 +11,10 @@ module.exports = {
   getExampleFilename: componentpath => path.join(path.dirname(componentpath), 'README.md'),
   sections: [
     {
+      name: 'Introduction',
+      content: './docs/introduction.md',
+    },
+    {
       name: 'Typography',
       content: './docs/typography.md',
       sections: [
