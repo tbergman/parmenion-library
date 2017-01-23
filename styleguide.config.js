@@ -65,6 +65,8 @@ module.exports = {
     webpackConfig.resolve.alias['rsg-components/Wrapper'] = path.join(__dirname, 'resources/styleguide/wrapper');
     webpackConfig.resolve.alias['library'] = path.join(__dirname, './app/library');
 
+    webpackConfig.entry.unshift('babel-polyfill');
+
     const presets = !isProd
       ? ['react', 'es2015', 'stage-0', 'react-hmre']
       : ['react', 'es2015', 'stage-0']
