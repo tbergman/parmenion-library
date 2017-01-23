@@ -5,6 +5,7 @@ export * from './Group';
 export * from './InputGroup';
 export * from './InputPassword';
 export * from './InputText';
+export * from './InputStatic';
 export * from './Label';
 export * from './Radio';
 export * from './Select';

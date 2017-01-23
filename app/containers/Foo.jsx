@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {
-  Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, Textarea, Grid, Row, Column,
+  Alert, Button, ButtonGroup, InputGroup, InputText, InputPassword, InputStatic, Textarea, Grid, Row, Column,
   Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Dropdown, Menu, MenuItem, Position, Float, Table, List, Select, Radio,
   Checkbox, Label, Group, PageHeader, H2, H3, H4, H5, H6, Icon, Tooltip, Overlay, Tag, Spinner, Stacked, Content,
 } from 'library';
@@ -117,6 +117,12 @@ export default props => (
             ]}
           />
         </InputGroup>
+      </Group>
+
+      <Group label={<Label>This is a static input: </Label>} isHorizontal>
+        <InputStatic>
+          <Icon icon="plusCircle" /> Some value here
+        </InputStatic>
       </Group>
 
       <Group label={<Label>This is a select with autocomplete: </Label>} isHorizontal>
