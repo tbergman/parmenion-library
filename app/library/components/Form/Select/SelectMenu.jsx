@@ -47,8 +47,10 @@ const Link = styled.span`
   `}
 `;
 
+/** @private */
 const Menu = props => <InnerMenu {...props} />;
 
+/** @private */
 const MenuItem = props => (
   <Item>
     <Link {...props} />
