@@ -24,7 +24,7 @@ class Select extends React.Component {
   constructor(props) {
     super(props);
 
-    const selectedItem = this.props.items.find(item => item.id === props.value);
+    const selectedItem = props.value ? this.props.items.find(item => item.id === props.value) : null;
     this.state = { isOpen: false, currentName: selectedItem != null ? selectedItem.name : null };
   }
 
