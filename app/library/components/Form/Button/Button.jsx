@@ -3,7 +3,15 @@ import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link } from 'react-router';
 
-const Default = styled(Link)`
+const MaybeLink = (props) => {
+  if (props.to != null) {
+    return <Link {...props} />;
+  }
+
+  return <a {...props} />;
+};
+
+const Default = styled(MaybeLink)`
   ${({ theme, isSmall, isBlock }) => css`
     display: ${isBlock ? 'block' : 'inline-block'};
     padding: ${isSmall ?

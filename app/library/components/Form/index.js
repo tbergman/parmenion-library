@@ -2,6 +2,7 @@ export * from './Button';
 export * from './ButtonGroup';
 export * from './Checkbox';
 export * from './Group';
+export * from './IconButton';
 export * from './InputGroup';
 export * from './InputPassword';
 export * from './InputText';

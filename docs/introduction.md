@@ -133,6 +133,14 @@ The name of your components should have emphasis on the dominant part of the con
 
 ---
 
+It's worth noting that [`<Stacked />`](#Stacked) and [`<Horizontal />`](#Horizontal) can be used to separate each child passed in as children, for vertical and horizontal layouts respectively.
+
+Sometimes when using other components and passing in children, there might be spacing applied to each child automagically. When this is the case, it will be documented against the corresponding prop in this styleguide as a `SpacedNode[]`.
+
+Some of examples of this can be found at the documentation for [`<Modal />`](#Modal) (`buttons` prop will automatically space each button passed in).
+
+---
+
 ### [Isolated Typography](#Typography)
 
 Typography on the web naturally follows a similar layout model as conventional word processors. For example, paragraphs will have spacing around them, headers will have a bottom margin, list items will be indented.
