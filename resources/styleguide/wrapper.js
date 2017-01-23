@@ -1,19 +1,12 @@
-import React, { Component } from 'react'
-import { ThemeProvider, injectGlobal } from 'styled-components'
-import brand from '../../app/theme'
+import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { injectGlobalStyles } from 'library';
+import brand from '../../app/theme';
 
-injectGlobal`
-  .rsg--example-preview * {
-    box-sizing: border-box;
-  }
-`
+injectGlobalStyles(brand);
 
-export default class Wrapper extends Component {
-  render() {
-    return (
-      <ThemeProvider theme={brand}>
-        {this.props.children}
-      </ThemeProvider>
-    )
-  }
-}
+export default props => (
+  <ThemeProvider theme={brand}>
+    {props.children}
+  </ThemeProvider>
+);
