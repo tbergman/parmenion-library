@@ -64,3 +64,16 @@ module.exports = {
     autoprefixer({ browsers: ['last 3 versions'] })
   ]
 };
+
+if (process.env.OUTPUT === 'module') {
+  module.exports.output = {
+    path: path.join(__dirname, '/dist/'),
+    filename: 'parmenion-library.min.js',
+    libraryTarget: 'umd',
+    library: 'Parmenion',
+  }
+
+  module.exports.entry = [
+    path.join(__dirname, 'app/library/index.js')
+  ]
+}
