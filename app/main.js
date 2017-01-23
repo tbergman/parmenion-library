@@ -8,12 +8,14 @@ import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { syncHistoryWithStore, routerReducer } from 'react-router-redux';
+import { injectGlobalStyles } from 'library';
 
-import { ThemeProvider, injectGlobal } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 import theme from 'theme';
 
 import * as reducers from './reducers';
 import { App, Home, Foo, Bar } from './containers';
+injectGlobalStyles(theme);
 
 const reducer = combineReducers({
   ...reducers,
@@ -31,22 +33,6 @@ const store = createStore(
   DevTools.instrument(),
 );
 const history = syncHistoryWithStore(browserHistory, store);
-
-injectGlobal`
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-  html {
-    font-size: ${theme.components.base_size};
-  }
-  body {
-    margin: 2rem;
-    font-size: ${theme.type.size};
-    font-family: ${theme.type.font};
-    line-height: ${theme.type.line_height};
-  }
-`;
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
