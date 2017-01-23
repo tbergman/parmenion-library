@@ -1,4 +1,9 @@
 const type = {
+  font: 'Arial, sans-serif',
+  font_heading: 'Calibri, serif',
+  font_size: '1.6rem',
+  size: '1.6rem',
+  line_height: '1.428571429',
   font_size_small: '0.9rem',
   font_size_h1: '3rem',
   font_size_h2: '2.8rem',

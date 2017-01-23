@@ -9,6 +9,7 @@ const resetMargins = css`
 const H1 = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h1};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;
@@ -16,6 +17,7 @@ const H1 = styled.h1`
 const H2Base = styled.h2`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h2};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;
@@ -23,6 +25,7 @@ const H2Base = styled.h2`
 const H3Base = styled.h3`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h3};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;
@@ -30,6 +33,7 @@ const H3Base = styled.h3`
 const H4Base = styled.h4`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h4};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;
@@ -37,6 +41,7 @@ const H4Base = styled.h4`
 const H5Base = styled.h5`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h5};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;
@@ -44,6 +49,7 @@ const H5Base = styled.h5`
 const H6Base = styled.h6`
   ${({ theme }) => css`
     font-size: ${theme.type.font_size_h6};
+    font-family: ${theme.type.font_heading};
     ${resetMargins};
   `}
 `;

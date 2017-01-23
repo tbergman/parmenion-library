@@ -1,6 +1,7 @@
 import colors from './colors';
 
 const components = {
+  base_size: '62.5%',  // 10px
   spacing_horizontal: '2rem',
   spacing_vertical: '2rem',
   padding_base_vertical: '1rem',

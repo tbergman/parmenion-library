@@ -19,31 +19,37 @@ export const Content = styled.div`
 
   h1 {
     font-size: ${props => props.theme.type.font_size_h1};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 1)};
   }
 
   h2 {
     font-size: ${props => props.theme.type.font_size_h2};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 1.2)};
   }
 
   h3 {
     font-size: ${props => props.theme.type.font_size_h3};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 1.4)};
   }
 
   h4 {
     font-size: ${props => props.theme.type.font_size_h4};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 1.6)};
   }
 
   h5 {
     font-size: ${props => props.theme.type.font_size_h5};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 1.8)};
   }
 
   h6 {
     font-size: ${props => props.theme.type.font_size_h6};
+    font-family: ${props => props.theme.type.font_heading};
     margin-bottom: ${props => reduceValue(props.theme.components.spacing_vertical, 2)};
   }
 
