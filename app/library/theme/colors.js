@@ -1,4 +1,12 @@
 const colors = {
+  primary: '#333333',
+  secondary: '#666666',
+  states: {
+    success: '#91c95b',
+    danger: '#BF2A23',
+    info: '#5bc0de',
+    warning: '#f0ad4e',
+  },
   gray_base: '#000',
   gray_darker: '#222',
   gray_dark: '#333',
