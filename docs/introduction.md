@@ -130,3 +130,14 @@ The name of your components should have emphasis on the dominant part of the con
 <ContentWithLeft />
 <ContentWithRight />
 ```
+
+---
+
+### [Isolated Typography](#Typography)
+
+Typography on the web naturally follows a similar layout model as conventional word processors. For example, paragraphs will have spacing around them, headers will have a bottom margin, list items will be indented.
+Rather than trying to make this work around a strict, consistent layout API described above, we have opted to isolate typography (or "content") in a dedicated component.
+
+For page headers, or isolated typography which has semantic meaning (e.g Card heading), components can be used instead of having to spawn a `<Content />` block.
+
+See the [Typography](#Typography) section for examples of this.
