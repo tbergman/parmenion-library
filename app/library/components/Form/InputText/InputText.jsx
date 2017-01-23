@@ -16,6 +16,7 @@ const InnerInputText = styled.input`
     line-height: ${theme.type.line_height};
     display: block;
     width: 100%;
+    height: 2.8em; /* IE and Firefox require height */
     background-image: none;
     transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 
