@@ -126,7 +126,7 @@ const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
           <AlertIcon>{ icon }</AlertIcon>
         </LeftColumn>
         <RightColumn>
-          <Header>{ title }</Header>
+          { title && <Header>{ title }</Header> }
           <Description>
             { children }
           </Description>
@@ -137,7 +137,7 @@ const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
 
   return (
     <InnerAlert hasArrow={hasArrow} isSmall={isSmall}>
-      <Header>{ title }</Header>
+      { title && <Header>{ title }</Header> }
       <Description>
         { children }
       </Description>
