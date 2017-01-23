@@ -37,7 +37,7 @@ const ModalInner = styled.div`
 
 const Title = styled.div`
   position: relative;
-  padding: ${({ theme }) => theme.components.padding_base_vertical} ${({ theme }) => theme.components.padding_base_horizontal};
+  padding: 2rem 2rem;
   border-bottom: 1px solid transparent;
   background: #BF2A23;
   color: white;
@@ -83,7 +83,7 @@ const ModalWithBackdrop = props => (
         <ContentWithRight
           content={props.title}
           right={
-            <IconButton onPress={props.onClose} icon="close" isInverted />
+            <IconButton onClick={props.onClose} icon="close" isInverted />
           }
         />
       </Title>

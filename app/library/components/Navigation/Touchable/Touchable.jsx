@@ -11,7 +11,7 @@ const TouchableOpacityStyle = styled.div`
 `;
 
 export const TouchableOpacity = props => (
-  <TouchableOpacityStyle onClick={props.onPress} role="button">
+  <TouchableOpacityStyle onClick={props.onClick} role="button">
     {props.children}
   </TouchableOpacityStyle>
 );

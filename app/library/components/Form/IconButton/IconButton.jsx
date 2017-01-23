@@ -10,7 +10,7 @@ const Container = styled.div`
 `;
 
 export const IconButton = props => (
-  <TouchableOpacity onPress={props.onPress}>
+  <TouchableOpacity onClick={props.onClick}>
     <Container>
       <Icon {...props} />
     </Container>
