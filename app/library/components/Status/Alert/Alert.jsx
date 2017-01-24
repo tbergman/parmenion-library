@@ -6,7 +6,6 @@ const Default = styled.div`
   ${({ theme, hasArrow, isSmall }) => css`
     position: relative;
     display: table;
-    margin: 0 0 ${theme.components.spacing_vertical} 0;
     width: 100%;
     padding: ${isSmall ?
       `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :

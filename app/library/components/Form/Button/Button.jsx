@@ -3,12 +3,12 @@ import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
 import { Link } from 'react-router';
 
-const MaybeLink = (props) => {
+const MaybeLink = ({ to, isBlock, isSmall, ...props }) => {
   if (props.to != null) {
     return <Link {...props} />;
   }
 
-  return <a {...props} />;
+  return <a {...props}>{props.children}</a>;
 };
 
 const Default = styled(MaybeLink)`

@@ -173,7 +173,7 @@ Select.propTypes = {
   placeholder: React.PropTypes.string,
   isSmall: React.PropTypes.bool,
   isAutocomplete: React.PropTypes.bool,
-  items: React.PropTypes.array.isRequired,
+  items: React.PropTypes.arrayOf(React.PropTypes.object).isRequired,
 };
 
 Select.defaultProps = {

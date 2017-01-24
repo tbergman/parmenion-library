@@ -23,6 +23,7 @@ module.exports = {
     },
     {
       name: 'Forms',
+      content: './docs/forms.md',
       sections: [
         { name: 'Components', components: './app/library/components/Form/**/*.jsx' },
       ],

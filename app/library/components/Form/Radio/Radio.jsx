@@ -97,8 +97,8 @@ const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline
 
 Radio.propTypes = {
   children: React.PropTypes.node.isRequired,
-  id: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
+  id: React.PropTypes.string,
+  name: React.PropTypes.string,
   value: React.PropTypes.string.isRequired,
   isSmall: React.PropTypes.bool,
   isInline: React.PropTypes.bool,

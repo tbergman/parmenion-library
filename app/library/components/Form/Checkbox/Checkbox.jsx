@@ -67,7 +67,7 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, status }) => {
+const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, status, onChange }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -86,7 +86,7 @@ const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInl
   return (
     <InnerCheckbox isInline={isInline}>
       <Label htmlFor={id} isSmall={isSmall} disabled={disabled}>
-        <Input type="checkbox" name={name} id={id} disabled={disabled} />
+        <Input type="checkbox" name={name} id={id} disabled={disabled} checked={checked} onChange={onChange} />
         { children }
       </Label>
     </InnerCheckbox>
@@ -95,12 +95,13 @@ const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInl
 
 Checkbox.propTypes = {
   children: React.PropTypes.node.isRequired,
-  id: React.PropTypes.string.isRequired,
-  name: React.PropTypes.string.isRequired,
-  value: React.PropTypes.string.isRequired,
+  id: React.PropTypes.string,
+  name: React.PropTypes.string,
+  value: React.PropTypes.string,
   isSmall: React.PropTypes.bool,
   isInline: React.PropTypes.bool,
   status: React.PropTypes.number,
+  checked: React.PropTypes.bool,
 };
 
 Checkbox.defaultProps = {

@@ -26,7 +26,7 @@ type Props = {
 }
 
 function RowContainer(props: Props) {
-  const { children, tagName, debug, divisions, spacing, ...rest } = props;
+  const { children, tagName, debug, divisions, spacing, alignItems, justifyContent, ...rest } = props; // eslint-disable-line
   const newChildren = passOn(children, [Column], child => ({
     debug: typeof child.props.debug === 'undefined'
         ? debug

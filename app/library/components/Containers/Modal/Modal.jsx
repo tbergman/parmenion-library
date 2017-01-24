@@ -59,7 +59,7 @@ export const Modal = props => (
 );
 
 Modal.propTypes = {
-  isOpen: PropTypes.boolean,
+  isOpen: PropTypes.bool,
 
   /** Fired when user presses on the close button in the corner of the modal */
   onClose: PropTypes.func,

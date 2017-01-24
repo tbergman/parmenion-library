@@ -31,7 +31,7 @@ type Props = {
 }
 
 function ColumnContainer(props: Props) {
-  const { children, tagName, debug, ...rest } = props;
+  const { children, tagName, debug, divisions, md, sm, xs, lg, ...rest } = props; // eslint-disable-line no-unused-vars
   const newChildren = passOn(children, [Row], child => ({
     debug: typeof child.props.debug === 'undefined'
         ? debug
@@ -106,5 +106,7 @@ const Column = styled(ColumnContainer)`
     }
   `}
 `;
+
+Column.displayName = 'Column';
 
 export default Column;
