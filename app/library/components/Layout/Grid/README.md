@@ -156,3 +156,31 @@
         </Column>
       </Row>
     </Stacked>
+
+**Wrapped columns**
+
+    import {Row, Column, DebugBox} from 'library'
+
+    <Row justifyContent="space-between">
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+      <Column md={3}>
+        <DebugBox label="3" />
+      </Column>
+    </Row>

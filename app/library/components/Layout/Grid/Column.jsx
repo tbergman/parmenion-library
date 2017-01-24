@@ -50,13 +50,11 @@ const Column = styled(ColumnContainer)`
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
   border: 0.1rem solid #fff;` : ''}
   box-sizing: border-box;
-  ${props => `padding: 0 ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;`}
+  ${props => `padding: ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(props.theme.components.spacing_vertical, 10) / 2}rem
+    ${props.spacing >= 0 ? (props.spacing / 2) : parseInt(props.theme.components.spacing_horizontal, 10) / 2}rem;`}
   ${props =>
     (props.xs || props.sm || props.md || props.lg) ? `
       width: 100%;
-      &:not(:last-child) {
-        margin-bottom: ${props.theme.components.spacing_vertical};
-      }
     ` : null
   }
   ${props =>
