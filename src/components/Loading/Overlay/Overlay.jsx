@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Overlay = styled.div`
+const InnerOverlay = styled.div`
   ${({ isFull, isInverted }) => css`
     position: ${isFull ? 'fixed' : 'absolute'};
     top: 0;
@@ -15,6 +15,8 @@ const Overlay = styled.div`
     z-index: ${isFull ? 100 : 10};
   `}
 `;
+
+const Overlay = props => <InnerOverlay {...props} />;
 
 Overlay.propTypes = {
   isFull: React.PropTypes.bool,

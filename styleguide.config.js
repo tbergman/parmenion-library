@@ -69,6 +69,12 @@ module.exports = {
         { name: 'Components', components: './src/components/Layout/**/*.jsx' },
       ],
     },
+    {
+      name: 'Loading',
+      sections: [
+        { name: 'Components', components: './src/components/Loading/**/*.jsx' },
+      ],
+    },
   ],
   updateWebpackConfig(webpackConfig, env) {
     const dir = path.join(__dirname, 'src');
