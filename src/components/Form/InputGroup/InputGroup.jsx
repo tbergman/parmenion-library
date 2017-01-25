@@ -75,8 +75,6 @@ const AddonButton = styled.span`
   }
   &:last-child > * {
     z-index: 2;
-    margin-left: -0.1rem;
-    border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
   }

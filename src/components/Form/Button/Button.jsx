@@ -14,7 +14,7 @@ const Default = styled.a`
     line-height: ${theme.type.line_height};
     border: 0.1rem solid ${theme.colors.gray_light};
     color: ${theme.type.text_color};
-    background-color: 'white';
+    background-color: white;
     box-shadow: ${theme.components.shadow};
     margin-bottom: 0;
     background-image: none;

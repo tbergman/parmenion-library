@@ -61,7 +61,7 @@ const Neutral = styled(Default)`
 
 const Input = styled.input`
   position: absolute;
-  margin-top: 0;
+  margin-top: 0.1rem;
   margin-left: -2.5rem;
   width: 2rem;
   height: 2rem;

@@ -20,8 +20,8 @@ const Link = styled.a`
   text-decoration: none;
   &:hover,
   &:focus {
-    background: ${props => props.theme.colors.gray_dark};
-    color: white;
+    background: ${props => props.theme.components.active_background};
+    color: ${props => props.theme.components.active_color};
     text-decoration:inherit;
   }
 `;

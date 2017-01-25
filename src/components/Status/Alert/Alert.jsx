@@ -20,9 +20,9 @@ const Default = styled.div`
     ${hasArrow && `&:after {
       content: "▲";
       position: absolute;
-      top: -1.6rem;
+      top: -1.7rem;
       left: 1.5rem;
-      color: ${tinycolor(theme.colors.grey_light).lighten(20).toString()};
+      color: ${theme.colors.gray_lighter};
     }`}
   `}
 `;

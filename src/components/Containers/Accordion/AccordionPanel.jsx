@@ -9,6 +9,7 @@ const AccordionPanelInner = styled.div`
     background-color: white;
     border: 1px solid ${theme.components.border_color};
     border-radius: ${theme.components.border_radius};
+    overflow: hidden;
     & + & {
       margin-top: -0.1rem;
     }
@@ -27,8 +28,6 @@ const Heading = styled.div`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     padding-right: 5rem;
     border-bottom: 0;
-    border-top-right-radius: ${theme.components.border_radius};
-    border-top-left-radius: ${theme.components.border_radius};
     color: ${theme.type.text_color};
     background-color: ${isOpen ? tc(theme.colors.gray_lightest).darken(5).toString() : theme.colors.gray_lightest};
     border-color: ${theme.components.border_color};
