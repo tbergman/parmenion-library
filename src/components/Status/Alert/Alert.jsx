@@ -7,6 +7,7 @@ const Default = styled.div`
     position: relative;
     display: table;
     width: 100%;
+    margin-top: ${hasArrow ? '1rem' : 0};
     padding: ${isSmall ?
       `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
       `${theme.components.padding_base_horizontal}`
