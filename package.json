@@ -54,6 +54,7 @@
     "jest": "^18.1.0",
     "json-loader": "^0.5.3",
     "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-styleguidist": "github:madjam002/react-styleguidist#multiple-components",
     "react-transform-hmr": "^1.0.0",
