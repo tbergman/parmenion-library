@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "fuzzaldrin": "^2.1.0",
-    "react": "^15.4.2",
     "react-motion": "^0.4.7",
     "react-portal": "^3.0.0",
     "recompose": "^0.21.2",
@@ -54,6 +53,7 @@
     "html-webpack-plugin": "^2.26.0",
     "jest": "^18.1.0",
     "json-loader": "^0.5.3",
+    "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-styleguidist": "github:madjam002/react-styleguidist#multiple-components",
     "react-transform-hmr": "^1.0.0",
@@ -61,6 +61,10 @@
     "stats-webpack-plugin": "^0.2.1",
     "webpack": "^1.12.2",
     "webpack-node-externals": "^1.5.4"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "jest": {
     "snapshotSerializers": [
