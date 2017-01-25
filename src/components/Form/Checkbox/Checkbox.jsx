@@ -27,10 +27,28 @@ const Default = styled.label`
     border-radius: ${theme.forms.input_border_radius};
     background-color: ${theme.forms.input_bg};
     box-shadow: ${theme.components.shadow};
-    transition: background-color 100ms linear;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+
+    &:focus {
+      background-color: ${tc('white').darken(6).toString()};
+          border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
+    }
 
     &:hover {
-      background-color: ${tc('white').darken(10).toString()};
+      background-color: ${tc('white').darken(6).toString()};
+          border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
+    }
+
+    &:active {
+      outline: 0;
+      background-color: ${tc('white').darken(6).toString()};
+          border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
+      &:hover,
+      &:focus {
+        background-color: ${tc('white').darken(10).toString()};
+            border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
+              box-shadow: ${theme.components.shadow_large};
+      }
     }
 
     &[disabled] {
@@ -46,19 +64,19 @@ const Default = styled.label`
 `;
 
 const Success = styled(Default)`
-  border-bottom: .2rem solid ${props => props.theme.colors.states.success};
+  border-bottom: .2rem solid ${props => props.theme.colors.states.success}!important;
 `;
 
 const Warning = styled(Default)`
-  border-bottom: .2rem solid ${props => props.theme.colors.states.warning};
+  border-bottom: .2rem solid ${props => props.theme.colors.states.warning}!important;
 `;
 
 const Danger = styled(Default)`
-  border-bottom: .2rem solid ${props => props.theme.colors.states.danger};
+  border-bottom: .2rem solid ${props => props.theme.colors.states.danger}!important;
 `;
 
 const Neutral = styled(Default)`
-  border-bottom: .2rem solid ${props => props.theme.colors.gray};
+  border-bottom: .2rem solid ${props => props.theme.colors.gray}!important;
 `;
 
 const Input = styled.input`

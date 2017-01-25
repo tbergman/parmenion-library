@@ -7,6 +7,10 @@ const colors = {
     info: '#5bc0de',
     warning: '#f0ad4e',
   },
+  actions: {
+    primary: '#91c95b',
+    secondary: '#5bc0de',
+  },
   gray_base: '#000',
   gray_darker: '#222',
   gray_dark: '#333',

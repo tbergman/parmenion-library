@@ -24,30 +24,31 @@ const Default = styled.a`
     text-decoration: none;
     text-align: center;
     vertical-align: middle;
-    transition: background-color 100ms linear;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
     touch-action: manipulation;
     cursor: pointer;
     white-space: nowrap;
     user-select: none;
 
     &:focus {
-      background-color: ${tc('white').darken(10).toString()};
+      background-color: ${tc('white').darken(6).toString()};
           border-color: ${tc(theme.colors.gray_light).darken(25).toString()};
     }
 
     &:hover {
-      background-color: ${tc('white').darken(10).toString()};
+      background-color: ${tc('white').darken(6).toString()};
           border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
     }
 
     &:active {
       outline: 0;
-      background-color: ${tc('white').darken(10).toString()};
+      background-color: ${tc('white').darken(6).toString()};
           border-color: ${tc(theme.colors.gray_light).darken(12).toString()};
       &:hover,
       &:focus {
-        background-color: ${tc('white').darken(17).toString()};
+        background-color: ${tc('white').darken(10).toString()};
             border-color: ${tc(theme.colors.gray_light).darken(25).toString()};
+              box-shadow: ${theme.components.shadow_large};
       }
     }
 
@@ -66,29 +67,29 @@ const Default = styled.a`
 const Primary = styled(Default)`
   ${({ theme }) => css`
     color: white;
-    border-color: ${tc(theme.colors.primary).darken(5).toString()};
-    background-color: ${theme.colors.primary};
+    border-color: ${tc(theme.colors.actions.primary).darken(5).toString()};
+    background-color: ${theme.colors.actions.primary};
     &:focus {
-      background-color: ${tc(theme.colors.primary).darken(10).toString()};
-          border-color: ${tc(theme.colors.primary).darken(30).toString()};
+      background-color: ${tc(theme.colors.actions.primary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.primary).darken(30).toString()};
     }
     &:hover {
-      background-color: ${tc(theme.colors.primary).darken(10).toString()};
-          border-color: ${tc(theme.colors.primary).darken(17).toString()};
+      background-color: ${tc(theme.colors.actions.primary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.primary).darken(17).toString()};
     }
     &:active {
-      background-color: ${tc(theme.colors.primary).darken(10).toString()};
-          border-color: ${tc(theme.colors.primary).darken(17).toString()};
+      background-color: ${tc(theme.colors.actions.primary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.primary).darken(17).toString()};
       &:hover,
       &:focus {
-        background-color: ${tc(theme.colors.primary).darken(17).toString()};
-            border-color: ${tc(theme.colors.primary).darken(30).toString()};
+        background-color: ${tc(theme.colors.actions.primary).darken(17).toString()};
+            border-color: ${tc(theme.colors.actions.primary).darken(30).toString()};
       }
     }
     &[disabled] {
       &:hover,
       &:focus {
-        background-color: ${theme.colors.primary};
+        background-color: ${theme.colors.actions.primary};
       }
     }
   `}
@@ -97,29 +98,29 @@ const Primary = styled(Default)`
 const Secondary = styled(Default)`
   ${({ theme }) => css`
     color: white;
-    border-color: ${tc(theme.colors.secondary).darken(5).toString()};
-    background-color: ${theme.colors.secondary};
+    border-color: ${tc(theme.colors.actions.secondary).darken(5).toString()};
+    background-color: ${theme.colors.actions.secondary};
     &:focus {
-      background-color: ${tc(theme.colors.secondary).darken(10).toString()};
-          border-color: ${tc(theme.colors.secondary).darken(30).toString()};
+      background-color: ${tc(theme.colors.actions.secondary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.secondary).darken(30).toString()};
     }
     &:hover {
-      background-color: ${tc(theme.colors.secondary).darken(10).toString()};
-          border-color: ${tc(theme.colors.secondary).darken(17).toString()};
+      background-color: ${tc(theme.colors.actions.secondary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.secondary).darken(17).toString()};
     }
     &:active {
-      background-color: ${tc(theme.colors.secondary).darken(10).toString()};
-          border-color: ${tc(theme.colors.secondary).darken(17).toString()};
+      background-color: ${tc(theme.colors.actions.secondary).darken(10).toString()};
+          border-color: ${tc(theme.colors.actions.secondary).darken(17).toString()};
       &:hover,
       &:focus {
-        background-color: ${tc(theme.colors.secondary).darken(17).toString()};
-            border-color: ${tc(theme.colors.secondary).darken(30).toString()};
+        background-color: ${tc(theme.colors.actions.secondary).darken(17).toString()};
+            border-color: ${tc(theme.colors.actions.secondary).darken(30).toString()};
       }
     }
     &[disabled] {
       &:hover,
       &:focus {
-        background-color: ${theme.colors.secondary};
+        background-color: ${theme.colors.actions.secondary};
       }
     }
   `}
@@ -177,6 +178,7 @@ const LinkButton = styled(Default)`
       &:focus {
         background-color: ${tc('white').darken(17).toString()};
             border-color: transparent;
+              box-shadow: none;
       }
     }
     &[disabled] {
