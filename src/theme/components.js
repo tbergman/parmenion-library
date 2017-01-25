@@ -14,7 +14,7 @@ const components = {
   active_color: 'white',
   active_background: tc(colors.primary).darken(15).toString(),
   shadow: '0 0.1rem 0.3rem rgba(0,0,0,.125)',
-  shadow_large: '0.2rem 0.3rem 1rem rgba(0,0,0,.25)',
+  shadow_large: '0rem 0.2rem 0.8rem rgba(0,0,0,.25)',
   border_radius: '0.3rem',
   input_height: '2.75em',
 };

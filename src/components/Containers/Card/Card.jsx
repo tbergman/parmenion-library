@@ -7,7 +7,7 @@ import { Menu, MenuItem } from '../../Navigation';
 const CardStyle = styled.div`
   ${({ theme, isActive }) => css`
     background: white;
-    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: ${theme.components.shadow_large};
     padding: ${theme.components.spacing_vertical} ${theme.components.padding_base_horizontal};
   `}
 `;
