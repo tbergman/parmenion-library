@@ -31,10 +31,26 @@
       This is the alert content
     </Alert>
 
+**Sizes**
+
+    import {Alert} from '@parmenion/library'
+
+    <Alert>
+      I am normal
+    </Alert>
+
+    <Alert status={3} isSmall>
+      I am small
+    </Alert>
+
 **With arrow**
 
     import {Alert} from '@parmenion/library'
 
     <Alert title="Alert title" hasArrow>
+      This is the alert content
+    </Alert>
+
+    <Alert status={2} isSmall hasArrow>
       This is the alert content
     </Alert>
