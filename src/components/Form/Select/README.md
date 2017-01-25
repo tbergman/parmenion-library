@@ -1,9 +1,9 @@
-    import {Select, Size, Group, Label, Stacked} from '@parmenion/library'
+    import {Select, Size, Form, Label, Stacked} from '@parmenion/library'
     import {counties} from './counties'
 
     <Size height={550}>
-      <Stacked>
-        <Group label={<Label>Normal:</Label>} isHorizontal>
+      <Form horizontal>
+        <Form.Field label="Normal:">
           <Select
             value={state.value}
             onChange={value => setState({ value })}
@@ -14,9 +14,9 @@
               { id: 3, name: 'Option 4' },
             ]}
           />
-        </Group>
+        </Form.Field>
 
-        <Group label={<Label>Autocomplete:</Label>} isHorizontal>
+        <Form.Field label="Autocomplete:">
           <Select
             isAutocomplete
             value={state.county}
@@ -27,9 +27,9 @@
               )
             }
           />
-        </Group>
+        </Form.Field>
 
-        <Group label={<Label>With placeholder:</Label>} isHorizontal>
+        <Form.Field label="With placeholder:">
           <Select
             value={state.value}
             onChange={value => setState({ value })}
@@ -41,9 +41,9 @@
               { id: 3, name: 'Option 4' },
             ]}
           />
-        </Group>
+        </Form.Field>
 
-        <Group label={<Label>Small:</Label>} isHorizontal>
+        <Form.Field label="Small:">
           <Select
             value={state.value}
             onChange={value => setState({ value })}
@@ -55,6 +55,6 @@
               { id: 3, name: 'Option 4' },
             ]}
           />
-        </Group>
-      </Stacked>
+        </Form.Field>
+      </Form>
     </Size>
