@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
-import { Icon } from '../../Decoration';
+import { Icon, Ripple } from '../../Decoration';
 
 const InnerMenu = styled.ul`
   margin: 0;
@@ -59,7 +59,7 @@ const Link = styled.a`
 const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow }) => {
+const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow, isRipple }) => {
   const InnerIcon = icon && React.cloneElement(icon, {
     isInverted: isActive,
     size: 0.8,
@@ -80,6 +80,7 @@ const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow })
             <Icon icon="chevronRight" size={1.25} isInverted={isActive} />
           </ArrowContainer>
         )}
+        { isRipple && <Ripple /> }
       </Link>
     </Item>
   );
@@ -92,6 +93,7 @@ MenuItem.propTypes = {
   icon: React.PropTypes.node,
   description: React.PropTypes.string,
   isActive: React.PropTypes.bool,
+  isRipple: React.PropTypes.bool,
 };
 
 MenuItem.defaultProps = {
@@ -100,6 +102,7 @@ MenuItem.defaultProps = {
   icon: null,
   description: null,
   isActive: false,
+  isRipple: true,
 };
 
 export { Menu, MenuItem };
