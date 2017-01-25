@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import tc from 'tinycolor2';
 import styled, { css } from 'styled-components';
+import { Ripple } from '../../Decoration';
 
 const AccordionPanelInner = styled.div`
   ${({ theme }) => css`
@@ -79,11 +80,12 @@ class AccordionPanel extends React.Component {
   }
 
   render() {
-    const { title, children, isOpen, onClick } = this.props;
+    const { title, children, isOpen, onClick, isRipple } = this.props;
     return (
       <AccordionPanelInner onClick={onClick}>
         <Heading href="#" isOpen={isOpen}>
           <Title>{title}</Title>
+          { isRipple && <Ripple /> }
         </Heading>
         <Body
           height={this.state.height} ref={(ref) => {
@@ -105,10 +107,12 @@ AccordionPanel.propTypes = {
   children: React.PropTypes.node.isRequired,
   onClick: React.PropTypes.func,
   isOpen: React.PropTypes.bool,
+  isRipple: React.PropTypes.bool,
 };
 
 AccordionPanel.defaultProps = {
   isOpen: false,
+  isRipple: true,
 };
 
 export default AccordionPanel;

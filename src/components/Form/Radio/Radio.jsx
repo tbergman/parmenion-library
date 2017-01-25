@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
+import { Ripple } from '../../Decoration';
 
 const InnerRadio = styled.div`
   ${({ theme, isInline }) => css`
@@ -11,6 +12,7 @@ const InnerRadio = styled.div`
 
 const Default = styled.label`
   ${({ theme, isSmall }) => css`
+    position: relative;
     display: inline-block;
     margin-bottom: 0;
     padding: ${isSmall ?
@@ -69,7 +71,7 @@ const Input = styled.input`
 
 const onRadioChange = onChangeFn => e => onChangeFn(e.target.value);
 
-const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, status, onChange }) => {
+const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, isRipple, status, onChange }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -90,6 +92,7 @@ const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline
       <Label htmlFor={id} isSmall={isSmall} disabled={disabled}>
         <Input type="radio" name={name} id={id} disabled={disabled} checked={checked} value={value} onChange={onRadioChange(onChange)} />
         { children }
+        { isRipple && <Ripple /> }
       </Label>
     </InnerRadio>
   );
@@ -102,12 +105,14 @@ Radio.propTypes = {
   value: React.PropTypes.string.isRequired,
   isSmall: React.PropTypes.bool,
   isInline: React.PropTypes.bool,
+  isRipple: React.PropTypes.bool,
   status: React.PropTypes.number,
 };
 
 Radio.defaultProps = {
   isSmall: false,
   isInline: false,
+  isRipple: true,
   status: 0,
 };
 

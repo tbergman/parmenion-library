@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
+import { Ripple } from '../../Decoration';
 
 const InnerCheckbox = styled.div`
   ${({ theme, isInline }) => css`
@@ -11,6 +12,7 @@ const InnerCheckbox = styled.div`
 
 const Default = styled.label`
   ${({ theme, isSmall }) => css`
+    position: relative;
     display: inline-block;
     margin-bottom: 0;
     padding: ${isSmall ?
@@ -67,7 +69,7 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, status, onChange }) => {
+const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, isRipple, status, onChange }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -88,6 +90,7 @@ const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInl
       <Label htmlFor={id} isSmall={isSmall} disabled={disabled}>
         <Input type="checkbox" name={name} id={id} disabled={disabled} checked={checked} onChange={onChange} />
         { children }
+        { isRipple && <Ripple /> }
       </Label>
     </InnerCheckbox>
   );
@@ -100,6 +103,7 @@ Checkbox.propTypes = {
   value: React.PropTypes.string,
   isSmall: React.PropTypes.bool,
   isInline: React.PropTypes.bool,
+  isRipple: React.PropTypes.bool,
   status: React.PropTypes.number,
   checked: React.PropTypes.bool,
 };
@@ -107,6 +111,7 @@ Checkbox.propTypes = {
 Checkbox.defaultProps = {
   isSmall: false,
   isInline: false,
+  isRipple: true,
   status: 0,
 };
 

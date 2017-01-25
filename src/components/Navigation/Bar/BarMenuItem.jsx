@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Ripple } from '../../Decoration';
 
 const InnerBarMenuItem = styled.li`
   display: inline-block;
@@ -26,10 +27,11 @@ const Link = styled.a`
   }
 `;
 
-const BarMenuItem = ({ children, href, to }) => (
+const BarMenuItem = ({ children, href, to, isRipple }) => (
   <InnerBarMenuItem>
     <Link href={href} to={to}>
       { children }
+      { isRipple && <Ripple /> }
     </Link>
   </InnerBarMenuItem>
 );
@@ -38,8 +40,11 @@ BarMenuItem.propTypes = {
   children: React.PropTypes.node,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
+  isRipple: React.PropTypes.bool,
 };
 
-BarMenuItem.defaultProps = {};
+BarMenuItem.defaultProps = {
+  isRipple: true,
+};
 
 export default BarMenuItem;
