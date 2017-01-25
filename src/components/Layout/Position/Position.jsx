@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Position = styled.div`
+const InnerPosition = styled.div`
   ${({ fixed, zindex, top, right, bottom, left }) => css`
     position: ${fixed ? 'fixed' : 'absolute'};
     z-index: ${zindex || '1'};
@@ -11,6 +11,8 @@ const Position = styled.div`
     left: ${left ? '0' : 'auto'};
   `}
 `;
+
+const Position = props => <InnerPosition {...props} />;
 
 Position.propTypes = {
   fixed: React.PropTypes.bool,

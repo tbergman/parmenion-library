@@ -7,6 +7,7 @@ module.exports = {
   serverPort: 3005,
   previewDelay: 0,
   showCode: false,
+  skipComponentsWithoutExample: true,
   resolver: require('react-docgen').resolver.findAllExportedComponentDefinitions,
   getExampleFilename: componentpath => path.join(path.dirname(componentpath), 'README.md'),
   sections: [
@@ -48,6 +49,12 @@ module.exports = {
       name: 'Status',
       sections: [
         { name: 'Components', components: './src/components/Status/**/*.jsx' },
+      ],
+    },
+    {
+      name: 'Decoration',
+      sections: [
+        { name: 'Components', components: './src/components/Decoration/**/*.jsx' },
       ],
     },
     {

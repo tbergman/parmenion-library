@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const TextArea = styled.textarea`
+const InnerTextArea = styled.textarea`
   ${({ theme }) => css`
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     font-size: 1em;
@@ -35,6 +35,8 @@ const TextArea = styled.textarea`
     }
   `}
 `;
+
+const TextArea = props => <InnerTextArea {...props} />;
 
 TextArea.propTypes = {
   rows: React.PropTypes.number,

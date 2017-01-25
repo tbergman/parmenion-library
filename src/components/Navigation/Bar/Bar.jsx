@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const Bar = styled.div`
+const InnerBar = styled.div`
   ${({ theme }) => css`
     margin: 0;
     height: 6rem;
@@ -10,6 +10,8 @@ const Bar = styled.div`
     box-shadow: ${theme.components.shadow};
   `}
 `;
+
+const Bar = props => <InnerBar {...props} />;
 
 Bar.propTypes = {
   children: React.PropTypes.node.isRequired,

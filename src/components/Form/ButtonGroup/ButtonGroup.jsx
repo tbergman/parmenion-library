@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
-const ButtonGroup = styled.div`
+const InnerButtonGroup = styled.div`
   ${({ isJustified }) => css`
     display: ${isJustified ? 'table' : 'inline-block'};
     width: ${isJustified ? '100%' : 'auto'};
@@ -42,6 +42,8 @@ const ButtonGroup = styled.div`
     }`}
   `}
 `;
+
+const ButtonGroup = props => <InnerButtonGroup {...props} />;
 
 ButtonGroup.propTypes = {
   isJustified: React.PropTypes.bool,

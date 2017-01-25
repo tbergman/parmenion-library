@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Align = styled.div`
+const InnerAlign = styled.div`
   text-align: ${props => () => {
     switch (props.type) {
       case 1:
         return 'left';
       case 2:
         return 'right';
+      case 3:
       default:
         return 'center';
     }
   }
   };
 `;
+
+const Align = props => <InnerAlign {...props} />;
 
 Align.propTypes = {
   type: React.PropTypes.number,

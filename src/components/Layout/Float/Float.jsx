@@ -1,16 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Float = styled.div`
-  float: ${props => props.right ? 'right' : 'left'};
+const InnerFloat = styled.div`
+  float: ${props => props.isRight ? 'right' : 'left'};
 `;
 
+const Float = props => <InnerFloat {...props} />;
+
 Float.propTypes = {
-  right: React.PropTypes.bool,
+  isRight: React.PropTypes.bool,
 };
 
 Float.defaultProps = {
-  right: false,
+  isRight: false,
 };
 
 export default Float;
