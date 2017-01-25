@@ -2,7 +2,6 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 
@@ -14,7 +13,7 @@ module.exports = {
   devtool: 'source-map',
   entry: [
     'webpack-hot-middleware/client?reload=true',
-    path.join('./main')
+    path.join('./src/index.js')
   ],
   output: {
     path: path.join(__dirname, '/dist/'),
@@ -22,11 +21,6 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: 'app/index.tpl.html',
-      inject: 'body',
-      filename: 'index.html'
-    }),
     new webpack.optimize.OccurenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
@@ -44,7 +38,7 @@ module.exports = {
         query: {
           "presets": ["react", "es2015", "stage-0", "react-hmre"]
         }
-      }, 
+      },
       {
         test: /\.json?$/,
         loader: 'json'
@@ -52,10 +46,10 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['', '.js', '.less'],
-    root: [path.join(__dirname, './app')]
+    extensions: ['', '.js', '.jsx', '.less'],
+    root: [path.join(__dirname, './src')]
   },
-  postcss: [ 
+  postcss: [
     autoprefixer({ browsers: ['last 3 versions'] })
   ]
 };

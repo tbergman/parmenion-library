@@ -1,0 +1,35 @@
+exports[`test renders a <Form /> correctly 1`] = `
+<form>
+  <Stacked
+    spaceBetween={1}>
+    Hello, world!
+  </Stacked>
+</form>
+`;
+
+exports[`test renders a <Row /> correctly 1`] = `
+<Row
+  divisions={3}>
+  <Column
+    md={1}>
+    <getContext(Component)
+      label="Field 1">
+      <div />
+    </getContext(Component)>
+  </Column>
+  <Column
+    md={1}>
+    <getContext(Component)
+      label="Field 2">
+      <div />
+    </getContext(Component)>
+  </Column>
+  <Column
+    md={1}>
+    <getContext(Component)
+      label="Field 3">
+      <div />
+    </getContext(Component)>
+  </Column>
+</Row>
+`;

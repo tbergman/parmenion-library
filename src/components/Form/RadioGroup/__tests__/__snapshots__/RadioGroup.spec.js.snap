@@ -1,0 +1,29 @@
+exports[`test renders correctly 1`] = `
+<Horizontal
+  spaceBetween={1}>
+  <Radio
+    checked={false}
+    isInline={false}
+    isSmall={false}
+    status={0}
+    value="1">
+    Option 1
+  </Radio>
+  <Radio
+    checked={false}
+    isInline={false}
+    isSmall={false}
+    status={0}
+    value="2">
+    Option 2
+  </Radio>
+  <Radio
+    checked={false}
+    isInline={false}
+    isSmall={false}
+    status={0}
+    value="3">
+    Option 3
+  </Radio>
+</Horizontal>
+`;
