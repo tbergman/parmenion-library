@@ -2,27 +2,24 @@
 
 var path = require('path');
 var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var StatsPlugin = require('stats-webpack-plugin');
 var autoprefixer = require('autoprefixer');
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'app/main.js')
+    path.join(__dirname, 'src/index.js')
   ],
   output: {
     path: path.join(__dirname, '/dist/'),
-    filename: '[name]-[hash].min.js',
-    publicPath: '/'
+    filename: 'parmenion-library.min.js',
+    libraryTarget: 'umd',
+    library: 'Parmenion',
   },
+  externals: [nodeExternals()],
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    new HtmlWebpackPlugin({
-      template: 'app/index.tpl.html',
-      inject: 'body',
-      filename: 'index.html'
-    }),
     new ExtractTextPlugin('[name]-[hash].min.css'),
     new webpack.optimize.UglifyJsPlugin({
       compressor: {
@@ -58,22 +55,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['', '.js', '.jsx', '.less'],
-    root: [path.join(__dirname, './app')]
+    root: [path.join(__dirname, './src')]
   },
   postcss: [
     autoprefixer({ browsers: ['last 3 versions'] })
   ]
 };
-
-if (process.env.OUTPUT === 'module') {
-  module.exports.output = {
-    path: path.join(__dirname, '/dist/'),
-    filename: 'parmenion-library.min.js',
-    libraryTarget: 'umd',
-    library: 'Parmenion',
-  }
-
-  module.exports.entry = [
-    path.join(__dirname, 'app/library/index.js')
-  ]
-}

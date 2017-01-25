@@ -18,53 +18,53 @@ module.exports = {
       name: 'Typography',
       content: './docs/typography.md',
       sections: [
-        { name: 'Components', components: './app/library/components/Type/**/*.jsx' },
+        { name: 'Components', components: './src/components/Type/**/*.jsx' },
       ],
     },
     {
       name: 'Forms',
       content: './docs/forms.md',
       sections: [
-        { name: 'Components', components: './app/library/components/Form/**/*.jsx' },
+        { name: 'Components', components: './src/components/Form/**/*.jsx' },
       ],
     },
     {
       name: 'Containers',
       sections: [
-        { name: 'Components', components: './app/library/components/Containers/**/*.jsx' },
+        { name: 'Components', components: './src/components/Containers/**/*.jsx' },
       ],
     },
     {
       name: 'Navigation',
       sections: [
-        { name: 'Components', components: './app/library/components/Navigation/**/*.jsx' },
+        { name: 'Components', components: './src/components/Navigation/**/*.jsx' },
       ],
     },
     {
       name: 'Status',
       sections: [
-        { name: 'Components', components: './app/library/components/Status/**/*.jsx' },
+        { name: 'Components', components: './src/components/Status/**/*.jsx' },
       ],
     },
     {
       name: 'Data',
       sections: [
-        { name: 'Components', components: './app/library/components/Data/**/*.jsx' },
+        { name: 'Components', components: './src/components/Data/**/*.jsx' },
       ],
     },
     {
       name: 'Layout',
       sections: [
-        { name: 'Components', components: './app/library/components/Layout/**/*.jsx' },
+        { name: 'Components', components: './src/components/Layout/**/*.jsx' },
       ],
     },
   ],
   updateWebpackConfig(webpackConfig, env) {
-    const dir = path.join(__dirname, 'app');
+    const dir = path.join(__dirname, 'src');
     const isProd = env === 'production';
 
     webpackConfig.resolve.alias['rsg-components/Wrapper'] = path.join(__dirname, 'resources/styleguide/wrapper');
-    webpackConfig.resolve.alias['library'] = path.join(__dirname, './app/library');
+    webpackConfig.resolve.alias['@parmenion/library'] = path.join(__dirname, './src');
 
     webpackConfig.entry.unshift('babel-polyfill');
 

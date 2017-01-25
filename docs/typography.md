@@ -5,7 +5,7 @@ There are various typography related components available for use.
 Mixed content (paragraphs, headers, lists) should be wrapped with the `<Content />` component.
 You are then able to use standard typography-related HTML elements within the `<Content />` component:
 
-    import {Content} from 'library'
+    import {Content} from '@parmenion/library'
 
     <Content>
       <p>
@@ -21,7 +21,7 @@ You are then able to use standard typography-related HTML elements within the `<
 
 All of the standard headers (1-6) are available within the context of the `<Content />` component:
 
-    import {Content} from 'library'
+    import {Content} from '@parmenion/library'
 
     <Content>
       <h1>Header 1</h1>
@@ -59,7 +59,7 @@ All of the standard headers (1-6) are available within the context of the `<Cont
 
 Alternatively, if you're just placing a single header and no other content, you may use one of the standalone semantic components. These components do not have a margin or padding, and depend on being enclosed in a layout component such as `<Stacked />`.
 
-    import {Stacked, PageHeader, H2, H3, H4, H5, H6} from 'library'
+    import {Stacked, PageHeader, H2, H3, H4, H5, H6} from '@parmenion/library'
 
     <Stacked>
       <PageHeader>This is a page header!</PageHeader>

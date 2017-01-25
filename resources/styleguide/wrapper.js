@@ -1,7 +1,7 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { injectGlobalStyles } from 'library';
-import brand from '../../app/theme';
+import { injectGlobalStyles } from '@parmenion/library';
+import brand from '../../src/theme';
 
 injectGlobalStyles(brand);
 

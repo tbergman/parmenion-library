@@ -9,7 +9,7 @@ Semantic and reusable layout is one of the hardest things to accomplish in moder
 
 For example:
 
-    import {Stacked, Row, Column, DebugBox} from 'library'
+    import {Stacked, Row, Column, DebugBox} from '@parmenion/library'
 
     <Stacked>
       <Row>
@@ -23,7 +23,7 @@ For example:
 
 As you can see in the above example, the margin/gutter/space in between all of the placeholders is delegated to dedicated layout components (in this example, [`<Stacked />`](#Stacked), [`<Row />`](#Row) and [`<Column />`](#Row)). This means you can place any components you like inside these layout components, and the result will be predictable and consistent:
 
-    import {Stacked, Row, Column, InputText} from 'library'
+    import {Stacked, Row, Column, InputText} from '@parmenion/library'
 
     <Stacked>
       <Row>
@@ -37,7 +37,7 @@ When you have reusable layouts which are used across screens, you should abstrac
 
 *Bad:*
 
-    import {Row, Column, DebugBox} from 'library'
+    import {Row, Column, DebugBox} from '@parmenion/library'
 
     <Row>
       <Column md={3}>
@@ -50,7 +50,7 @@ When you have reusable layouts which are used across screens, you should abstrac
 
 ---
 
-    import {Row, Column, DebugBox} from 'library'
+    import {Row, Column, DebugBox} from '@parmenion/library'
 
     <Row>
       <Column fill>
@@ -63,7 +63,7 @@ When you have reusable layouts which are used across screens, you should abstrac
 
 *Good:*
 
-    import {Row, Column, DebugBox} from 'library'
+    import {Row, Column, DebugBox} from '@parmenion/library'
 
     const ContentWithSidebar = props => (
       <Row>
@@ -89,7 +89,7 @@ When you have reusable layouts which are used across screens, you should abstrac
 
 ---
 
-    import {Row, Column, DebugBox} from 'library'
+    import {Row, Column, DebugBox} from '@parmenion/library'
 
     const ContentWithRight = props => (
       <Row>
