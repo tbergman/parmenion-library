@@ -15,6 +15,10 @@ module.exports = {
       content: './docs/introduction.md',
     },
     {
+      name: 'Getting started',
+      content: './docs/getting-started.md',
+    },
+    {
       name: 'Typography',
       content: './docs/typography.md',
       sections: [

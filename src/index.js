@@ -1,7 +1,7 @@
 import { injectGlobal } from 'styled-components';
 
 export * from './components';
-export theme from './theme';
+export defaultTheme from './theme';
 export { ThemeProvider } from 'styled-components';
 
 export const injectGlobalStyles = theme =>
