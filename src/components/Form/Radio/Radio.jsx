@@ -67,7 +67,9 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const onRadioChange = onChangeFn => e => onChangeFn(e.target.value);
+const onRadioChange = onChangeFn => (e) => {
+  if (onChangeFn != null) onChangeFn(e.target.value);
+};
 
 const Radio = ({ children, id, name, value, checked, disabled, isSmall, isInline, status, onChange }) => {
   const Label = (() => {
