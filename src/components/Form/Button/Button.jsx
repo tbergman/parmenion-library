@@ -1,9 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import tc from 'tinycolor2';
+import { Ripple } from '../../Decoration';
 
 const Default = styled.a`
   ${({ theme, isSmall, isBlock }) => css`
+    position: relative;
     display: ${isBlock ? 'block' : 'inline-block'};
     padding: ${isSmall ?
       `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
@@ -186,7 +188,7 @@ const LinkButton = styled(Default)`
   `}
 `;
 
-const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, href, to }) => {
+const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple, onClick, href, to }) => {
   const InnerButton = (() => {
     switch (type) {
       case 1:
@@ -203,8 +205,9 @@ const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, onClick, 
   })();
 
   return (
-    <InnerButton isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} onClick={onClick} href={href} to={to}>
+    <InnerButton isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} isRipple={isRipple} onClick={onClick} href={href} to={to}>
       { children }
+      { isRipple && <Ripple /> }
     </InnerButton>
   );
 };
@@ -214,6 +217,7 @@ Button.propTypes = {
   isSmall: React.PropTypes.bool,
   isBlock: React.PropTypes.bool,
   isDisabled: React.PropTypes.bool,
+  isRipple: React.PropTypes.bool,
   onClick: React.PropTypes.func,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
@@ -225,6 +229,7 @@ Button.defaultProps = {
   isSmall: false,
   isBlock: false,
   isDisabled: false,
+  isRipple: true,
   onClick: null,
   href: null,
   to: null,
