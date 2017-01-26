@@ -15,6 +15,7 @@ const CardStyle = styled.div`
 const OutsetContent = styled.div`
   ${({ theme }) => css`
     margin: 0 -${theme.components.padding_base_horizontal} -${theme.components.spacing_vertical} -${theme.components.padding_base_horizontal};
+    border-top: 1px solid ${theme.colors.gray_lighter};
   `}
 `;
 
