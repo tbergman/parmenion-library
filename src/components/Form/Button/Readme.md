@@ -34,4 +34,4 @@
     import {Button, Icon} from '@parmenion/library'
 
     <Button icon={<Icon icon="file" />}>Files to the left of me</Button>
-    <Button type={2} icon={<Icon icon="chevronRight" isInverted />} iconRight>Arrows to the right</Button>
+    <Button type={2} icon={<Icon icon="chevronRight" isInverted />} iconRight>Arrows on the right</Button>

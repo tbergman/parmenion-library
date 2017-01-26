@@ -27,13 +27,17 @@ const InnerButtonGroup = styled.div`
     > *:first-child {
       margin-left: 0;
       &:not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        &, & > a {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
       }
     }
     > *:last-child:not(:first-child) {
-      border-top-left-radius: 0;
-      border-bottom-left-radius: 0;
+      &, & > a {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
     }
     ${isJustified && `> * {
       float: none!important;

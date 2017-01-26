@@ -33,3 +33,31 @@
       <Button type={4}>Transparent</Button>
       <Button type={4}>Another transparent button</Button>
     </ButtonGroup>
+
+**With dropdown**
+
+    import {ButtonGroup, Button, Dropdown, Menu, MenuItem, Icon, Size} from '@parmenion/library'
+
+    <Size height={150}>
+      <ButtonGroup>
+        <Button>Hey</Button>
+        <Button>Ho</Button>
+        <Dropdown
+          isRight
+          trigger={
+            <Button icon={<Icon icon="caretDown" />} iconRight>
+              Let's go
+            </Button>
+          }
+        >
+          <Menu>
+            <MenuItem to="/bar">
+              This is an action
+            </MenuItem>
+            <MenuItem to="/bar">
+              This is another action
+            </MenuItem>
+          </Menu>
+        </Dropdown>
+      </ButtonGroup>
+    </Size>
