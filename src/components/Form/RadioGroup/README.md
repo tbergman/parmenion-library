@@ -4,12 +4,12 @@
 
     <RadioGroup>
       <Radio name="exampleRadioGroup" value="1">
-        Normal checkbox button
+        Normal radio button
       </Radio>
       <Radio name="exampleRadioGroup" value="2">
-        Normal checkbox button
+        Normal radio button
       </Radio>
       <Radio name="exampleRadioGroup" value="3">
-        Normal checkbox button
+        Normal radio button
       </Radio>
     </RadioGroup>
