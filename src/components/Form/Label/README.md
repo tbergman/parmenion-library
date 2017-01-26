@@ -1,4 +1,4 @@
-**With standard buttons**
+**Label linked to input**
 
     import {Label, InputText} from '@parmenion/library'
 
