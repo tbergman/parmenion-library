@@ -34,6 +34,16 @@
       <Button type={4}>Another transparent button</Button>
     </ButtonGroup>
 
+**Justified**
+
+    import {ButtonGroup, Button} from '@parmenion/library'
+
+    <ButtonGroup isJustified>
+      <Button>Left</Button>
+      <Button>Middle</Button>
+      <Button>Right</Button>
+    </ButtonGroup>
+
 **With dropdown**
 
     import {ButtonGroup, Button, Dropdown, Menu, MenuItem, Icon, Size} from '@parmenion/library'
