@@ -1,8 +1,18 @@
 **Normal**
 
-    import {Bar, BarMenu, BarMenuItem, Icon} from '@parmenion/library'
+    import {Bar, BarMenu, BarMenuItem, Icon, Float} from '@parmenion/library'
 
     <Bar>
+      <Float isRight>
+        <BarMenu>
+          <BarMenuItem href="/">
+            Settings
+          </BarMenuItem>
+          <BarMenuItem href="/">
+            Log out
+          </BarMenuItem>
+        </BarMenu>
+      </Float>
       <BarMenu>
         <BarMenuItem href="/">
           Home
@@ -25,6 +35,28 @@
 
     <Size height={250}>
       <Bar>
+        <Float isRight>
+          <BarMenu>
+            <BarMenuItemDropdown
+              isRight
+              menu={
+                <Menu>
+                  <MenuItem to="/">
+                    This is a menu item
+                  </MenuItem>
+                  <MenuItem to="/">
+                    The menu is aligned using isRight
+                  </MenuItem>
+                </Menu>
+              }
+            >
+              Dropdown click <Icon icon="caretDown" isInverted />
+            </BarMenuItemDropdown>
+            <BarMenuItem href="/">
+              Log out
+            </BarMenuItem>
+          </BarMenu>
+        </Float>
         <BarMenu>
           <BarMenuItem href="/">
             Home
