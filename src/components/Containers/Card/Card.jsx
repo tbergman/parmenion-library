@@ -5,7 +5,7 @@ import { H3 } from '../../Type';
 import { Menu, MenuItem } from '../../Navigation';
 
 const CardStyle = styled.div`
-  ${({ theme, isActive }) => css`
+  ${({ theme }) => css`
     background: white;
     box-shadow: ${theme.components.shadow_large};
     padding: ${theme.components.spacing_vertical} ${theme.components.padding_base_horizontal};
@@ -13,7 +13,7 @@ const CardStyle = styled.div`
 `;
 
 const OutsetContent = styled.div`
-  ${({ theme, isActive }) => css`
+  ${({ theme }) => css`
     margin: 0 -${theme.components.padding_base_horizontal} -${theme.components.spacing_vertical} -${theme.components.padding_base_horizontal};
   `}
 `;
@@ -31,6 +31,15 @@ export const Card = props => (
 );
 
 Card.Heading = H3;
+
+Card.propTypes = {
+  heading: React.PropTypes.string,
+  children: React.PropTypes.node.isRequired,
+};
+
+Card.defaultProps = {
+  heading: null,
+};
 
 Card.ActionList = props => (
   <OutsetContent>
