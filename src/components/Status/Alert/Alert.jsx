@@ -98,8 +98,8 @@ const RightColumn = styled.div`
 `;
 
 const AlertIcon = styled.div`
-  ${({ theme }) => css`
-    padding: 0 ${theme.components.padding_base_horizontal} 0 0;
+  ${({ theme, isSmall }) => css`
+    padding: 0 ${isSmall ? theme.components.padding_small_horizontal : theme.components.padding_base_horizontal} 0 0;
   `}
 `;
 
@@ -123,7 +123,7 @@ const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
     return (
       <InnerAlert hasArrow={hasArrow} isSmall={isSmall}>
         <LeftColumn>
-          <AlertIcon>{ icon }</AlertIcon>
+          <AlertIcon isSmall={isSmall}>{ icon }</AlertIcon>
         </LeftColumn>
         <RightColumn>
           { title && <Header>{ title }</Header> }

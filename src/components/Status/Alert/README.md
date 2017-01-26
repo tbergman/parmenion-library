@@ -54,3 +54,25 @@
     <Alert status={2} isSmall hasArrow>
       This is the alert content
     </Alert>
+
+
+**With icons**
+
+    import {Alert, Icon, Content} from '@parmenion/library'
+
+    <Alert title="Alert title" icon={<Icon icon="bank" size={1.5}/>}>
+      <Content>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis ullamcorper,
+          est eget iaculis varius, ex libero dapibus erat, vitae tempor mi odio ut dolor.
+        </p>
+      </Content>
+    </Alert>
+
+    <Alert icon={<Icon icon="checkCircle" size={1.5}/>} status={1}>
+      Something went right
+    </Alert>
+
+    <Alert icon={<Icon icon="exclamation" />} status={2} isSmall hasArrow>
+      Something went wrong
+    </Alert>
