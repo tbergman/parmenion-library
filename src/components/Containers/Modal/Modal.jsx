@@ -54,15 +54,62 @@ const Body = styled.div`
   min-height: 40px;
 `;
 
-export const Modal = props => (
-  <Portal
-    isOpened={props.isOpen}
-    onOpen={() => { document.body.className += ' p-modal-open'; }}
-    onClose={() => { document.body.className = document.body.className.replace(' p-modal-open', ''); }}
-  >
-    <ModalWithBackdrop {...props}>{props.children}</ModalWithBackdrop>
-  </Portal>
-);
+export class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.openCount = 0;
+    this.state = { isClosing: false, isOpen: props.isOpen };
+
+    if (props.isOpen) {
+      this.open();
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.isOpen !== this.props.isOpen) {
+      if (nextProps.isOpen) {
+        this.openCount += 1; // increment react key for every time the modal opens to force a re-render
+        this.setState({ isOpen: true, isClosing: false });
+        this.open();
+      } else {
+        this.setState({ isClosing: true });
+        this.close();
+      }
+    }
+  }
+
+  onAnimationRest = () => {
+    if (this.state.isClosing) {
+      this.setState({ isOpen: false, isClosing: false });
+    }
+  }
+
+  open = () => {
+    document.body.className += ' p-modal-open';
+  }
+
+  close = () => {
+    document.body.className = document.body.className.replace(' p-modal-open', '');
+  }
+
+  render() {
+    return (
+      <Portal
+        isOpened={this.state.isOpen}
+      >
+        <ModalWithBackdrop
+          key={this.openCount}
+          isClosing={this.state.isClosing}
+          onAnimationRest={this.onAnimationRest}
+          {...this.props}
+        >
+          {this.props.children}
+        </ModalWithBackdrop>
+      </Portal>
+    );
+  }
+}
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,
@@ -82,37 +129,57 @@ Modal.propTypes = {
   children: PropTypes.node,
 };
 
-const ModalWithBackdrop = props => (
-  <Motion defaultStyle={{ scale: 0.9, y: -100, opacity: 0 }} style={{ scale: spring(1, { stiffness: 150, damping: 17 }), y: spring(0, { stiffness: 150, damping: 17 }), opacity: spring(1) }}>
-    {interpolated => (
-      <ModalContainer style={{ background: 'rgba(0, 0, 0, 0.5)', opacity: interpolated.opacity }}>
-        <ModalInner style={{ transform: `scale(${interpolated.scale}) translateY(${interpolated.y}px)` }}>
-          <Title>
-            <ContentWithRight
-              content={props.title}
-              right={
-                <IconButton onClick={props.onClose} icon="close" isInverted />
-              }
-            />
-          </Title>
-          <Body>
-            <Stacked>
-              {props.children}
+class ModalWithBackdrop extends React.Component { // eslint-disable-line
+  render() {
+    const { isClosing, ...props } = this.props;
 
-              {(props.primaryButton != null || props.buttons != null) && (
+    return (
+      <Motion
+        defaultStyle={{ scale: 0.9, y: -100, opacity: 0 }}
+        style={{
+          scale: spring(isClosing ? 0.9 : 1, { stiffness: 150, damping: 17 }),
+          y: spring(isClosing ? 100 : 0, { stiffness: 150, damping: 17 }),
+          opacity: spring(isClosing ? 0 : 1),
+        }}
+        onRest={this.props.onAnimationRest}
+      >
+        {interpolated => (
+          <ModalContainer
+            style={{
+              background: 'rgba(0, 0, 0, 0.5)',
+              opacity: interpolated.opacity,
+              pointerEvents: isClosing ? 'none' : 'auto',
+            }}
+          >
+            <ModalInner style={{ transform: `scale(${interpolated.scale}) translateY(${interpolated.y}px)` }}>
+              <Title>
                 <ContentWithRight
-                  content={
-                    <Horizontal>
-                      {props.buttons}
-                    </Horizontal>
+                  content={props.title}
+                  right={
+                    <IconButton onClick={props.onClose} icon="close" isInverted />
                   }
-                  right={props.primaryButton}
                 />
-              )}
-            </Stacked>
-          </Body>
-        </ModalInner>
-      </ModalContainer>
-    )}
-  </Motion>
-);
+              </Title>
+              <Body>
+                <Stacked>
+                  {props.children}
+
+                  {(props.primaryButton != null || props.buttons != null) && (
+                    <ContentWithRight
+                      content={
+                        <Horizontal>
+                          {props.buttons}
+                        </Horizontal>
+                      }
+                      right={props.primaryButton}
+                    />
+                  )}
+                </Stacked>
+              </Body>
+            </ModalInner>
+          </ModalContainer>
+        )}
+      </Motion>
+    );
+  }
+}
