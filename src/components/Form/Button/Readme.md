@@ -28,3 +28,10 @@
       <Button>I'm not a block</Button>
       <Button isBlock>I am a block</Button>
     </Stacked>
+
+**With icons**
+
+    import {Button, Icon} from '@parmenion/library'
+
+    <Button icon={<Icon icon="file" />}>Files to the left of me</Button>
+    <Button type={2} icon={<Icon icon="chevronRight" isInverted />} iconRight>Arrows to the right</Button>

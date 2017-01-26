@@ -190,7 +190,24 @@ const LinkButton = styled(Default)`
   `}
 `;
 
-const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple, onClick, href, to }) => {
+
+const InnerButtonIcon = styled.div`
+  ${({ theme, isSmall, isRight }) => css`
+    position: relative;
+    float: ${isRight ? 'right' : 'left'};
+    margin-left: ${isRight ?
+      `${(parseFloat(isSmall ? theme.components.padding_small_horizontal : theme.components.padding_base_horizontal, 10) / 3).toFixed(2)}rem` :
+      `-${(parseFloat(isSmall ? theme.components.padding_small_horizontal : theme.components.padding_base_horizontal, 10) / 3).toFixed(2)}rem`
+    };
+    margin-right: ${isRight ?
+      `-${(parseFloat(isSmall ? theme.components.padding_small_horizontal : theme.components.padding_base_horizontal, 10) / 3).toFixed(2)}rem` :
+      `${(parseFloat(isSmall ? theme.components.padding_small_horizontal : theme.components.padding_base_horizontal, 10) / 3).toFixed(2)}rem`
+    };
+  `}
+`;
+
+
+const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple, onClick, href, to, icon, iconRight }) => {
   const InnerButton = (() => {
     switch (type) {
       case 1:
@@ -206,9 +223,14 @@ const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple,
     }
   })();
 
+  const ButtonIcon = icon && <InnerButtonIcon isSmall={isSmall} isRight={iconRight}>
+    { icon }
+  </InnerButtonIcon>;
+
   return (
     <InnerButton isSmall={isSmall} isBlock={isBlock} disabled={isDisabled} isRipple={isRipple} onClick={onClick} href={href} to={to}>
       { children }
+      { ButtonIcon }
       { isRipple && <Ripple /> }
     </InnerButton>
   );
@@ -223,6 +245,8 @@ Button.propTypes = {
   onClick: React.PropTypes.func,
   href: React.PropTypes.string,
   to: React.PropTypes.string,
+  icon: React.PropTypes.node,
+  iconRight: React.PropTypes.bool,
   children: React.PropTypes.node.isRequired,
 };
 
@@ -235,6 +259,8 @@ Button.defaultProps = {
   onClick: null,
   href: null,
   to: null,
+  icon: null,
+  iconRight: false,
 };
 
 export default Button;
