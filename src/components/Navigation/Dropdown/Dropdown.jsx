@@ -24,7 +24,7 @@ const Menu = styled.div`
   `}
 `;
 
-class Dropdown extends React.Component {
+export class Dropdown extends React.Component {
 
   constructor(props) {
     super(props);
@@ -63,5 +63,3 @@ Dropdown.defaultProps = {
   isRight: false,
   isHover: false,
 };
-
-export default Dropdown;

@@ -1,1 +1,1 @@
-export InputStatic from './InputStatic';
+export * from './InputStatic';

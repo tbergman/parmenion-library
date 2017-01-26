@@ -1,6 +1,6 @@
 **Positions**
 
-    import {Tooltip} from '@parmenion/library'
+    import {Tooltip, Button} from '@parmenion/library'
 
     <Tooltip text="Hey this is a tooltip" position={0}>
       <Button to="/">Top</Button>

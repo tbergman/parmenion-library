@@ -8,7 +8,7 @@ const InnerVisible = styled.div`
   }
 `;
 
-const Visible = props => <InnerVisible {...props} />;
+export const Visible = props => <InnerVisible {...props} />;
 
 Visible.propTypes = {
   lower: React.PropTypes.string,
@@ -19,5 +19,3 @@ Visible.defaultProps = {
   lower: '0px',
   upper: '999999px',
 };
-
-export default Visible;

@@ -47,7 +47,7 @@ const InnerButtonGroup = styled.div`
   `}
 `;
 
-const ButtonGroup = props => <InnerButtonGroup {...props} />;
+export const ButtonGroup = props => <InnerButtonGroup {...props} />;
 
 ButtonGroup.propTypes = {
   isJustified: React.PropTypes.bool,
@@ -57,5 +57,3 @@ ButtonGroup.propTypes = {
 ButtonGroup.defaultProps = {
   isJustified: false,
 };
-
-export default ButtonGroup;

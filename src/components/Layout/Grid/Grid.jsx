@@ -5,8 +5,6 @@
 
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Grid = styled.div`
   width: 100%;
 `;
-
-export default Container;

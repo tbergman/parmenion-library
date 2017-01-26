@@ -11,12 +11,10 @@ const InnerBar = styled.div`
   `}
 `;
 
-const Bar = props => <InnerBar {...props} />;
+export const Bar = props => <InnerBar {...props} />;
 
 Bar.propTypes = {
   children: React.PropTypes.node.isRequired,
 };
 
 Bar.defaultProps = {};
-
-export default Bar;

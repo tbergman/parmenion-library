@@ -22,7 +22,7 @@ const InnerList = styled.ul`
   `}
 `;
 
-const List = props => <InnerList {...props} />;
+export const List = props => <InnerList {...props} />;
 
 List.propTypes = {
   hasBullets: React.PropTypes.bool,
@@ -36,5 +36,3 @@ List.defaultProps = {
   isSpaced: false,
   isInline: false,
 };
-
-export default List;

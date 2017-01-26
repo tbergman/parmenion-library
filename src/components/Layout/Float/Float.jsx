@@ -5,7 +5,7 @@ const InnerFloat = styled.div`
   float: ${props => props.isRight ? 'right' : 'left'};
 `;
 
-const Float = props => <InnerFloat {...props} />;
+export const Float = props => <InnerFloat {...props} />;
 
 Float.propTypes = {
   isRight: React.PropTypes.bool,
@@ -14,5 +14,3 @@ Float.propTypes = {
 Float.defaultProps = {
   isRight: false,
 };
-
-export default Float;

@@ -142,7 +142,7 @@ const Left = styled(Default)`
   `}
 `;
 
-const Tooltip = ({ children, text, position }) => {
+export const Tooltip = ({ children, text, position }) => {
   const InnerTooltip = (() => {
     switch (position) {
       case 1:
@@ -170,5 +170,3 @@ Tooltip.propTypes = {
 };
 
 Tooltip.defaultProps = {};
-
-export default Tooltip;

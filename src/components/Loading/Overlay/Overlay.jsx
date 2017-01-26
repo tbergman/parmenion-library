@@ -16,7 +16,7 @@ const InnerOverlay = styled.div`
   `}
 `;
 
-const Overlay = props => <InnerOverlay {...props} />;
+export const Overlay = props => <InnerOverlay {...props} />;
 
 Overlay.propTypes = {
   isFull: React.PropTypes.bool,
@@ -27,5 +27,3 @@ Overlay.defaultProps = {
   isFull: false,
   isInverted: false,
 };
-
-export default Overlay;

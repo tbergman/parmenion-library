@@ -76,7 +76,7 @@ const InnerTable = styled.table`
   `}
 `;
 
-const Table = ({ children, isLight, isHover, isStriped, breakpoint }) => (
+export const Table = ({ children, isLight, isHover, isStriped, breakpoint }) => (
   <Container breakpoint={breakpoint}>
     <InnerTable isLight={isLight} isHover={isHover} isStriped={isStriped}>
       { children }
@@ -98,5 +98,3 @@ Table.defaultProps = {
   isStriped: false,
   breakpoint: null,
 };
-
-export default Table;

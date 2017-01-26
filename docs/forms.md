@@ -2,7 +2,7 @@ There is a simple API available to construct various different form layouts and 
 
 **Simple vertical* form**
 
-    import {Form, InputText, Textarea, Radio, Checkbox, RadioGroup, CheckboxGroup} from '@parmenion/library'
+    import {Form, InputText, Textarea, Radio, Checkbox, RadioGroup, CheckboxGroup, Select} from '@parmenion/library'
 
     initialState = { chooseOne: 'no', horizontal: false }
 

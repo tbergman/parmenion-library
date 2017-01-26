@@ -7,12 +7,10 @@ const InnerBarMenu = styled.ul`
   list-style: none;
 `;
 
-const BarMenu = props => <InnerBarMenu {...props} />;
+export const BarMenu = props => <InnerBarMenu {...props} />;
 
 BarMenu.propTypes = {
   children: React.PropTypes.node.isRequired,
 };
 
 BarMenu.defaultProps = {};
-
-export default BarMenu;

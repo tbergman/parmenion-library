@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "A boilerplate for running a Webpack workflow in Node express",
   "main": "dist/parmenion-library.min.js",
+  "typings": "./index.d.tsx",
   "author": "Ben Dunn",
   "license": "MIT",
   "bugs": {
@@ -20,6 +21,7 @@
     "styleguide-publish": "npm run styleguide-build && gh-pages -d styleguide"
   },
   "dependencies": {
+    "@types/react": "^15.0.4",
     "fuzzaldrin": "^2.1.0",
     "react-motion": "^0.4.7",
     "react-portal": "^3.0.0",
@@ -57,6 +59,7 @@
     "react-addons-test-utils": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-styleguidist": "github:madjam002/react-styleguidist#multiple-components",
+    "react-to-typescript-definitions": "^0.18.0",
     "react-transform-hmr": "^1.0.0",
     "rimraf": "^2.4.3",
     "stats-webpack-plugin": "^0.2.1",

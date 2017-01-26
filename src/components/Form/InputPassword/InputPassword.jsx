@@ -1,7 +1,7 @@
 import React from 'react';
 import { InputText } from '../InputText';
 
-const InputPassword = ({ placeholder }) => (
+export const InputPassword = ({ placeholder }) => (
   <InputText placeholder={placeholder} type="password" />
 );
 
@@ -12,5 +12,3 @@ InputPassword.propTypes = {
 InputPassword.defaultProps = {
   placeholder: null,
 };
-
-export default InputPassword;

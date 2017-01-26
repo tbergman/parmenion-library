@@ -1,10 +1,10 @@
 import React from 'react';
-import AccordionPanel from './AccordionPanel';
+import { AccordionPanel } from './AccordionPanel';
 
 /**
  * @example ./README.md#Accordion
  */
-class Accordion extends React.Component {
+export class Accordion extends React.Component {
 
   constructor(props) {
     super(props);
@@ -39,5 +39,3 @@ Accordion.propTypes = {
 };
 
 Accordion.defaultProps = {};
-
-export default Accordion;

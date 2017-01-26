@@ -1,1 +1,1 @@
-export InputPassword from './InputPassword';
+export * from './InputPassword';

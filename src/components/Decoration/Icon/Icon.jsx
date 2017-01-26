@@ -166,7 +166,7 @@ const icons = {
   userTimes,
 };
 
-const Icon = ({ icon, size, isInverted }) => (
+export const Icon = ({ icon, size, isInverted }) => (
   <Container size={size} isInverted={isInverted}>
     {icons[icon]}
   </Container>
@@ -182,5 +182,3 @@ Icon.defaultProps = {
   size: 1,
   isInverted: false,
 };
-
-export default Icon;

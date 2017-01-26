@@ -7,7 +7,7 @@ const InnerLabel = styled.label`
   `}
 `;
 
-const Label = props => <InnerLabel htmlFor={props.for} {...props} />;
+export const Label = props => <InnerLabel htmlFor={props.for} {...props} />;
 
 Label.propTypes = {
   for: React.PropTypes.node.isRequired,
@@ -17,5 +17,3 @@ Label.propTypes = {
 Label.defaultProps = {
   for: null,
 };
-
-export default Label;

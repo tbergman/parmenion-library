@@ -87,7 +87,7 @@ const Input = styled.input`
   height: 2rem;
 `;
 
-const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, isRipple, status, onChange }) => {
+export const Checkbox = ({ children, id, name, value, checked, disabled, isSmall, isInline, isRipple, status, onChange }) => {
   const Label = (() => {
     switch (status) {
       case 1:
@@ -132,5 +132,3 @@ Checkbox.defaultProps = {
   isRipple: true,
   status: 0,
 };
-
-export default Checkbox;

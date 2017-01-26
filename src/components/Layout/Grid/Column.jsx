@@ -8,7 +8,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Row from './Row';
+import { Row } from './Row';
 import { divvy, media, passOn } from './utils';
 
 type Props = {
@@ -44,7 +44,7 @@ ColumnContainer.defaultProps = {
   divisions: 12,
 };
 
-const Column = styled(ColumnContainer)`
+export const Column = styled(ColumnContainer)`
   display: ${(window.document.documentMode < 10) ? 'block' : props => props.flex ? 'flex' : 'block'};
   float: ${(window.document.documentMode < 10) ? 'left' : 'none'};
   ${props => props.debug ? `background-color: rgba(50, 50, 255, .1);
@@ -108,5 +108,3 @@ const Column = styled(ColumnContainer)`
 `;
 
 Column.displayName = 'Column';
-
-export default Column;

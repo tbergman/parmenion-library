@@ -17,7 +17,7 @@ const InnerInputStatic = styled.div`
   `}
 `;
 
-const InputStatic = ({ isSmall, children }) => (
+export const InputStatic = ({ isSmall, children }) => (
   <InnerInputStatic isSmall={isSmall}>
     {children}
   </InnerInputStatic>
@@ -29,5 +29,3 @@ InputStatic.propTypes = {
 };
 
 InputStatic.defaultProps = {};
-
-export default InputStatic;

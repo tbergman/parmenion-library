@@ -1,1 +1,1 @@
-export Float from './Float';
+export * from './Float';

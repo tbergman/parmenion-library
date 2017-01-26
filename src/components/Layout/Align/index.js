@@ -1,1 +1,1 @@
-export Align from './Align';
+export * from './Align';

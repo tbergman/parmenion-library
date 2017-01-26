@@ -29,7 +29,7 @@ const Trigger = styled.span`
   }
 `;
 
-const BarMenuItemDropdown = ({ children, menu, isHover, isRight }) => (
+export const BarMenuItemDropdown = ({ children, menu, isHover, isRight }) => (
   <InnerBarMenuItemDropdown>
     <Dropdown
       isHover={isHover}
@@ -54,5 +54,3 @@ BarMenuItemDropdown.defaultProps = {
   isHover: false,
   isRight: false,
 };
-
-export default BarMenuItemDropdown;

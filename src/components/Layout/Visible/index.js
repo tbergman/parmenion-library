@@ -1,1 +1,1 @@
-export Visible from './Visible';
+export * from './Visible';

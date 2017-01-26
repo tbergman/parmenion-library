@@ -56,10 +56,10 @@ const Link = styled.a`
 `;
 
 /** @example ./README.md#Menu */
-const Menu = props => <InnerMenu {...props} />;
+export const Menu = props => <InnerMenu {...props} />;
 
 /** @example ./README.md#MenuItem */
-const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow, isRipple }) => {
+export const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow, isRipple }) => {
   const InnerIcon = icon && React.cloneElement(icon, {
     isInverted: isActive,
     size: 0.8,
@@ -104,5 +104,3 @@ MenuItem.defaultProps = {
   isActive: false,
   isRipple: true,
 };
-
-export { Menu, MenuItem };

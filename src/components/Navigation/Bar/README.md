@@ -31,7 +31,7 @@
 
 **With dropdown item**
 
-    import {Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Menu, MenuItem, Icon, Size} from '@parmenion/library'
+    import {Bar, BarMenu, BarMenuItem, BarMenuItemDropdown, Menu, MenuItem, Icon, Size, Float} from '@parmenion/library'
 
     <Size height={250}>
       <Bar>

@@ -1,1 +1,1 @@
-export Dropdown from './Dropdown.jsx';
+export * from './Dropdown';

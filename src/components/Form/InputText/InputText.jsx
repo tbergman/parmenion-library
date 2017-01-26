@@ -38,7 +38,7 @@ const InnerInputText = styled.input`
   `}
 `;
 
-const InputText = ({ isReadOnly, ...props }) => (
+export const InputText = ({ isReadOnly, ...props }) => (
   <InnerInputText
     {...props}
     readOnly={isReadOnly}
@@ -66,5 +66,3 @@ InputText.defaultProps = {
   onClick: null,
   onKeyDown: null,
 };
-
-export default InputText;

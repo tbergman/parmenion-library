@@ -27,7 +27,7 @@ const Link = styled.a`
   }
 `;
 
-const BarMenuItem = ({ children, href, to, isRipple }) => (
+export const BarMenuItem = ({ children, href, to, isRipple }) => (
   <InnerBarMenuItem>
     <Link href={href} to={to}>
       { children }
@@ -46,5 +46,3 @@ BarMenuItem.propTypes = {
 BarMenuItem.defaultProps = {
   isRipple: true,
 };
-
-export default BarMenuItem;

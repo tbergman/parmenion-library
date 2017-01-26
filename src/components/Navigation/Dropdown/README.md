@@ -1,6 +1,6 @@
 **Normal**
 
-    import {Dropdown, Menu, MenuItem, Icon, Size} from '@parmenion/library'
+    import {Dropdown, Menu, MenuItem, Icon, Size, Button} from '@parmenion/library'
 
     <Size height={250}>
       <Dropdown
@@ -26,7 +26,7 @@
 
 **Hover**
 
-    import {Dropdown, Menu, MenuItem, Icon, Size} from '@parmenion/library'
+    import {Dropdown, Menu, MenuItem, Icon, Size, Button} from '@parmenion/library'
 
     <Size height={250}>
       <Dropdown

@@ -77,3 +77,7 @@ Form.Row = props => (
     )}
   </Row>
 );
+
+Form.propTypes = {
+  children: React.PropTypes.node,
+};

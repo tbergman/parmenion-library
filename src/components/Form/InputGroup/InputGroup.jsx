@@ -80,7 +80,7 @@ const AddonButton = styled.span`
   }
 `;
 
-const InputGroup = ({ children, start, end }) => {
+export const InputGroup = ({ children, start, end }) => {
   let AddonStart;
   let AddonEnd;
 
@@ -121,5 +121,3 @@ InputGroup.defaultProps = {
   start: null,
   end: null,
 };
-
-export default InputGroup;

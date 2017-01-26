@@ -1,1 +1,1 @@
-export Position from './Position';
+export * from './Position';

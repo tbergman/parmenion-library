@@ -8,7 +8,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import Column from './Column';
+import { Column } from './Column';
 import { passOn } from './utils';
 
 type Props = {
@@ -70,6 +70,4 @@ const RowStyle = styled(RowContainer)`
   }
 `;
 
-const Row = props => <RowStyle {...props} />;
-
-export default Row;
+export const Row = props => <RowStyle {...props} />;

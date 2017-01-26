@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled from 'styled-components';
 import { TouchableOpacity } from '../../Navigation';
 import { Icon } from '../../Decoration';
@@ -16,3 +16,8 @@ export const IconButton = props => (
     </Container>
   </TouchableOpacity>
 );
+
+IconButton.propTypes = {
+  onClick: PropTypes.func,
+  ...Icon.propTypes,
+};

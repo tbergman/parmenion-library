@@ -19,7 +19,7 @@ const InnerSelect = styled.div`
   `}
 `;
 
-class Select extends React.Component {
+export class Select extends React.Component {
 
   constructor(props) {
     super(props);
@@ -182,5 +182,3 @@ Select.defaultProps = {
   isSmall: false,
   isAutocomplete: false,
 };
-
-export default Select;

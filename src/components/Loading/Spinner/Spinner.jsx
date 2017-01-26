@@ -41,7 +41,7 @@ const Circle = styled.span`
   `}
 `;
 
-const Spinner = ({ isInverted, isCentered }) => (
+export const Spinner = ({ isInverted, isCentered }) => (
   <InnerSpinner isCentered={isCentered}>
     <Circle isInverted={isInverted} />
     <Circle isInverted={isInverted} />
@@ -58,5 +58,3 @@ Spinner.defaultProps = {
   isCentered: false,
   isInverted: false,
 };
-
-export default Spinner;

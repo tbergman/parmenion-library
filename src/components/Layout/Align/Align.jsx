@@ -16,7 +16,7 @@ const InnerAlign = styled.div`
   };
 `;
 
-const Align = props => <InnerAlign {...props} />;
+export const Align = props => <InnerAlign {...props} />;
 
 Align.propTypes = {
   type: React.PropTypes.number,
@@ -25,5 +25,3 @@ Align.propTypes = {
 Align.defaultProps = {
   type: 1,
 };
-
-export default Align;

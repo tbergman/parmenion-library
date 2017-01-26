@@ -190,7 +190,6 @@ const LinkButton = styled(Default)`
   `}
 `;
 
-
 const InnerButtonIcon = styled.div`
   ${({ theme, isSmall, isRight }) => css`
     position: relative;
@@ -206,8 +205,7 @@ const InnerButtonIcon = styled.div`
   `}
 `;
 
-
-const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple, onClick, href, to, icon, iconRight }) => {
+export const Button = ({ theme, children, type, isSmall, isBlock, isDisabled, isRipple, onClick, href, to, icon, iconRight }) => {
   const InnerButton = (() => {
     switch (type) {
       case 1:
@@ -262,5 +260,3 @@ Button.defaultProps = {
   icon: null,
   iconRight: false,
 };
-
-export default Button;

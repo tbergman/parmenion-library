@@ -12,7 +12,7 @@ const InnerPosition = styled.div`
   `}
 `;
 
-const Position = props => <InnerPosition {...props} />;
+export const Position = props => <InnerPosition {...props} />;
 
 Position.propTypes = {
   fixed: React.PropTypes.bool,
@@ -31,5 +31,3 @@ Position.defaultProps = {
   bottom: false,
   left: false,
 };
-
-export default Position;

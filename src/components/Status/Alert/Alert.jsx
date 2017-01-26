@@ -103,7 +103,7 @@ const AlertIcon = styled.div`
   `}
 `;
 
-const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
+export const Alert = ({ children, status, hasArrow, title, icon, isSmall }) => {
   const InnerAlert = (() => {
     switch (status) {
       case 1:
@@ -161,5 +161,3 @@ Alert.defaultProps = {
   hasArrow: false,
   isSmall: false,
 };
-
-export default Alert;

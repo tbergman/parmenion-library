@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styled, { css } from 'styled-components';
 import { Stacked } from '../../Layout';
 import { H3 } from '../../Type';
@@ -34,8 +34,8 @@ export const Card = props => (
 Card.Heading = H3;
 
 Card.propTypes = {
-  heading: React.PropTypes.string,
-  children: React.PropTypes.node.isRequired,
+  heading: PropTypes.string,
+  children: PropTypes.node,
 };
 
 Card.defaultProps = {

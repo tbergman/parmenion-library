@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Horizontal } from '../../Layout';
 
 export const CheckboxGroup = props => (
@@ -6,3 +6,7 @@ export const CheckboxGroup = props => (
     {props.children}
   </Horizontal>
 );
+
+CheckboxGroup.propTypes = {
+  children: PropTypes.node,
+};

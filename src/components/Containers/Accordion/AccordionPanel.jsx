@@ -56,7 +56,7 @@ const BodyInner = styled.div`
 /**
  * @example ./README.md#AccordionPanel
  */
-class AccordionPanel extends React.Component {
+export class AccordionPanel extends React.Component {
 
   constructor(props) {
     super(props);
@@ -114,5 +114,3 @@ AccordionPanel.defaultProps = {
   isOpen: false,
   isRipple: true,
 };
-
-export default AccordionPanel;
