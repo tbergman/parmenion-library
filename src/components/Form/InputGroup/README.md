@@ -22,13 +22,23 @@
       <InputText />
     </InputGroup>
 
-
 **Multiple inputs**
 
-    import {InputGroup, InputText} from '@parmenion/library'
+    import {InputGroup, InputText, Select, Size} from '@parmenion/library'
 
-    <InputGroup start="Hi" end="Bye">
-      <InputText />
-      <InputText />
-      <InputText />
-    </InputGroup>
+    <Size height={250}>
+      <InputGroup start="Hi" end="Bye">
+        <InputText placeholder="One" />
+        <InputText placeholder="Two" />
+        <InputText placeholder="Three"/>
+        <Select
+          placeholder="Select"
+          items={[
+            { id: 0, name: 'Option 1' },
+            { id: 1, name: 'Option 2' },
+            { id: 2, name: 'Option 3' },
+            { id: 3, name: 'Option 4' },
+          ]}
+        />
+      </InputGroup>
+    </Size>
