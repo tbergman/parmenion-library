@@ -43,8 +43,10 @@ const Title = styled.div`
   position: relative;
   padding: 2rem 2rem;
   border-bottom: 1px solid transparent;
-  background: #BF2A23;
+  background: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.type.font_heading};
   color: white;
+  font-size: 1.5em;
 `;
 
 const Body = styled.div`
