@@ -4,12 +4,16 @@ import tc from 'tinycolor2';
 
 const MenuContainer = styled.div`
   ${({ theme, isOpen }) => css`
-    display: ${isOpen ? 'block' : 'none'};
+    display: block;
     position: absolute;
     left: 0;
     line-height: 2rem;
     width:100%;
     z-index: 1;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transform: ${isOpen ? 'scaleY(1)' : 'scaleY(0)'};
+    transform-origin: left top 0px;
+    opacity: ${isOpen ? '1' : '0'};
     box-shadow: ${theme.components.shadow_large};
     max-height: 25rem;
     overflow: auto;

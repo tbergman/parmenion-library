@@ -8,7 +8,7 @@ const InnerDropdown = styled.span`
 
 const Menu = styled.div`
   ${({ theme, isOpen, isRight }) => css`
-    display: ${isOpen ? 'block' : 'none'};
+    display: block;
     position: absolute;
     left: ${isRight ? 'auto' : '0'};
     right: ${isRight ? '0' : 'auto'};
@@ -16,6 +16,10 @@ const Menu = styled.div`
     z-index: 1;
     width:100%;
     min-width: 20rem;
+    transition: all 450ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    transform: ${isOpen ? 'scaleY(1)' : 'scaleY(0)'};
+    transform-origin: left top 0px;
+    opacity: ${isOpen ? '1' : '0'};
     box-shadow: ${theme.components.shadow_large};
   `}
 `;
