@@ -1,4 +1,5 @@
 import React from 'react';
+import tc from 'tinycolor2';
 import styled, { css } from 'styled-components';
 
 const InnerInputText = styled.input`
@@ -18,12 +19,12 @@ const InnerInputText = styled.input`
     width: 100%;
     height: ${theme.components.input_height}; /* IE and Firefox require height */
     background-image: none;
-    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color cubic-bezier(0.23, 1, 0.32, 1) .15s, box-shadow cubic-bezier(0.23, 1, 0.32, 1) .15s;
 
     &:focus {
       border-color: ${theme.forms.input_border_focus};
       outline: 0;
-      box-shadow: inset 0 0.1rem 0.1rem rgba(0,0,0,.075), 0 0 0.8rem rgba(102, 175, 233, 0.6);
+      box-shadow: 0 0 0 1px white, 0 0 0 2.5px ${tc(theme.forms.input_border_focus).lighten(60).toString()};
     }
 
     &[disabled] {
