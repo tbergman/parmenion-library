@@ -1,5 +1,6 @@
 **With standard buttons**
 
-    import {Label} from '@parmenion/library'
+    import {Label, InputText} from '@parmenion/library'
 
-    <Label>This is a form label</Label>
+    <Label for="MyInput">This is a form label</Label>
+    <InputText id="MyInput" />
