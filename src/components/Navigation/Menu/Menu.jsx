@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import tc from 'tinycolor2';
 import { Icon, Ripple } from '../../Decoration';
 
 const InnerMenu = styled.ul`
@@ -44,13 +43,13 @@ const Link = styled.a`
     width: 100%;
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     border-bottom: 0.1rem solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
-    color: ${isActive ? 'white' : theme.type.text_color};
+    color: ${theme.type.text_color};
     background-color: ${isActive ? theme.components.active_background : 'white'};
     text-align: left;
     text-decoration: none;
     &:hover,
     &:focus {
-      background-color: ${isActive ? tc(theme.components.active_background).darken(3).toString() : theme.colors.gray_lightest};
+      background-color: ${isActive ? theme.components.active_background : theme.colors.gray_lightest};
     }
   `}
 `;
@@ -61,7 +60,6 @@ export const Menu = props => <InnerMenu {...props} />;
 /** @example ./README.md#MenuItem */
 export const MenuItem = ({ children, href, to, icon, description, isActive, hasArrow, isRipple }) => {
   const InnerIcon = icon && React.cloneElement(icon, {
-    isInverted: isActive,
     size: 0.8,
   });
 

@@ -7,6 +7,11 @@ import { MenuContainer, Menu, MenuItem } from './SelectMenu';
 const InnerSelect = styled.div`
   ${({ theme, isAutocomplete }) => css`
     position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
     ${!isAutocomplete && `&:after {
       content: "▼";
       position: absolute;
@@ -19,12 +24,59 @@ const InnerSelect = styled.div`
   `}
 `;
 
+const InnerInput = styled.div`
+  ${({ theme, isSmall, isOpen }) => css`
+    padding: ${isSmall ?
+      `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
+      `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}`
+    };
+    font-size: ${isSmall ? '0.9em' : '1em'};
+    color: ${theme.forms.input_color};
+    background-color: ${theme.forms.input_bg};
+    border: 0.1rem solid ${theme.forms.input_border};
+    border-radius: ${theme.forms.input_border_radius};
+    box-shadow: ${theme.forms.input_inner_shadow};
+    line-height: ${theme.type.line_height};
+    width: 100%;
+    min-height: ${theme.components.input_height}; /* IE and Firefox require height */
+    background-image: none;
+    transition: border-color cubic-bezier(0.23, 1, 0.32, 1) .15s, box-shadow cubic-bezier(0.23, 1, 0.32, 1) .15s;
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+
+    padding-right: 30px; /* for select arrow */
+
+    ${isOpen && `
+      border-color: ${theme.forms.input_border_focus};
+      outline: 0;
+      border-bottom-color: white;
+      border-radius: ${theme.forms.input_border_radius} ${theme.forms.input_border_radius} 0 0;
+    `}
+
+    &:focus {
+      outline: none;
+    }
+
+    &[disabled] {
+        background-color: ${theme.forms.input_bg_disabled};
+        opacity: 1;
+        cursor: ${theme.forms.cursor_disabled};
+    }
+
+    &[readonly] {
+        cursor: pointer;
+    }
+  `}
+`;
+
 export class Select extends React.Component {
 
   constructor(props) {
     super(props);
 
-    const selectedItem = props.value ? this.props.items.find(item => item.id === props.value) : null;
+    const selectedItem = props.value != null ? this.props.items.find(item => item.id === props.value) : null;
     this.state = { isOpen: false, currentName: selectedItem != null ? selectedItem.name : null };
   }
 
@@ -145,19 +197,37 @@ export class Select extends React.Component {
       </MenuItem>
     ));
 
+    const inputProps = {
+      isSmall,
+      onClick: this.toggleMenu,
+      onKeyDown: this.handleKeyDown,
+      onBlur: this.onBlur,
+    };
+
+    const backingInput = isAutocomplete
+      ? (
+        <InputText
+          {...inputProps}
+          placeholder={placeholder}
+          onChange={this.onSearch}
+          value={this.state.currentName}
+          _attachedDropdownIsOpen={this.state.isOpen}
+        />
+      )
+      : (
+        <InnerInput
+          {...inputProps}
+          tabIndex={0}
+          isOpen={this.state.isOpen}
+        >
+          {this.state.currentName}
+        </InnerInput>
+      );
+
     return (
       <InnerSelect isAutocomplete={isAutocomplete}>
         <input type="hidden" value={this.props.value} id={id} />
-        <InputText
-          placeholder={placeholder}
-          isSmall={isSmall}
-          value={this.state.currentName}
-          isReadOnly={!isAutocomplete}
-          onChange={this.onSearch}
-          onClick={this.toggleMenu}
-          onKeyDown={this.handleKeyDown}
-          onBlur={this.onBlur}
-        />
+        {backingInput}
         <MenuContainer isOpen={this.state.isOpen}>
           <Menu>
             { itemsToRender }

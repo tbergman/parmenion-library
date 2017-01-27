@@ -56,5 +56,14 @@
             ]}
           />
         </Form.Field>
+
+        <Form.Field label="With long value:">
+          <Select
+            value={0}
+            items={[
+              { id: 0, name: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis elit nec dolor auctor ultrices. Suspendisse est velit, tempus eu tempus nec, consectetur sit amet lacus. Proin eu justo at tellus placerat egestas. Nunc eu ex odio. Vivamus cursus eros ut pulvinar volutpat. Nulla facilisi. Integer placerat vulputate turpis efficitur imperdiet. Praesent sapien tellus, pharetra condimentum maximus eu, ultrices sed nunc. Vestibulum pellentesque tortor sodales ligula tristique venenatis. Aenean eget ligula sed libero imperdiet tempus.' },
+            ]}
+          />
+        </Form.Field>
       </Form>
     </Size>

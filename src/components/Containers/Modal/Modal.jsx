@@ -138,7 +138,7 @@ class ModalWithBackdrop extends React.Component { // eslint-disable-line
         defaultStyle={{ scale: 0.9, y: -100, opacity: 0 }}
         style={{
           scale: spring(isClosing ? 0.9 : 1, { stiffness: 150, damping: 17 }),
-          y: spring(isClosing ? 100 : 0, { stiffness: 150, damping: 17 }),
+          y: spring(isClosing ? -100 : 0, { stiffness: 150, damping: 17 }),
           opacity: spring(isClosing ? 0 : 1),
         }}
         onRest={this.props.onAnimationRest}
@@ -151,7 +151,7 @@ class ModalWithBackdrop extends React.Component { // eslint-disable-line
               pointerEvents: isClosing ? 'none' : 'auto',
             }}
           >
-            <ModalInner style={{ transform: `scale(${interpolated.scale}) translateY(${interpolated.y}px)` }}>
+            <ModalInner style={{ transform: `translateY(${interpolated.y}px) scale(${interpolated.scale})` }}>
               <Title>
                 <ContentWithRight
                   content={props.title}

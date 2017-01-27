@@ -1,9 +1,8 @@
 import React from 'react';
-import tc from 'tinycolor2';
 import styled, { css } from 'styled-components';
 
 const InnerInputText = styled.input`
-  ${({ theme, isSmall }) => css`
+  ${({ theme, isSmall, ...props }) => css`
     padding: ${isSmall ?
       `${theme.components.padding_small_vertical} ${theme.components.padding_small_horizontal}` :
       `${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal}`
@@ -24,7 +23,6 @@ const InnerInputText = styled.input`
     &:focus {
       border-color: ${theme.forms.input_border_focus};
       outline: 0;
-      box-shadow: 0 0 0 1px white, 0 0 0 2.5px ${tc(theme.forms.input_border_focus).lighten(60).toString()};
     }
 
     &[disabled] {
@@ -36,6 +34,13 @@ const InnerInputText = styled.input`
     &[readonly] {
         cursor: pointer;
     }
+
+    ${props._attachedDropdownIsOpen && `
+      border-color: ${theme.forms.input_border_focus};
+      outline: 0;
+      border-bottom-color: ${theme.forms.input_bg};
+      border-radius: ${theme.forms.input_border_radius} ${theme.forms.input_border_radius} 0 0;
+    `}
   `}
 `;
 

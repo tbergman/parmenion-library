@@ -10,7 +10,7 @@ const forms = {
   input_inner_shadow: 'inset 0 0.1rem 0.1rem rgba(0,0,0,.05)',
   input_border_radius: components.border_radius,
   input_border_radius_small: components.border_radius_small,
-  input_border_focus: colors.primary,
+  input_border_focus: colors.bright_blue,
   input_color_placeholder: tc(colors.gray_light).darken(15).toString(),
   input_height: 'auto',
   input_height_small: '3rem',

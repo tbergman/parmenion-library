@@ -1,6 +1,5 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import tc from 'tinycolor2';
 
 const MenuContainer = styled.div`
   ${({ theme, isOpen }) => css`
@@ -14,10 +13,14 @@ const MenuContainer = styled.div`
     transform: ${isOpen ? 'scaleY(1)' : 'scaleY(0)'};
     transform-origin: left top 0px;
     opacity: ${isOpen ? '1' : '0'};
-    box-shadow: ${theme.components.shadow_large};
     max-height: 25rem;
     overflow: auto;
     user-select: none;
+    border: 0.1rem solid ${theme.forms.input_border_focus};
+    border-top: none;
+    margin-top: -1px;
+    border-radius: 0 0 ${theme.forms.input_border_radius} ${theme.forms.input_border_radius};
+    box-shadow: ${theme.components.shadow};
   `}
 `;
 
@@ -39,14 +42,14 @@ const Link = styled.span`
     width: 100%;
     padding: ${theme.components.padding_base_vertical} ${theme.components.padding_base_horizontal};
     border-bottom: 0.1rem solid ${isActive ? 'transparent' : theme.colors.gray_lighter};
-    color: ${isActive ? 'white' : theme.type.text_color};
+    color: ${theme.type.text_color};
     background-color: ${isActive ? theme.components.active_background : 'white'};
     text-align: left;
     text-decoration: none;
     cursor: pointer;
     &:hover,
     &:focus {
-      background-color: ${isActive ? tc(theme.components.active_background).darken(3).toString() : theme.colors.gray_lightest};
+      background-color: ${isActive ? theme.components.active_background : theme.colors.gray_lightest};
     }
   `}
 `;
