@@ -110,6 +110,11 @@ module.exports = {
         test: /\.json?$/,
         include: dir,
         loader: 'json',
+      },
+      {
+        test: /\.css$/,
+        include: path.join(__dirname, 'node_modules/react-dates'),
+        loader: 'style-loader!css-loader',
       }
     );
 
